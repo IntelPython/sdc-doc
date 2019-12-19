@@ -1,2 +1,2 @@
 # sdc-doc
-Documentation pages for SDC.
+[Documentation for SDC.](https://intelpython.github.io/sdc-doc/latest/)
