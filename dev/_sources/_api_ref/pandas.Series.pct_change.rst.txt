@@ -1,0 +1,65 @@
+.. _pandas.Series.pct_change:
+
+:orphan:
+
+pandas.Series.pct_change
+************************
+
+Percentage change between the current and a prior element.
+
+Computes the percentage change from the immediately previous row by
+default. This is useful in comparing the percentage of change in a time
+series of elements.
+
+:param periods:
+    int, default 1
+        Periods to shift for forming percent change.
+
+:param fill_method:
+    str, default 'pad'
+        How to handle NAs before computing percent changes.
+
+:param limit:
+    int, default None
+        The number of consecutive NAs to fill before stopping.
+
+:param freq:
+    DateOffset, timedelta, or offset alias string, optional
+        Increment to use from time series API (e.g. 'M' or BDay()).
+        \*\*kwargs
+        Additional keyword arguments are passed into
+        `DataFrame.shift` or `Series.shift`.
+
+:return: chg : Series or DataFrame
+    The same type as the calling object.
+
+Limitations
+-----------
+- Unsupported mixed numeric and string data
+- Parameters limit, freq are currently unsupported by Intel Scalable Dataframe Compiler
+
+Examples
+--------
+.. literalinclude:: ../../../examples/series/series_pct_change.py
+   :language: python
+   :lines: 36-
+   :caption: Percentage change between the current and a prior element.
+   :name: ex_series_pct_change
+
+.. command-output:: python ./series/series_pct_change.py
+   :cwd: ../../../examples
+
+.. seealso::
+
+    :ref:`Series.diff <pandas.Series.diff>`
+        Compute the difference of two elements in a Series.
+
+    :ref:`DataFrame.diff <pandas.DataFrame.diff>`
+        Compute the difference of two elements in a DataFrame.
+
+    :ref:`Series.shift <pandas.Series.shift>`
+        Shift the index by some number of periods.
+
+    :ref:`DataFrame.shift <pandas.DataFrame.shift>`
+        Shift the index by some number of periods.
+

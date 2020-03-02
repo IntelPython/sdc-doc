@@ -1,0 +1,36 @@
+.. _pandas.Series.cov:
+
+:orphan:
+
+pandas.Series.cov
+*****************
+
+Compute covariance with Series, excluding missing values.
+
+:param other:
+    Series
+        Series with which to compute the covariance.
+
+:param min_periods:
+    int, optional
+        Minimum number of observations needed to have a valid result.
+
+:return: float
+    Covariance between Series and other normalized by N-1
+    (unbiased estimator).
+
+Limitations
+-----------
+- Unsupported mixed numeric and string data
+
+Examples
+--------
+.. literalinclude:: ../../../examples/series/series_cov.py
+   :language: python
+   :lines: 27-
+   :caption: Compute covariance with Series, excluding missing values.
+   :name: ex_series_cov
+
+.. command-output:: python ./series/series_cov.py
+   :cwd: ../../../examples
+

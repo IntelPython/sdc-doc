@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.plot &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.Series.plot<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Make plots of Series or DataFrame using the backend specified by the
+option <code class="docutils literal notranslate"><span class="pre">plotting.backend</span></code>. By default, matplotlib is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param data</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Series or DataFrame</dt><dd><p>The object for which the method is called</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param x</dt>
+<dd class="field-even"><dl class="simple">
+<dt>label or position, default None</dt><dd><p>Only used if data is a DataFrame.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param y</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>label, position or list of label, positions, default None</dt><dd><p>Allows plotting of one column versus another. Only used if data is a
+DataFrame.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param kind</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param - ‘line’</dt>
+<dd class="field-odd"><p>line plot (default)</p>
+</dd>
+<dt class="field-even">param - ‘bar’</dt>
+<dd class="field-even"><p>vertical bar plot</p>
+</dd>
+<dt class="field-odd">param - ‘barh’</dt>
+<dd class="field-odd"><p>horizontal bar plot</p>
+</dd>
+<dt class="field-even">param - ‘hist’</dt>
+<dd class="field-even"><p>histogram</p>
+</dd>
+<dt class="field-odd">param - ‘box’</dt>
+<dd class="field-odd"><p>boxplot</p>
+</dd>
+<dt class="field-even">param - ‘kde’</dt>
+<dd class="field-even"><p>Kernel Density Estimation plot</p>
+</dd>
+<dt class="field-odd">param - ‘density’</dt>
+<dd class="field-odd"><p>same as ‘kde’</p>
+</dd>
+<dt class="field-even">param - ‘area’</dt>
+<dd class="field-even"><p>area plot</p>
+</dd>
+<dt class="field-odd">param - ‘pie’</dt>
+<dd class="field-odd"><p>pie plot</p>
+</dd>
+<dt class="field-even">param - ‘scatter’</dt>
+<dd class="field-even"><p>scatter plot</p>
+</dd>
+<dt class="field-odd">param - ‘hexbin’</dt>
+<dd class="field-odd"><p>hexbin plot</p>
+</dd>
+<dt class="field-even">param figsize</dt>
+<dd class="field-even"><p>a tuple (width, height) in inches</p>
+</dd>
+<dt class="field-odd">param use_index</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Use index as ticks for x axis</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param title</dt>
+<dd class="field-even"><dl class="simple">
+<dt>string or list</dt><dd><p>Title to use for the plot. If a string is passed, print the string
+at the top of the figure. If a list is passed and <cite>subplots</cite> is
+True, print each item in the list above the corresponding subplot.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param grid</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default None (matlab style default)</dt><dd><p>Axis grid lines</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param legend</dt>
+<dd class="field-even"><dl class="simple">
+<dt>False/True/’reverse’</dt><dd><p>Place legend on axis subplots</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param style</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list or dict</dt><dd><p>matplotlib line style per column</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param logx</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool or ‘sym’, default False</dt><dd><p>Use log scaling or symlog scaling on x axis
+.. versionchanged:: 0.25.0</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param logy</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool or ‘sym’ default False</dt><dd><p>Use log scaling or symlog scaling on y axis
+.. versionchanged:: 0.25.0</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param loglog</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool or ‘sym’, default False</dt><dd><p>Use log scaling or symlog scaling on both x and y axes
+.. versionchanged:: 0.25.0</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param xticks</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>sequence</dt><dd><p>Values to use for the xticks</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param yticks</dt>
+<dd class="field-even"><dl class="simple">
+<dt>sequence</dt><dd><p>Values to use for the yticks</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param xlim</dt>
+<dd class="field-odd"><p>2-tuple/list</p>
+</dd>
+<dt class="field-even">param ylim</dt>
+<dd class="field-even"><p>2-tuple/list</p>
+</dd>
+<dt class="field-odd">param rot</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int, default None</dt><dd><p>Rotation for ticks (xticks for vertical, yticks for horizontal
+plots)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param fontsize</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int, default None</dt><dd><p>Font size for xticks and yticks</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param colormap</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or matplotlib colormap object, default None</dt><dd><p>Colormap to select colors from. If string, load colormap with that
+name from matplotlib.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param colorbar</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, optional</dt><dd><p>If True, plot colorbar (only relevant for ‘scatter’ and ‘hexbin’
+plots)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param position</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>float</dt><dd><p>Specify relative alignments for bar plot layout.
+From 0 (left/bottom-end) to 1 (right/top-end). Default is 0.5
+(center)</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param table</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, Series or DataFrame, default False</dt><dd><p>If True, draw a table using the data in the DataFrame and the data
+will be transposed to meet matplotlib’s default layout.
+If a Series or DataFrame is passed, use passed data to draw a
+table.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param yerr</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>DataFrame, Series, array-like, dict and str</dt><dd><p>See <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html#visualization-errorbars" title="(in pandas v1.0.1)"><span class="xref std std-ref">Plotting with Error Bars</span></a> for
+detail.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param xerr</dt>
+<dd class="field-even"><dl class="simple">
+<dt>DataFrame, Series, array-like, dict and str</dt><dd><p>Equivalent to yerr.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param mark_right</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>When using a secondary_y axis, automatically mark the column
+labels with “(right)” in the legend</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param <cite>**kwds</cite></dt>
+<dd class="field-even"><dl class="simple">
+<dt>keywords</dt><dd><p>Options to pass to matplotlib plotting method</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes.Axes</span></code> or numpy.ndarray of them
+If the backend is not the default matplotlib one, the return value
+will be the object returned by the backend.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

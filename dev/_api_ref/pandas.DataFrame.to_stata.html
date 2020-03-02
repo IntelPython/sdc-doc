@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.to_stata &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.to_stata<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Export DataFrame object to Stata dta format.</p>
+<p>Writes the DataFrame to a Stata dataset file.
+“dta” files contain a Stata dataset.</p>
+<dl class="field-list">
+<dt class="field-odd">param fname</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, buffer or path object</dt><dd><p>String, path object (pathlib.Path or py._path.local.LocalPath) or
+object implementing a binary write() function. If using a buffer
+then the buffer will not be automatically closed after the file
+data has been written.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param convert_dates</dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict</dt><dd><p>Dictionary mapping columns containing datetime types to stata
+internal format to use when writing the dates. Options are ‘tc’,
+‘td’, ‘tm’, ‘tw’, ‘th’, ‘tq’, ‘ty’. Column can be either an integer
+or a name. Datetime columns that do not have a conversion type
+specified will be converted to ‘tc’. Raises NotImplementedError if
+a datetime column has timezone information.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param write_index</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>Write the index to Stata dataset.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param encoding</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>Default is latin-1. Unicode is not supported.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param byteorder</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>Can be “&gt;”, “&lt;”, “little”, or “big”. default is <cite>sys.byteorder</cite>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param time_stamp</dt>
+<dd class="field-even"><dl class="simple">
+<dt>datetime</dt><dd><p>A datetime to use as file creation date.  Default is the current
+time.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param data_label</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, optional</dt><dd><p>A label for the data set.  Must be 80 characters or smaller.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param variable_labels</dt>
+<dd class="field-even"><dl>
+<dt>dict</dt><dd><p>Dictionary containing columns as keys and variable labels as
+values. Each label must be 80 characters or smaller.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param version</dt>
+<dd class="field-odd"><dl>
+<dt>{114, 117}, default 114</dt><dd><p>Version to use in the output dta file.  Version 114 can be used
+read by Stata 10 and later.  Version 117 can be read by Stata 13
+or later. Version 114 limits string variables to 244 characters or
+fewer while 117 allows strings with lengths up to 2,000,000
+characters.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param convert_strl</dt>
+<dd class="field-even"><dl>
+<dt>list, optional</dt><dd><p>List of column names to convert to string columns to Stata StrL
+format. Only available if version is 117.  Storing strings in the
+StrL format can produce smaller dta files if strings have more than
+8 characters and values are repeated.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">raises</dt>
+<dd class="field-odd"><dl>
+<dt>NotImplementedError</dt><dd><ul class="simple">
+<li><p>If datetimes contain timezone information</p></li>
+<li><dl class="simple">
+<dt>Column dtype is not representable in Stata</dt><dd><p>ValueError</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Columns listed in convert_dates are neither datetime64[ns]</dt><dd><p>or datetime.datetime</p>
+</dd>
+</dl>
+</li>
+<li><p>Column listed in convert_dates is not in DataFrame</p></li>
+<li><p>Categorical label contains more than 32,000 characters</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

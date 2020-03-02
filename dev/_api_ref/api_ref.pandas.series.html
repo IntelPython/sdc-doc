@@ -1,0 +1,1673 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pandas Series &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="DataFrame" href="api_ref.pandas.dataframe.html" />
+    <link rel="prev" title="API Reference" href="../apireference.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="api_ref.pandas.dataframe.html" title="DataFrame">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../apireference.html" title="API Reference">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../apireference.html" accesskey="U">API Reference</a> &#187;</li>
+      
+      <li>Pandas Series</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="api-ref-pandas-series"></span><div class="section" id="pandas-series">
+<h1>Pandas Series<a class="headerlink" href="#pandas-series" title="Permalink to this headline">¶</a></h1>
+<p>This is basic <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> data structure representing a dataframe column. In <a class="reference external" href="https://numpy.org/">NumPy*</a> terms this is
+one-dimensional ndarray with axis labels.</p>
+<div class="section" id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.html#pandas-series"><span class="std std-ref">Series</span></a></dt><dd><p>One-dimensional ndarray with axis labels (including time series).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="attributes-operators">
+<h2>Attributes/Operators<a class="headerlink" href="#attributes-operators" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.index.html#pandas-series-index"><span class="std std-ref">Series.index</span></a></dt><dd><p>The index (axis labels) of the Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.array.html#pandas-series-array"><span class="std std-ref">Series.array</span></a></dt><dd><p>The ExtensionArray of the data backing this Series or Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.values.html#pandas-series-values"><span class="std std-ref">Series.values</span></a></dt><dd><p>Return Series as ndarray or ndarray-like depending on the dtype.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dtype.html#pandas-series-dtype"><span class="std std-ref">Series.dtype</span></a></dt><dd><p>Return the dtype object of the underlying data.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.shape.html#pandas-series-shape"><span class="std std-ref">Series.shape</span></a></dt><dd><p>Return a tuple of the shape of the underlying data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.nbytes.html#pandas-series-nbytes"><span class="std std-ref">Series.nbytes</span></a></dt><dd><p>Return the number of bytes in the underlying data.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.ndim.html#pandas-series-ndim"><span class="std std-ref">Series.ndim</span></a></dt><dd><p>Number of dimensions of the underlying data, by definition 1.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.size.html#pandas-series-size"><span class="std std-ref">Series.size</span></a></dt><dd><p>Return the number of elements in the underlying data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.T.html#pandas-series-t"><span class="std std-ref">Series.T</span></a></dt><dd><p>Return the transpose, which is by definition self.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.memory_usage.html#pandas-series-memory-usage"><span class="std std-ref">Series.memory_usage</span></a></dt><dd><p>Return the memory usage of the Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.hasnans.html#pandas-series-hasnans"><span class="std std-ref">Series.hasnans</span></a></dt><dd><p>Return if I have any nans; enables various perf speedups.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.empty.html#pandas-series-empty"><span class="std std-ref">Series.empty</span></a></dt><dd><p><strong>Unsupported by Intel SDC</strong>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dtypes.html#pandas-series-dtypes"><span class="std std-ref">Series.dtypes</span></a></dt><dd><p>Return the dtype object of the underlying data.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.name.html#pandas-series-name"><span class="std std-ref">Series.name</span></a></dt><dd><p>Return name of the Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.put.html#pandas-series-put"><span class="std std-ref">Series.put</span></a></dt><dd><p>Apply the <cite>put</cite> method to its <cite>values</cite> attribute if it has one.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="type-conversions">
+<h2>Type Conversions<a class="headerlink" href="#type-conversions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.astype.html#pandas-series-astype"><span class="std std-ref">Series.astype</span></a></dt><dd><p>Cast a pandas object to a specified dtype <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.infer_objects.html#pandas-series-infer-objects"><span class="std std-ref">Series.infer_objects</span></a></dt><dd><p>Attempt to infer better dtypes for object columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.copy.html#pandas-series-copy"><span class="std std-ref">Series.copy</span></a></dt><dd><p>Make a copy of this object’s indices and data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.bool.html#pandas-series-bool"><span class="std std-ref">Series.bool</span></a></dt><dd><p>Return the bool of a single element PandasObject.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_numpy.html#pandas-series-to-numpy"><span class="std std-ref">Series.to_numpy</span></a></dt><dd><p>A NumPy ndarray representing the values in this Series or Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_period.html#pandas-series-to-period"><span class="std std-ref">Series.to_period</span></a></dt><dd><p>Convert Series from DatetimeIndex to PeriodIndex with desired frequency (inferred from index if not passed).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_timestamp.html#pandas-series-to-timestamp"><span class="std std-ref">Series.to_timestamp</span></a></dt><dd><p>Cast to DatetimeIndex of Timestamps, at <em>beginning</em> of period.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_list.html#pandas-series-to-list"><span class="std std-ref">Series.to_list</span></a></dt><dd><p>Return a list of the values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.get_values.html#pandas-series-get-values"><span class="std std-ref">Series.get_values</span></a></dt><dd><p>Same as values (but handles sparseness conversions); is a view.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.__array__.html#pandas-series-array"><span class="std std-ref">Series.__array__</span></a></dt><dd><p>Return the values as a NumPy array.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="indexing-and-iteration">
+<h2>Indexing and Iteration<a class="headerlink" href="#indexing-and-iteration" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.get.html#pandas-series-get"><span class="std std-ref">Series.get</span></a></dt><dd><p>Get item from object for given key (ex: DataFrame column).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.at.html#pandas-series-at"><span class="std std-ref">Series.at</span></a></dt><dd><p>Access a single value for a row/column label pair.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.iat.html#pandas-series-iat"><span class="std std-ref">Series.iat</span></a></dt><dd><p>Access a single value for a row/column pair by integer position.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.loc.html#pandas-series-loc"><span class="std std-ref">Series.loc</span></a></dt><dd><p>Access a group of rows and columns by label(s) or a boolean array.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.iloc.html#pandas-series-iloc"><span class="std std-ref">Series.iloc</span></a></dt><dd><p>Purely integer-location based indexing for selection by position.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.__iter__.html#pandas-series-iter"><span class="std std-ref">Series.__iter__</span></a></dt><dd><p>Return an iterator of the values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.items.html#pandas-series-items"><span class="std std-ref">Series.items</span></a></dt><dd><p>Lazily iterate over (index, value) tuples.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.iteritems.html#pandas-series-iteritems"><span class="std std-ref">Series.iteritems</span></a></dt><dd><p>Lazily iterate over (index, value) tuples.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.keys.html#pandas-series-keys"><span class="std std-ref">Series.keys</span></a></dt><dd><p>Return alias for index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.pop.html#pandas-series-pop"><span class="std std-ref">Series.pop</span></a></dt><dd><p>Return item and drop from frame. Raise KeyError if not found.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.item.html#pandas-series-item"><span class="std std-ref">Series.item</span></a></dt><dd><p>Return the first element of the underlying data as a python scalar.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.xs.html#pandas-series-xs"><span class="std std-ref">Series.xs</span></a></dt><dd><p>Return cross-section from the Series/DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>For more information on <code class="docutils literal notranslate"><span class="pre">.at</span></code>, <code class="docutils literal notranslate"><span class="pre">.iat</span></code>, <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">.iloc</span></code>,  see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing" title="(in pandas v1.0.1)"><span class="xref std std-ref">indexing documentation</span></a>.</p>
+</div>
+<div class="section" id="binary-operator-functions">
+<h2>Binary Operator Functions<a class="headerlink" href="#binary-operator-functions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.add.html#pandas-series-add"><span class="std std-ref">Series.add</span></a></dt><dd><p>Return Addition of series and other, element-wise (binary operator <cite>add</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sub.html#pandas-series-sub"><span class="std std-ref">Series.sub</span></a></dt><dd><p>Return Subtraction of series and other, element-wise (binary operator <cite>sub</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.mul.html#pandas-series-mul"><span class="std std-ref">Series.mul</span></a></dt><dd><p>Return Multiplication of series and other, element-wise (binary operator <cite>mul</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.div.html#pandas-series-div"><span class="std std-ref">Series.div</span></a></dt><dd><p>Return Floating division of series and other, element-wise (binary operator <cite>truediv</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.truediv.html#pandas-series-truediv"><span class="std std-ref">Series.truediv</span></a></dt><dd><p>Return Floating division of series and other, element-wise (binary operator <cite>truediv</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.floordiv.html#pandas-series-floordiv"><span class="std std-ref">Series.floordiv</span></a></dt><dd><p>Return Integer division of series and other, element-wise (binary operator <cite>floordiv</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.mod.html#pandas-series-mod"><span class="std std-ref">Series.mod</span></a></dt><dd><p>Return Modulo of series and other, element-wise (binary operator <cite>mod</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.pow.html#pandas-series-pow"><span class="std std-ref">Series.pow</span></a></dt><dd><p>Return Exponential power of series and other, element-wise (binary operator <cite>pow</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.radd.html#pandas-series-radd"><span class="std std-ref">Series.radd</span></a></dt><dd><p>Return Addition of series and other, element-wise (binary operator <cite>radd</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rsub.html#pandas-series-rsub"><span class="std std-ref">Series.rsub</span></a></dt><dd><p>Return Subtraction of series and other, element-wise (binary operator <cite>rsub</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rmul.html#pandas-series-rmul"><span class="std std-ref">Series.rmul</span></a></dt><dd><p>Return Multiplication of series and other, element-wise (binary operator <cite>rmul</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rdiv.html#pandas-series-rdiv"><span class="std std-ref">Series.rdiv</span></a></dt><dd><p>Return Floating division of series and other, element-wise (binary operator <cite>rtruediv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rtruediv.html#pandas-series-rtruediv"><span class="std std-ref">Series.rtruediv</span></a></dt><dd><p>Return Floating division of series and other, element-wise (binary operator <cite>rtruediv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rfloordiv.html#pandas-series-rfloordiv"><span class="std std-ref">Series.rfloordiv</span></a></dt><dd><p>Return Integer division of series and other, element-wise (binary operator <cite>rfloordiv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rmod.html#pandas-series-rmod"><span class="std std-ref">Series.rmod</span></a></dt><dd><p>Return Modulo of series and other, element-wise (binary operator <cite>rmod</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rpow.html#pandas-series-rpow"><span class="std std-ref">Series.rpow</span></a></dt><dd><p>Return Exponential power of series and other, element-wise (binary operator <cite>rpow</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.combine.html#pandas-series-combine"><span class="std std-ref">Series.combine</span></a></dt><dd><p>Combine the Series with a Series or scalar according to <cite>func</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.combine_first.html#pandas-series-combine-first"><span class="std std-ref">Series.combine_first</span></a></dt><dd><p>Combine Series values, choosing the calling Series’s values first.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.round.html#pandas-series-round"><span class="std std-ref">Series.round</span></a></dt><dd><p>Round each value in a Series to the given number of decimals.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.lt.html#pandas-series-lt"><span class="std std-ref">Series.lt</span></a></dt><dd><p>Return Less than of series and other, element-wise (binary operator <cite>lt</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.gt.html#pandas-series-gt"><span class="std std-ref">Series.gt</span></a></dt><dd><p>Return Greater than of series and other, element-wise (binary operator <cite>gt</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.le.html#pandas-series-le"><span class="std std-ref">Series.le</span></a></dt><dd><p>Return Less than or equal to of series and other, element-wise (binary operator <cite>le</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.ge.html#pandas-series-ge"><span class="std std-ref">Series.ge</span></a></dt><dd><p>Return Greater than or equal to of series and other, element-wise (binary operator <cite>ge</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.ne.html#pandas-series-ne"><span class="std std-ref">Series.ne</span></a></dt><dd><p>Return Not equal to of series and other, element-wise (binary operator <cite>ne</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.eq.html#pandas-series-eq"><span class="std std-ref">Series.eq</span></a></dt><dd><p>Return Equal to of series and other, element-wise (binary operator <cite>eq</cite>).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.product.html#pandas-series-product"><span class="std std-ref">Series.product</span></a></dt><dd><p>Return the product of the values for the requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dot.html#pandas-series-dot"><span class="std std-ref">Series.dot</span></a></dt><dd><p>Compute the dot product between the Series and the columns of other.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="user-defined-functions-groupby-window">
+<h2>User-Defined Functions, GroupBy, Window<a class="headerlink" href="#user-defined-functions-groupby-window" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.apply.html#pandas-series-apply"><span class="std std-ref">Series.apply</span></a></dt><dd><p>Invoke function on values of Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.agg.html#pandas-series-agg"><span class="std std-ref">Series.agg</span></a></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.aggregate.html#pandas-series-aggregate"><span class="std std-ref">Series.aggregate</span></a></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.transform.html#pandas-series-transform"><span class="std std-ref">Series.transform</span></a></dt><dd><p>Call <code class="docutils literal notranslate"><span class="pre">func</span></code> on self producing a Series with transformed values and that has the same axis length as self.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.map.html#pandas-series-map"><span class="std std-ref">Series.map</span></a></dt><dd><p>Map values of Series according to input correspondence.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.groupby.html#pandas-series-groupby"><span class="std std-ref">Series.groupby</span></a></dt><dd><p>Group DataFrame or Series using a mapper or by a Series of columns.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rolling.html#pandas-series-rolling"><span class="std std-ref">Series.rolling</span></a></dt><dd><p>Provide rolling window calculations.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.expanding.html#pandas-series-expanding"><span class="std std-ref">Series.expanding</span></a></dt><dd><p>Provide expanding transformations.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.ewm.html#pandas-series-ewm"><span class="std std-ref">Series.ewm</span></a></dt><dd><p>Provide exponential weighted functions.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.pipe.html#pandas-series-pipe"><span class="std std-ref">Series.pipe</span></a></dt><dd><p>Apply func(self, \*args, \*\*kwargs).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="computations-descriptive-statistics">
+<span id="api-ref-pandas-series-stats"></span><h2>Computations, Descriptive Statistics<a class="headerlink" href="#computations-descriptive-statistics" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.abs.html#pandas-series-abs"><span class="std std-ref">Series.abs</span></a></dt><dd><p>Return a Series/DataFrame with absolute numeric value of each element.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.all.html#pandas-series-all"><span class="std std-ref">Series.all</span></a></dt><dd><p>Return whether all elements are True, potentially over an axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.any.html#pandas-series-any"><span class="std std-ref">Series.any</span></a></dt><dd><p>Return whether any element is True, potentially over an axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.autocorr.html#pandas-series-autocorr"><span class="std std-ref">Series.autocorr</span></a></dt><dd><p>Compute the lag-N autocorrelation.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.between.html#pandas-series-between"><span class="std std-ref">Series.between</span></a></dt><dd><p>Return boolean Series equivalent to left &lt;= series &lt;= right.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.clip.html#pandas-series-clip"><span class="std std-ref">Series.clip</span></a></dt><dd><p>Trim values at input threshold(s).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.corr.html#pandas-series-corr"><span class="std std-ref">Series.corr</span></a></dt><dd><p>Compute correlation with <cite>other</cite> Series, excluding missing values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.count.html#pandas-series-count"><span class="std std-ref">Series.count</span></a></dt><dd><p>Return number of non-NA/null observations in the Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cov.html#pandas-series-cov"><span class="std std-ref">Series.cov</span></a></dt><dd><p>Compute covariance with Series, excluding missing values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cummax.html#pandas-series-cummax"><span class="std std-ref">Series.cummax</span></a></dt><dd><p>Return cumulative maximum over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cummin.html#pandas-series-cummin"><span class="std std-ref">Series.cummin</span></a></dt><dd><p>Return cumulative minimum over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cumprod.html#pandas-series-cumprod"><span class="std std-ref">Series.cumprod</span></a></dt><dd><p>Return cumulative product over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cumsum.html#pandas-series-cumsum"><span class="std std-ref">Series.cumsum</span></a></dt><dd><p>Return cumulative sum over a DataFrame or Series axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.describe.html#pandas-series-describe"><span class="std std-ref">Series.describe</span></a></dt><dd><p>Generate descriptive statistics that summarize the central tendency, dispersion and shape of a dataset’s distribution, excluding <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.diff.html#pandas-series-diff"><span class="std std-ref">Series.diff</span></a></dt><dd><p>First discrete difference of element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.factorize.html#pandas-series-factorize"><span class="std std-ref">Series.factorize</span></a></dt><dd><p>Encode the object as an enumerated type or categorical variable.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.kurt.html#pandas-series-kurt"><span class="std std-ref">Series.kurt</span></a></dt><dd><p>Return unbiased kurtosis over requested axis using Fisher’s definition of kurtosis (kurtosis of normal == 0.0). Normalized by N-1.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.mad.html#pandas-series-mad"><span class="std std-ref">Series.mad</span></a></dt><dd><p>Return the mean absolute deviation of the values for the requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.max.html#pandas-series-max"><span class="std std-ref">Series.max</span></a></dt><dd><p>Return the maximum of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.mean.html#pandas-series-mean"><span class="std std-ref">Series.mean</span></a></dt><dd><p>Return the mean of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.median.html#pandas-series-median"><span class="std std-ref">Series.median</span></a></dt><dd><p>Return the median of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.min.html#pandas-series-min"><span class="std std-ref">Series.min</span></a></dt><dd><p>Return the minimum of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.mode.html#pandas-series-mode"><span class="std std-ref">Series.mode</span></a></dt><dd><p>Return the mode(s) of the dataset.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.nlargest.html#pandas-series-nlargest"><span class="std std-ref">Series.nlargest</span></a></dt><dd><p>Return the largest <cite>n</cite> elements.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.nsmallest.html#pandas-series-nsmallest"><span class="std std-ref">Series.nsmallest</span></a></dt><dd><p>Return the smallest <cite>n</cite> elements.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.pct_change.html#pandas-series-pct-change"><span class="std std-ref">Series.pct_change</span></a></dt><dd><p>Percentage change between the current and a prior element.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.prod.html#pandas-series-prod"><span class="std std-ref">Series.prod</span></a></dt><dd><p>Return the product of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.quantile.html#pandas-series-quantile"><span class="std std-ref">Series.quantile</span></a></dt><dd><p>Return value at the given quantile.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rank.html#pandas-series-rank"><span class="std std-ref">Series.rank</span></a></dt><dd><p>Compute numerical data ranks (1 through n) along axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sem.html#pandas-series-sem"><span class="std std-ref">Series.sem</span></a></dt><dd><p>Return unbiased standard error of the mean over requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.skew.html#pandas-series-skew"><span class="std std-ref">Series.skew</span></a></dt><dd><p>Return unbiased skew over requested axis Normalized by N-1.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.std.html#pandas-series-std"><span class="std std-ref">Series.std</span></a></dt><dd><p>Return sample standard deviation over requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sum.html#pandas-series-sum"><span class="std std-ref">Series.sum</span></a></dt><dd><p>Return the sum of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.var.html#pandas-series-var"><span class="std std-ref">Series.var</span></a></dt><dd><p>Return unbiased variance over requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.kurtosis.html#pandas-series-kurtosis"><span class="std std-ref">Series.kurtosis</span></a></dt><dd><p>Return unbiased kurtosis over requested axis using Fisher’s definition of kurtosis (kurtosis of normal == 0.0). Normalized by N-1.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.unique.html#pandas-series-unique"><span class="std std-ref">Series.unique</span></a></dt><dd><p>Return unique values of Series object.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.nunique.html#pandas-series-nunique"><span class="std std-ref">Series.nunique</span></a></dt><dd><p>Return number of unique elements in the object.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.is_unique.html#pandas-series-is-unique"><span class="std std-ref">Series.is_unique</span></a></dt><dd><p>Return boolean if values in the object are unique.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.is_monotonic.html#pandas-series-is-monotonic"><span class="std std-ref">Series.is_monotonic</span></a></dt><dd><p>Return boolean if values in the object are monotonic_increasing.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.is_monotonic_increasing.html#pandas-series-is-monotonic-increasing"><span class="std std-ref">Series.is_monotonic_increasing</span></a></dt><dd><p>Return boolean if values in the object are monotonic_increasing.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.is_monotonic_decreasing.html#pandas-series-is-monotonic-decreasing"><span class="std std-ref">Series.is_monotonic_decreasing</span></a></dt><dd><p>Return boolean if values in the object are monotonic_decreasing.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.value_counts.html#pandas-series-value-counts"><span class="std std-ref">Series.value_counts</span></a></dt><dd><p>Return a Series containing counts of unique values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.compound.html#pandas-series-compound"><span class="std std-ref">Series.compound</span></a></dt><dd><p>Return the compound percentage of the values for the requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="re-indexing-selection-label-manipulation">
+<h2>Re-Indexing, Selection, Label Manipulation<a class="headerlink" href="#re-indexing-selection-label-manipulation" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.align.html#pandas-series-align"><span class="std std-ref">Series.align</span></a></dt><dd><p>Align two objects on their axes with the specified join method for each axis Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.drop.html#pandas-series-drop"><span class="std std-ref">Series.drop</span></a></dt><dd><p>Return Series with specified index labels removed.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.droplevel.html#pandas-series-droplevel"><span class="std std-ref">Series.droplevel</span></a></dt><dd><p>Return DataFrame with requested index / column level(s) removed.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.drop_duplicates.html#pandas-series-drop-duplicates"><span class="std std-ref">Series.drop_duplicates</span></a></dt><dd><p>Return Series with duplicate values removed.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.duplicated.html#pandas-series-duplicated"><span class="std std-ref">Series.duplicated</span></a></dt><dd><p>Indicate duplicate Series values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.equals.html#pandas-series-equals"><span class="std std-ref">Series.equals</span></a></dt><dd><p>Test whether two objects contain the same elements.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.first.html#pandas-series-first"><span class="std std-ref">Series.first</span></a></dt><dd><p>Convenience method for subsetting initial periods of time series data based on a date offset.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.head.html#pandas-series-head"><span class="std std-ref">Series.head</span></a></dt><dd><p>Return the first <cite>n</cite> rows.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.idxmax.html#pandas-series-idxmax"><span class="std std-ref">Series.idxmax</span></a></dt><dd><p>Return the row label of the maximum value.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.idxmin.html#pandas-series-idxmin"><span class="std std-ref">Series.idxmin</span></a></dt><dd><p>Return the row label of the minimum value.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.isin.html#pandas-series-isin"><span class="std std-ref">Series.isin</span></a></dt><dd><p>Check whether <cite>values</cite> are contained in Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.last.html#pandas-series-last"><span class="std std-ref">Series.last</span></a></dt><dd><p>Convenience method for subsetting final periods of time series data based on a date offset.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.reindex.html#pandas-series-reindex"><span class="std std-ref">Series.reindex</span></a></dt><dd><p>Conform Series to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index. A new object is produced unless the new index is equivalent to the current one and <code class="docutils literal notranslate"><span class="pre">copy=False</span></code>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.reindex_like.html#pandas-series-reindex-like"><span class="std std-ref">Series.reindex_like</span></a></dt><dd><p>Return an object with matching indices as other object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rename.html#pandas-series-rename"><span class="std std-ref">Series.rename</span></a></dt><dd><p>Alter Series index labels or name.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.rename_axis.html#pandas-series-rename-axis"><span class="std std-ref">Series.rename_axis</span></a></dt><dd><p>Set the name of the axis for the index or columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.reset_index.html#pandas-series-reset-index"><span class="std std-ref">Series.reset_index</span></a></dt><dd><p>Generate a new DataFrame or Series with the index reset.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sample.html#pandas-series-sample"><span class="std std-ref">Series.sample</span></a></dt><dd><p>Return a random sample of items from an axis of object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.set_axis.html#pandas-series-set-axis"><span class="std std-ref">Series.set_axis</span></a></dt><dd><p>Assign desired index to given axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.take.html#pandas-series-take"><span class="std std-ref">Series.take</span></a></dt><dd><p>Return the elements in the given <em>positional</em> indices along an axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.tail.html#pandas-series-tail"><span class="std std-ref">Series.tail</span></a></dt><dd><p>Return the last <cite>n</cite> rows.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.truncate.html#pandas-series-truncate"><span class="std std-ref">Series.truncate</span></a></dt><dd><p>Truncate a Series or DataFrame before and after some index value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.where.html#pandas-series-where"><span class="std std-ref">Series.where</span></a></dt><dd><p>Replace values where the condition is False.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.mask.html#pandas-series-mask"><span class="std std-ref">Series.mask</span></a></dt><dd><p>Replace values where the condition is True.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.add_prefix.html#pandas-series-add-prefix"><span class="std std-ref">Series.add_prefix</span></a></dt><dd><p>Prefix labels with string <cite>prefix</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.add_suffix.html#pandas-series-add-suffix"><span class="std std-ref">Series.add_suffix</span></a></dt><dd><p>Suffix labels with string <cite>suffix</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.filter.html#pandas-series-filter"><span class="std std-ref">Series.filter</span></a></dt><dd><p>Subset rows or columns of dataframe according to labels in the specified index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="missing-data-handling">
+<h2>Missing Data Handling<a class="headerlink" href="#missing-data-handling" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.isna.html#pandas-series-isna"><span class="std std-ref">Series.isna</span></a></dt><dd><p>Detect missing values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.notna.html#pandas-series-notna"><span class="std std-ref">Series.notna</span></a></dt><dd><p>Detect existing (non-missing) values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dropna.html#pandas-series-dropna"><span class="std std-ref">Series.dropna</span></a></dt><dd><p>Return a new Series with missing values removed.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.fillna.html#pandas-series-fillna"><span class="std std-ref">Series.fillna</span></a></dt><dd><p>Fill NA/NaN values using the specified method.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.interpolate.html#pandas-series-interpolate"><span class="std std-ref">Series.interpolate</span></a></dt><dd><p>Interpolate values according to different methods.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="re-shaping-sorting">
+<h2>Re-Shaping, Sorting<a class="headerlink" href="#re-shaping-sorting" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.argsort.html#pandas-series-argsort"><span class="std std-ref">Series.argsort</span></a></dt><dd><p>Override ndarray.argsort. Argsorts the value, omitting NA/null values, and places the result in the same locations as the non-NA values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.argmin.html#pandas-series-argmin"><span class="std std-ref">Series.argmin</span></a></dt><dd><p>Return the row label of the minimum value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.argmax.html#pandas-series-argmax"><span class="std std-ref">Series.argmax</span></a></dt><dd><p>Return the row label of the maximum value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.reorder_levels.html#pandas-series-reorder-levels"><span class="std std-ref">Series.reorder_levels</span></a></dt><dd><p>Rearrange index levels using input order.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sort_values.html#pandas-series-sort-values"><span class="std std-ref">Series.sort_values</span></a></dt><dd><p>Sort by the values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sort_index.html#pandas-series-sort-index"><span class="std std-ref">Series.sort_index</span></a></dt><dd><p>Sort Series by index labels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.swaplevel.html#pandas-series-swaplevel"><span class="std std-ref">Series.swaplevel</span></a></dt><dd><p>Swap levels i and j in a MultiIndex.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.unstack.html#pandas-series-unstack"><span class="std std-ref">Series.unstack</span></a></dt><dd><p>Unstack, a.k.a. pivot, Series with MultiIndex to produce DataFrame. The level involved will automatically get sorted.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.explode.html#pandas-series-explode"><span class="std std-ref">Series.explode</span></a></dt><dd><p>Transform each element of a list-like to a row, replicating the index values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.searchsorted.html#pandas-series-searchsorted"><span class="std std-ref">Series.searchsorted</span></a></dt><dd><p>Find indices where elements should be inserted to maintain order.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.ravel.html#pandas-series-ravel"><span class="std std-ref">Series.ravel</span></a></dt><dd><p>Return the flattened underlying data as an ndarray.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.repeat.html#pandas-series-repeat"><span class="std std-ref">Series.repeat</span></a></dt><dd><p>Repeat elements of a Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.squeeze.html#pandas-series-squeeze"><span class="std std-ref">Series.squeeze</span></a></dt><dd><p>Squeeze 1 dimensional axis objects into scalars.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.view.html#pandas-series-view"><span class="std std-ref">Series.view</span></a></dt><dd><p>Create a new view of the Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="combining-joining-merging">
+<h2>Combining, Joining, Merging<a class="headerlink" href="#combining-joining-merging" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.append.html#pandas-series-append"><span class="std std-ref">Series.append</span></a></dt><dd><p>Concatenate two or more Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.replace.html#pandas-series-replace"><span class="std std-ref">Series.replace</span></a></dt><dd><p>Replace values given in <cite>to_replace</cite> with <cite>value</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.update.html#pandas-series-update"><span class="std std-ref">Series.update</span></a></dt><dd><p>Modify Series in place using non-NA values from passed Series. Aligns on index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="time-series">
+<h2>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.asfreq.html#pandas-series-asfreq"><span class="std std-ref">Series.asfreq</span></a></dt><dd><p>Convert TimeSeries to specified frequency.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.asof.html#pandas-series-asof"><span class="std std-ref">Series.asof</span></a></dt><dd><p>Return the last row(s) without any NaNs before <cite>where</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.shift.html#pandas-series-shift"><span class="std std-ref">Series.shift</span></a></dt><dd><p>Shift index by desired number of periods with an optional time <cite>freq</cite>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.first_valid_index.html#pandas-series-first-valid-index"><span class="std std-ref">Series.first_valid_index</span></a></dt><dd><p>Return index for first non-NA/null value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.last_valid_index.html#pandas-series-last-valid-index"><span class="std std-ref">Series.last_valid_index</span></a></dt><dd><p>Return index for last non-NA/null value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.resample.html#pandas-series-resample"><span class="std std-ref">Series.resample</span></a></dt><dd><p>Resample time-series data.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.tz_convert.html#pandas-series-tz-convert"><span class="std std-ref">Series.tz_convert</span></a></dt><dd><p>Convert tz-aware axis to target time zone.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.tz_localize.html#pandas-series-tz-localize"><span class="std std-ref">Series.tz_localize</span></a></dt><dd><p>Localize tz-naive index of a Series or DataFrame to target time zone.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.at_time.html#pandas-series-at-time"><span class="std std-ref">Series.at_time</span></a></dt><dd><p>Select values at particular time of day (e.g. 9:30AM).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.between_time.html#pandas-series-between-time"><span class="std std-ref">Series.between_time</span></a></dt><dd><p>Select values between particular times of the day (e.g., 9:00-9:30 AM).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.tshift.html#pandas-series-tshift"><span class="std std-ref">Series.tshift</span></a></dt><dd><p>Shift the time index, using the index’s frequency if available.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.slice_shift.html#pandas-series-slice-shift"><span class="std std-ref">Series.slice_shift</span></a></dt><dd><p>Equivalent to <cite>shift</cite> without copying data. The shifted data will not include the dropped periods and the shifted axis will be smaller than the original.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="accessors">
+<h2>Accessors<a class="headerlink" href="#accessors" title="Permalink to this headline">¶</a></h2>
+<p>Pandas provides dtype-specific methods under various accessors.
+These are separate namespaces within <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> that only apply
+to specific data types.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Type</p></th>
+<th class="head"><p>Accessor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Datetime, Timedelta, Period</p></td>
+<td><p><a class="reference internal" href="#api-ref-pandas-series-dt"><span class="std std-ref">dt</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>String</p></td>
+<td><p><a class="reference internal" href="#api-ref-pandas-series-str"><span class="std std-ref">str</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>Categorical</p></td>
+<td><p><a class="reference internal" href="#api-ref-pandas-series-cat"><span class="std std-ref">cat</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Sparse</p></td>
+<td><p><a class="reference internal" href="#api-ref-pandas-series-sparse"><span class="std std-ref">sparse</span></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="datetimelike-properties">
+<span id="api-ref-pandas-series-dt"></span><h3>Datetimelike properties<a class="headerlink" href="#datetimelike-properties" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Series.dt</span></code> can be used to access the values of the series as
+datetimelike and return several properties.
+These can be accessed like <code class="docutils literal notranslate"><span class="pre">Series.dt.&lt;property&gt;</span></code>.</p>
+<div class="section" id="datetime-properties">
+<h4>Datetime properties<a class="headerlink" href="#datetime-properties" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.dt.date.html#pandas-series-dt-date"><span class="std std-ref">Series.dt.date</span></a></dt><dd><p>Returns numpy array of python datetime.date objects (namely, the date part of Timestamps without timezone information).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.time.html#pandas-series-dt-time"><span class="std std-ref">Series.dt.time</span></a></dt><dd><p>Returns numpy array of datetime.time. The time part of the Timestamps.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.timetz.html#pandas-series-dt-timetz"><span class="std std-ref">Series.dt.timetz</span></a></dt><dd><p>Returns numpy array of datetime.time also containing timezone information. The time part of the Timestamps.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.year.html#pandas-series-dt-year"><span class="std std-ref">Series.dt.year</span></a></dt><dd><p>The year of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.month.html#pandas-series-dt-month"><span class="std std-ref">Series.dt.month</span></a></dt><dd><p>The month as January=1, December=12.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.day.html#pandas-series-dt-day"><span class="std std-ref">Series.dt.day</span></a></dt><dd><p>The days of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.hour.html#pandas-series-dt-hour"><span class="std std-ref">Series.dt.hour</span></a></dt><dd><p>The hours of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.minute.html#pandas-series-dt-minute"><span class="std std-ref">Series.dt.minute</span></a></dt><dd><p>The minutes of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.second.html#pandas-series-dt-second"><span class="std std-ref">Series.dt.second</span></a></dt><dd><p>The seconds of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.microsecond.html#pandas-series-dt-microsecond"><span class="std std-ref">Series.dt.microsecond</span></a></dt><dd><p>The microseconds of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.nanosecond.html#pandas-series-dt-nanosecond"><span class="std std-ref">Series.dt.nanosecond</span></a></dt><dd><p>The nanoseconds of the datetime.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.week.html#pandas-series-dt-week"><span class="std std-ref">Series.dt.week</span></a></dt><dd><p>The week ordinal of the year.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.weekofyear.html#pandas-series-dt-weekofyear"><span class="std std-ref">Series.dt.weekofyear</span></a></dt><dd><p>The week ordinal of the year.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.dayofweek.html#pandas-series-dt-dayofweek"><span class="std std-ref">Series.dt.dayofweek</span></a></dt><dd><p>The day of the week with Monday=0, Sunday=6.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.weekday.html#pandas-series-dt-weekday"><span class="std std-ref">Series.dt.weekday</span></a></dt><dd><p>The day of the week with Monday=0, Sunday=6.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.dayofyear.html#pandas-series-dt-dayofyear"><span class="std std-ref">Series.dt.dayofyear</span></a></dt><dd><p>The ordinal day of the year.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.quarter.html#pandas-series-dt-quarter"><span class="std std-ref">Series.dt.quarter</span></a></dt><dd><p>The quarter of the date.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_month_start.html#pandas-series-dt-is-month-start"><span class="std std-ref">Series.dt.is_month_start</span></a></dt><dd><p>Indicates whether the date is the first day of the month.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_month_end.html#pandas-series-dt-is-month-end"><span class="std std-ref">Series.dt.is_month_end</span></a></dt><dd><p>Indicates whether the date is the last day of the month.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_quarter_start.html#pandas-series-dt-is-quarter-start"><span class="std std-ref">Series.dt.is_quarter_start</span></a></dt><dd><p>Indicator for whether the date is the first day of a quarter.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_quarter_end.html#pandas-series-dt-is-quarter-end"><span class="std std-ref">Series.dt.is_quarter_end</span></a></dt><dd><p>Indicator for whether the date is the last day of a quarter.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_year_start.html#pandas-series-dt-is-year-start"><span class="std std-ref">Series.dt.is_year_start</span></a></dt><dd><p>Indicate whether the date is the first day of a year.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_year_end.html#pandas-series-dt-is-year-end"><span class="std std-ref">Series.dt.is_year_end</span></a></dt><dd><p>Indicate whether the date is the last day of the year.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.is_leap_year.html#pandas-series-dt-is-leap-year"><span class="std std-ref">Series.dt.is_leap_year</span></a></dt><dd><p>Boolean indicator if the date belongs to a leap year.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.daysinmonth.html#pandas-series-dt-daysinmonth"><span class="std std-ref">Series.dt.daysinmonth</span></a></dt><dd><p>The number of days in the month.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.days_in_month.html#pandas-series-dt-days-in-month"><span class="std std-ref">Series.dt.days_in_month</span></a></dt><dd><p>The number of days in the month.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.tz.html#pandas-series-dt-tz"><span class="std std-ref">Series.dt.tz</span></a></dt><dd><p>Return timezone, if any.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.freq.html#pandas-series-dt-freq"><span class="std std-ref">Series.dt.freq</span></a></dt><dd><p><strong>Unsupported by Intel SDC</strong>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="datetime-methods">
+<h4>Datetime methods<a class="headerlink" href="#datetime-methods" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.dt.to_period.html#pandas-series-dt-to-period"><span class="std std-ref">Series.dt.to_period</span></a></dt><dd><p>Cast to PeriodArray/Index at a particular frequency.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.to_pydatetime.html#pandas-series-dt-to-pydatetime"><span class="std std-ref">Series.dt.to_pydatetime</span></a></dt><dd><p>Return the data as an array of native Python datetime objects.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.tz_localize.html#pandas-series-dt-tz-localize"><span class="std std-ref">Series.dt.tz_localize</span></a></dt><dd><p>Localize tz-naive Datetime Array/Index to tz-aware Datetime Array/Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.tz_convert.html#pandas-series-dt-tz-convert"><span class="std std-ref">Series.dt.tz_convert</span></a></dt><dd><p>Convert tz-aware Datetime Array/Index from one time zone to another.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.normalize.html#pandas-series-dt-normalize"><span class="std std-ref">Series.dt.normalize</span></a></dt><dd><p>Convert times to midnight.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.strftime.html#pandas-series-dt-strftime"><span class="std std-ref">Series.dt.strftime</span></a></dt><dd><p>Convert to Index using specified date_format.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.round.html#pandas-series-dt-round"><span class="std std-ref">Series.dt.round</span></a></dt><dd><p>Perform round operation on the data to the specified <cite>freq</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.floor.html#pandas-series-dt-floor"><span class="std std-ref">Series.dt.floor</span></a></dt><dd><p>Perform floor operation on the data to the specified <cite>freq</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.ceil.html#pandas-series-dt-ceil"><span class="std std-ref">Series.dt.ceil</span></a></dt><dd><p>Perform ceil operation on the data to the specified <cite>freq</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.month_name.html#pandas-series-dt-month-name"><span class="std std-ref">Series.dt.month_name</span></a></dt><dd><p>Return the month names of the DateTimeIndex with specified locale.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.day_name.html#pandas-series-dt-day-name"><span class="std std-ref">Series.dt.day_name</span></a></dt><dd><p>Return the day names of the DateTimeIndex with specified locale.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="period-properties">
+<h4>Period properties<a class="headerlink" href="#period-properties" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.dt.qyear.html#pandas-series-dt-qyear"><span class="std std-ref">Series.dt.qyear</span></a></dt><dd><p><strong>Unsupported by Intel SDC</strong>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.start_time.html#pandas-series-dt-start-time"><span class="std std-ref">Series.dt.start_time</span></a></dt><dd><p><strong>Unsupported by Intel SDC</strong>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.end_time.html#pandas-series-dt-end-time"><span class="std std-ref">Series.dt.end_time</span></a></dt><dd><p><strong>Unsupported by Intel SDC</strong>.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="timedelta-properties">
+<h4>Timedelta properties<a class="headerlink" href="#timedelta-properties" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.dt.days.html#pandas-series-dt-days"><span class="std std-ref">Series.dt.days</span></a></dt><dd><p>Number of days for each element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.seconds.html#pandas-series-dt-seconds"><span class="std std-ref">Series.dt.seconds</span></a></dt><dd><p>Number of seconds (&gt;= 0 and less than 1 day) for each element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.microseconds.html#pandas-series-dt-microseconds"><span class="std std-ref">Series.dt.microseconds</span></a></dt><dd><p>Number of microseconds (&gt;= 0 and less than 1 second) for each element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.nanoseconds.html#pandas-series-dt-nanoseconds"><span class="std std-ref">Series.dt.nanoseconds</span></a></dt><dd><p>Number of nanoseconds (&gt;= 0 and less than 1 microsecond) for each element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.components.html#pandas-series-dt-components"><span class="std std-ref">Series.dt.components</span></a></dt><dd><p>Return a Dataframe of the components of the Timedeltas.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="timedelta-methods">
+<h4>Timedelta methods<a class="headerlink" href="#timedelta-methods" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.dt.to_pytimedelta.html#pandas-series-dt-to-pytimedelta"><span class="std std-ref">Series.dt.to_pytimedelta</span></a></dt><dd><p>Return an array of native <cite>datetime.timedelta</cite> objects.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.dt.total_seconds.html#pandas-series-dt-total-seconds"><span class="std std-ref">Series.dt.total_seconds</span></a></dt><dd><p>Return total duration of each element expressed in seconds.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="string-handling">
+<span id="api-ref-pandas-series-str"></span><h3>String handling<a class="headerlink" href="#string-handling" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Series.str</span></code> can be used to access the values of the series as
+strings and apply several methods to it. These can be accessed like
+<code class="docutils literal notranslate"><span class="pre">Series.str.&lt;function/property&gt;</span></code>.</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.str.capitalize.html#pandas-series-str-capitalize"><span class="std std-ref">Series.str.capitalize</span></a></dt><dd><p>Convert strings in the Series/Index to be capitalized.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.casefold.html#pandas-series-str-casefold"><span class="std std-ref">Series.str.casefold</span></a></dt><dd><p>Convert strings in the Series/Index to be casefolded.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.cat.html#pandas-series-str-cat"><span class="std std-ref">Series.str.cat</span></a></dt><dd><p>Concatenate strings in the Series/Index with given separator.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.center.html#pandas-series-str-center"><span class="std std-ref">Series.str.center</span></a></dt><dd><p>Filling left and right side of strings in the Series/Index with an additional character. Equivalent to <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.center" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.center()</span></code></a>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.contains.html#pandas-series-str-contains"><span class="std std-ref">Series.str.contains</span></a></dt><dd><p>Test if pattern or regex is contained within a string of a Series or Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.count.html#pandas-series-str-count"><span class="std std-ref">Series.str.count</span></a></dt><dd><p>Count occurrences of pattern in each string of the Series/Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.decode.html#pandas-series-str-decode"><span class="std std-ref">Series.str.decode</span></a></dt><dd><p>Decode character string in the Series/Index using indicated encoding. Equivalent to <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.decode" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.decode()</span></code></a> in python2 and <code class="xref py py-meth docutils literal notranslate"><span class="pre">bytes.decode()</span></code> in python3.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.encode.html#pandas-series-str-encode"><span class="std std-ref">Series.str.encode</span></a></dt><dd><p>Encode character string in the Series/Index using indicated encoding. Equivalent to <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.encode" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code></a>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.endswith.html#pandas-series-str-endswith"><span class="std std-ref">Series.str.endswith</span></a></dt><dd><p>Test if the end of each string element matches a pattern.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.extract.html#pandas-series-str-extract"><span class="std std-ref">Series.str.extract</span></a></dt><dd><p>Extract capture groups in the regex <cite>pat</cite> as columns in a DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.extractall.html#pandas-series-str-extractall"><span class="std std-ref">Series.str.extractall</span></a></dt><dd><p>For each subject string in the Series, extract groups from all matches of regular expression pat. When each subject string in the Series has exactly one match, extractall(pat).xs(0, level=’match’) is the same as extract(pat).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.find.html#pandas-series-str-find"><span class="std std-ref">Series.str.find</span></a></dt><dd><p>Return lowest indexes in each strings in the Series/Index where the substring is fully contained between [start:end]. Return -1 on failure. Equivalent to standard <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.find" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.find()</span></code></a>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.findall.html#pandas-series-str-findall"><span class="std std-ref">Series.str.findall</span></a></dt><dd><p>Find all occurrences of pattern or regular expression in the Series/Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.get.html#pandas-series-str-get"><span class="std std-ref">Series.str.get</span></a></dt><dd><p>Extract element from each component at specified position.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.index.html#pandas-series-str-index"><span class="std std-ref">Series.str.index</span></a></dt><dd><p>Return lowest indexes in each strings where the substring is fully contained between [start:end]. This is the same as <code class="docutils literal notranslate"><span class="pre">str.find</span></code> except instead of returning -1, it raises a ValueError when the substring is not found. Equivalent to standard <code class="docutils literal notranslate"><span class="pre">str.index</span></code>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.join.html#pandas-series-str-join"><span class="std std-ref">Series.str.join</span></a></dt><dd><p>Join lists contained as elements in the Series/Index with passed delimiter.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.len.html#pandas-series-str-len"><span class="std std-ref">Series.str.len</span></a></dt><dd><p>Compute the length of each element in the Series/Index. The element may be a sequence (such as a string, tuple or list) or a collection (such as a dictionary).</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.ljust.html#pandas-series-str-ljust"><span class="std std-ref">Series.str.ljust</span></a></dt><dd><p>Filling right side of strings in the Series/Index with an additional character. Equivalent to <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.ljust" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.ljust()</span></code></a>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.lower.html#pandas-series-str-lower"><span class="std std-ref">Series.str.lower</span></a></dt><dd><p>Convert strings in the Series/Index to lowercase.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.lstrip.html#pandas-series-str-lstrip"><span class="std std-ref">Series.str.lstrip</span></a></dt><dd><p>Remove leading and trailing characters.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.match.html#pandas-series-str-match"><span class="std std-ref">Series.str.match</span></a></dt><dd><p>Determine if each string matches a regular expression.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.normalize.html#pandas-series-str-normalize"><span class="std std-ref">Series.str.normalize</span></a></dt><dd><p>Return the Unicode normal form for the strings in the Series/Index. For more information on the forms, see the <a class="reference external" href="https://docs.python.org/2/library/unicodedata.html#unicodedata.normalize" title="(in Python v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">unicodedata.normalize()</span></code></a>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.pad.html#pandas-series-str-pad"><span class="std std-ref">Series.str.pad</span></a></dt><dd><p>Pad strings in the Series/Index up to width.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.partition.html#pandas-series-str-partition"><span class="std std-ref">Series.str.partition</span></a></dt><dd><p>Split the string at the first occurrence of <cite>sep</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.repeat.html#pandas-series-str-repeat"><span class="std std-ref">Series.str.repeat</span></a></dt><dd><p>Duplicate each string in the Series or Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.replace.html#pandas-series-str-replace"><span class="std std-ref">Series.str.replace</span></a></dt><dd><p>Replace occurrences of pattern/regex in the Series/Index with some other string. Equivalent to <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.replace" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.replace()</span></code></a> or <a class="reference external" href="https://docs.python.org/2/library/re.html#re.sub" title="(in Python v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">re.sub()</span></code></a>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rfind.html#pandas-series-str-rfind"><span class="std std-ref">Series.str.rfind</span></a></dt><dd><p>Return highest indexes in each strings in the Series/Index where the substring is fully contained between [start:end]. Return -1 on failure. Equivalent to standard <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.rfind" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.rfind()</span></code></a>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rindex.html#pandas-series-str-rindex"><span class="std std-ref">Series.str.rindex</span></a></dt><dd><p>Return highest indexes in each strings where the substring is fully contained between [start:end]. This is the same as <code class="docutils literal notranslate"><span class="pre">str.rfind</span></code> except instead of returning -1, it raises a ValueError when the substring is not found. Equivalent to standard <code class="docutils literal notranslate"><span class="pre">str.rindex</span></code>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rjust.html#pandas-series-str-rjust"><span class="std std-ref">Series.str.rjust</span></a></dt><dd><p>Filling left side of strings in the Series/Index with an additional character. Equivalent to <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.rjust" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.rjust()</span></code></a>.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rpartition.html#pandas-series-str-rpartition"><span class="std std-ref">Series.str.rpartition</span></a></dt><dd><p>Split the string at the last occurrence of <cite>sep</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rstrip.html#pandas-series-str-rstrip"><span class="std std-ref">Series.str.rstrip</span></a></dt><dd><p>Remove leading and trailing characters.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.slice.html#pandas-series-str-slice"><span class="std std-ref">Series.str.slice</span></a></dt><dd><p>Slice substrings from each element in the Series or Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.slice_replace.html#pandas-series-str-slice-replace"><span class="std std-ref">Series.str.slice_replace</span></a></dt><dd><p>Replace a positional slice of a string with another value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.split.html#pandas-series-str-split"><span class="std std-ref">Series.str.split</span></a></dt><dd><p>Split strings around given separator/delimiter.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.rsplit.html#pandas-series-str-rsplit"><span class="std std-ref">Series.str.rsplit</span></a></dt><dd><p>Split strings around given separator/delimiter.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.startswith.html#pandas-series-str-startswith"><span class="std std-ref">Series.str.startswith</span></a></dt><dd><p>Test if the start of each string element matches a pattern.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.strip.html#pandas-series-str-strip"><span class="std std-ref">Series.str.strip</span></a></dt><dd><p>Remove leading and trailing characters.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.swapcase.html#pandas-series-str-swapcase"><span class="std std-ref">Series.str.swapcase</span></a></dt><dd><p>Convert strings in the Series/Index to be swapcased.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.title.html#pandas-series-str-title"><span class="std std-ref">Series.str.title</span></a></dt><dd><p>Convert strings in the Series/Index to titlecase.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.translate.html#pandas-series-str-translate"><span class="std std-ref">Series.str.translate</span></a></dt><dd><p>Map all characters in the string through the given mapping table. Equivalent to standard <a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#str.translate" title="(in Python v2.7)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.translate()</span></code></a>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.upper.html#pandas-series-str-upper"><span class="std std-ref">Series.str.upper</span></a></dt><dd><p>Convert strings in the Series/Index to uppercase.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.wrap.html#pandas-series-str-wrap"><span class="std std-ref">Series.str.wrap</span></a></dt><dd><p>Wrap long strings in the Series/Index to be formatted in paragraphs with length less than a given width.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.zfill.html#pandas-series-str-zfill"><span class="std std-ref">Series.str.zfill</span></a></dt><dd><p>Pad strings in the Series/Index by prepending ‘0’ characters.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isalnum.html#pandas-series-str-isalnum"><span class="std std-ref">Series.str.isalnum</span></a></dt><dd><p>Check whether all characters in each string are alphanumeric.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isalpha.html#pandas-series-str-isalpha"><span class="std std-ref">Series.str.isalpha</span></a></dt><dd><p>Check whether all characters in each string are alphabetic.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isdigit.html#pandas-series-str-isdigit"><span class="std std-ref">Series.str.isdigit</span></a></dt><dd><p>Check whether all characters in each string are digits.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isspace.html#pandas-series-str-isspace"><span class="std std-ref">Series.str.isspace</span></a></dt><dd><p>Check whether all characters in each string are whitespace.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.islower.html#pandas-series-str-islower"><span class="std std-ref">Series.str.islower</span></a></dt><dd><p>Check whether all characters in each string are lowercase.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isupper.html#pandas-series-str-isupper"><span class="std std-ref">Series.str.isupper</span></a></dt><dd><p>Check whether all characters in each string are uppercase.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.istitle.html#pandas-series-str-istitle"><span class="std std-ref">Series.str.istitle</span></a></dt><dd><p>Check whether all characters in each string are titlecase.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isnumeric.html#pandas-series-str-isnumeric"><span class="std std-ref">Series.str.isnumeric</span></a></dt><dd><p>Check whether all characters in each string are numeric.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.isdecimal.html#pandas-series-str-isdecimal"><span class="std std-ref">Series.str.isdecimal</span></a></dt><dd><p>Check whether all characters in each string are decimal.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.get_dummies.html#pandas-series-str-get-dummies"><span class="std std-ref">Series.str.get_dummies</span></a></dt><dd><p>Split each string in the Series by sep and return a DataFrame of dummy/indicator variables.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="categorical-accessor">
+<span id="api-ref-pandas-series-cat"></span><h3>Categorical Accessor<a class="headerlink" href="#categorical-accessor" title="Permalink to this headline">¶</a></h3>
+<p>Categorical-dtype specific methods and attributes are available under
+the <code class="docutils literal notranslate"><span class="pre">Series.cat</span></code> accessor.</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.cat.categories.html#pandas-series-cat-categories"><span class="std std-ref">Series.cat.categories</span></a></dt><dd><p>The categories of this categorical.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.ordered.html#pandas-series-cat-ordered"><span class="std std-ref">Series.cat.ordered</span></a></dt><dd><p>Whether the categories have an ordered relationship.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.codes.html#pandas-series-cat-codes"><span class="std std-ref">Series.cat.codes</span></a></dt><dd><p>Return Series of codes as well as the index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.rename_categories.html#pandas-series-cat-rename-categories"><span class="std std-ref">Series.cat.rename_categories</span></a></dt><dd><p>Rename categories.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.reorder_categories.html#pandas-series-cat-reorder-categories"><span class="std std-ref">Series.cat.reorder_categories</span></a></dt><dd><p>Reorder categories as specified in new_categories.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.add_categories.html#pandas-series-cat-add-categories"><span class="std std-ref">Series.cat.add_categories</span></a></dt><dd><p>Add new categories.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.remove_categories.html#pandas-series-cat-remove-categories"><span class="std std-ref">Series.cat.remove_categories</span></a></dt><dd><p>Remove the specified categories.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.remove_unused_categories.html#pandas-series-cat-remove-unused-categories"><span class="std std-ref">Series.cat.remove_unused_categories</span></a></dt><dd><p>Remove categories which are not used.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.set_categories.html#pandas-series-cat-set-categories"><span class="std std-ref">Series.cat.set_categories</span></a></dt><dd><p>Set the categories to the specified new_categories.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.as_ordered.html#pandas-series-cat-as-ordered"><span class="std std-ref">Series.cat.as_ordered</span></a></dt><dd><p>Set the Categorical to be ordered.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.cat.as_unordered.html#pandas-series-cat-as-unordered"><span class="std std-ref">Series.cat.as_unordered</span></a></dt><dd><p>Set the Categorical to be unordered.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="sparse-accessor">
+<span id="api-ref-pandas-series-sparse"></span><h3>Sparse Accessor<a class="headerlink" href="#sparse-accessor" title="Permalink to this headline">¶</a></h3>
+<p>Sparse-dtype specific methods and attributes are provided under the
+<code class="docutils literal notranslate"><span class="pre">Series.sparse</span></code> accessor.</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.sparse.npoints.html#pandas-series-sparse-npoints"><span class="std std-ref">Series.sparse.npoints</span></a></dt><dd><p>The number of non- <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> points.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sparse.density.html#pandas-series-sparse-density"><span class="std std-ref">Series.sparse.density</span></a></dt><dd><p>The percent of non- <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> points, as decimal.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sparse.fill_value.html#pandas-series-sparse-fill-value"><span class="std std-ref">Series.sparse.fill_value</span></a></dt><dd><p>Elements in <cite>data</cite> that are <cite>fill_value</cite> are not stored.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sparse.sp_values.html#pandas-series-sparse-sp-values"><span class="std std-ref">Series.sparse.sp_values</span></a></dt><dd><p>An ndarray containing the non- <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sparse.from_coo.html#pandas-series-sparse-from-coo"><span class="std std-ref">Series.sparse.from_coo</span></a></dt><dd><p>Create a SparseSeries from a scipy.sparse.coo_matrix.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.sparse.to_coo.html#pandas-series-sparse-to-coo"><span class="std std-ref">Series.sparse.to_coo</span></a></dt><dd><p>Create a scipy.sparse.coo_matrix from a SparseSeries with MultiIndex.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="plotting">
+<span id="api-ref-pandas-series-metadata"></span><h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Series.plot</span></code> is both a callable method and a namespace attribute for
+specific plotting methods of the form <code class="docutils literal notranslate"><span class="pre">Series.plot.&lt;kind&gt;</span></code>.</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.plot.html#pandas-series-plot"><span class="std std-ref">Series.plot</span></a></dt><dd><p>Make plots of Series or DataFrame using the backend specified by the option <code class="docutils literal notranslate"><span class="pre">plotting.backend</span></code>. By default, matplotlib is used.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.area.html#pandas-series-plot-area"><span class="std std-ref">Series.plot.area</span></a></dt><dd><p>Draw a stacked area plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.bar.html#pandas-series-plot-bar"><span class="std std-ref">Series.plot.bar</span></a></dt><dd><p>Vertical bar plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.barh.html#pandas-series-plot-barh"><span class="std std-ref">Series.plot.barh</span></a></dt><dd><p>Make a horizontal bar plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.box.html#pandas-series-plot-box"><span class="std std-ref">Series.plot.box</span></a></dt><dd><p>Make a box plot of the DataFrame columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.density.html#pandas-series-plot-density"><span class="std std-ref">Series.plot.density</span></a></dt><dd><p>Generate Kernel Density Estimate plot using Gaussian kernels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.hist.html#pandas-series-plot-hist"><span class="std std-ref">Series.plot.hist</span></a></dt><dd><p>Draw one histogram of the DataFrame’s columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.kde.html#pandas-series-plot-kde"><span class="std std-ref">Series.plot.kde</span></a></dt><dd><p>Generate Kernel Density Estimate plot using Gaussian kernels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.line.html#pandas-series-plot-line"><span class="std std-ref">Series.plot.line</span></a></dt><dd><p>Plot Series or DataFrame as lines.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.plot.pie.html#pandas-series-plot-pie"><span class="std std-ref">Series.plot.pie</span></a></dt><dd><p>Generate a pie plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.hist.html#pandas-series-hist"><span class="std std-ref">Series.hist</span></a></dt><dd><p>Draw histogram of the input series using matplotlib.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="serialization-input-output-conversion">
+<h2>Serialization, Input-Output, Conversion<a class="headerlink" href="#serialization-input-output-conversion" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.Series.to_pickle.html#pandas-series-to-pickle"><span class="std std-ref">Series.to_pickle</span></a></dt><dd><p>Pickle (serialize) object to file.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_csv.html#pandas-series-to-csv"><span class="std std-ref">Series.to_csv</span></a></dt><dd><p>Write object to a comma-separated values (csv) file.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_dict.html#pandas-series-to-dict"><span class="std std-ref">Series.to_dict</span></a></dt><dd><p>Convert Series to {label -&gt; value} dict or dict-like object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_excel.html#pandas-series-to-excel"><span class="std std-ref">Series.to_excel</span></a></dt><dd><p>Write object to an Excel sheet.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_frame.html#pandas-series-to-frame"><span class="std std-ref">Series.to_frame</span></a></dt><dd><p>Convert Series to DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_xarray.html#pandas-series-to-xarray"><span class="std std-ref">Series.to_xarray</span></a></dt><dd><p>Return an xarray object from the pandas object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_hdf.html#pandas-series-to-hdf"><span class="std std-ref">Series.to_hdf</span></a></dt><dd><p>Write the contained data to an HDF5 file using HDFStore.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_sql.html#pandas-series-to-sql"><span class="std std-ref">Series.to_sql</span></a></dt><dd><p>Write records stored in a DataFrame to a SQL database.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_msgpack.html#pandas-series-to-msgpack"><span class="std std-ref">Series.to_msgpack</span></a></dt><dd><p>Serialize object to input file path using msgpack format.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_json.html#pandas-series-to-json"><span class="std std-ref">Series.to_json</span></a></dt><dd><p>Convert the object to a JSON string.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_string.html#pandas-series-to-string"><span class="std std-ref">Series.to_string</span></a></dt><dd><p>Render a string representation of the Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_clipboard.html#pandas-series-to-clipboard"><span class="std std-ref">Series.to_clipboard</span></a></dt><dd><p>Copy object to the system clipboard.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.to_latex.html#pandas-series-to-latex"><span class="std std-ref">Series.to_latex</span></a></dt><dd><p>Render an object to a LaTeX tabular environment table.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apireference.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Series: Columnar Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.dataframe.html">Dataframe: Tabular Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.window.html">Window</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../apireference.html"
+                        title="previous chapter">API Reference</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api_ref.pandas.dataframe.html"
+                        title="next chapter">DataFrame</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.astype &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.Series.astype<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Cast a pandas object to a specified dtype <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">param dtype</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>data type, or dict of column name -&gt; data type</dt><dd><p>Use a numpy.dtype or Python type to cast entire pandas object to
+the same type. Alternatively, use {col: dtype, …}, where col is a
+column label and dtype is a numpy.dtype or Python type to cast one
+or more of the DataFrame’s columns to column-specific types.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param copy</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Return a copy when <code class="docutils literal notranslate"><span class="pre">copy=True</span></code> (be very careful setting
+<code class="docutils literal notranslate"><span class="pre">copy=False</span></code> as changes to values then may propagate to other
+pandas objects).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param errors</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{‘raise’, ‘ignore’}, default ‘raise’</dt><dd><p>Control raising of exceptions on invalid data for provided dtype.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param - <code class="docutils literal notranslate"><span class="pre">raise</span></code></dt>
+<dd class="field-even"><p>allow exceptions to be raised</p>
+</dd>
+<dt class="field-odd">param - <code class="docutils literal notranslate"><span class="pre">ignore</span></code></dt>
+<dd class="field-odd"><p>suppress exceptions. On error return original object</p>
+<blockquote>
+<div><div class="versionadded">
+<p><span class="versionmodified added">New in version 0.20.0.</span></p>
+</div>
+</div></blockquote>
+</dd>
+<dt class="field-even">param kwargs</dt>
+<dd class="field-even"><p>keyword arguments to pass on to the constructor</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>casted : same type as caller</p>
+</dd>
+</dl>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Currently copy=False is not supported</p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="ex-series-astype">
+<div class="code-block-caption"><span class="caption-text">Cast a pandas object to a specified dtype dtype.</span><a class="headerlink" href="#ex-series-astype" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">series_astype</span><span class="p">():</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">92</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">series_astype</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_astype.py
+0      3.000000
+1    -10.000000
+2           nan
+3      0.000000
+4     92.000000
+dtype: object
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime">pandas.absolute</a></p>
+<blockquote>
+<div><p>Convert argument to datetime.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_timedelta.html#pandas.to_timedelta">pandas.absolute</a></p>
+<blockquote>
+<div><p>Convert argument to timedelta.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas.to_numeric">pandas.absolute</a></p>
+<blockquote>
+<div><p>Convert argument to a numeric type.</p>
+</div></blockquote>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype">numpy.absolute</a></p>
+<blockquote>
+<div><p>Copy of the array, cast to a specified type.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

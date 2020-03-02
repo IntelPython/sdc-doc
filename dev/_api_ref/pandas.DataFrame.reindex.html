@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.reindex &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.reindex<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Conform DataFrame to new index with optional filling logic, placing
+NA/NaN in locations having no value in the previous index. A new object
+is produced unless the new index is equivalent to the current one and
+<code class="docutils literal notranslate"><span class="pre">copy=False</span></code>.</p>
+<dl class="field-list">
+<dt class="field-odd">param labels</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>array-like, optional</dt><dd><p>New labels / index to conform the axis specified by ‘axis’ to.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param index, columns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>array-like, optional</dt><dd><p>New labels / index to conform to, should be specified using
+keywords. Preferably an Index object to avoid duplicating data</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param axis</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int or str, optional</dt><dd><p>Axis to target. Can be either the axis name (‘index’, ‘columns’)
+or number (0, 1).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param method</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{None, ‘backfill’/’bfill’, ‘pad’/’ffill’, ‘nearest’}</dt><dd><p>Method to use for filling holes in reindexed DataFrame.
+Please note: this is only applicable to DataFrames/Series with a
+monotonically increasing/decreasing index.</p>
+<ul class="simple">
+<li><p>None (default): don’t fill gaps</p></li>
+<li><dl class="simple">
+<dt>pad / ffill: propagate last valid observation forward to next</dt><dd><p>valid</p>
+</dd>
+</dl>
+</li>
+<li><p>backfill / bfill: use next valid observation to fill gap</p></li>
+<li><p>nearest: use nearest valid observations to fill gap</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param copy</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Return a new object, even if the passed indexes are the same.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param level</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int or name</dt><dd><p>Broadcast across a level, matching Index values on the
+passed MultiIndex level.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param fill_value</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>scalar, default np.NaN</dt><dd><p>Value to use for missing values. Defaults to NaN, but can be any
+“compatible” value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param limit</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int, default None</dt><dd><p>Maximum number of consecutive elements to forward or backward fill.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param tolerance</dt>
+<dd class="field-odd"><dl>
+<dt>optional</dt><dd><p>Maximum distance between original and new labels for inexact
+matches. The values of the index at the matching locations most
+satisfy the equation <code class="docutils literal notranslate"><span class="pre">abs(index[indexer]</span> <span class="pre">-</span> <span class="pre">target)</span> <span class="pre">&lt;=</span> <span class="pre">tolerance</span></code>.</p>
+<p>Tolerance may be a scalar value, which applies the same tolerance
+to all values, or list-like, which applies variable tolerance per
+element. List-like includes list, tuple, array, Series, and must be
+the same size as the index and its dtype must exactly match the
+index’s type.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0: </span>(list-like tolerance)</p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>DataFrame with changed index.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.sort_index &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.sort_index<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Sort object by labels (along an axis).</p>
+<dl class="field-list simple">
+<dt class="field-odd">param axis</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{0 or ‘index’, 1 or ‘columns’}, default 0</dt><dd><p>The axis along which to sort.  The value 0 identifies the rows,
+and 1 identifies the columns.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param level</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int or level name or list of ints or list of level names</dt><dd><p>If not None, sort on values in specified index level(s).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param ascending</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Sort ascending vs. descending.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param inplace</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default False</dt><dd><p>If True, perform operation in-place.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param kind</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{‘quicksort’, ‘mergesort’, ‘heapsort’}, default ‘quicksort’</dt><dd><p>Choice of sorting algorithm. See also ndarray.np.sort for more
+information.  <cite>mergesort</cite> is the only stable algorithm. For
+DataFrames, this option is only applied when sorting on a single
+column or label.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param na_position</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{‘first’, ‘last’}, default ‘last’</dt><dd><p>Puts NaNs at the beginning if <cite>first</cite>; <cite>last</cite> puts NaNs at the end.
+Not implemented for MultiIndex.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param sort_remaining</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>If True and sorting by level and index is multilevel, sort by other
+levels too (in order) after sorting by specified level.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>sorted_obj : DataFrame or None
+DataFrame with sorted index if inplace=False, None otherwise.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

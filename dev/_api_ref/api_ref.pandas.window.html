@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pandas Window &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="List of examples" href="../examples.html" />
+    <link rel="prev" title="DataFrame" href="api_ref.pandas.dataframe.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../examples.html" title="List of examples">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="api_ref.pandas.dataframe.html" title="DataFrame">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../apireference.html" accesskey="U">API Reference</a> &#187;</li>
+      
+      <li>Pandas Window</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="api-ref-pandas-window"></span><div class="section" id="pandas-window">
+<h1>Pandas Window<a class="headerlink" href="#pandas-window" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="standard-moving-window-functions">
+<h2>Standard moving window functions<a class="headerlink" href="#standard-moving-window-functions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.count.html#pandas-core-window-rolling-count"><span class="std std-ref">Rolling.count</span></a></dt><dd><p>The rolling count of any non-NaN observations inside the window.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.sum.html#pandas-core-window-rolling-sum"><span class="std std-ref">Rolling.sum</span></a></dt><dd><p>Calculate rolling sum of given DataFrame or Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.mean.html#pandas-core-window-rolling-mean"><span class="std std-ref">Rolling.mean</span></a></dt><dd><p>Calculate the rolling mean of the values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.median.html#pandas-core-window-rolling-median"><span class="std std-ref">Rolling.median</span></a></dt><dd><p>Calculate the rolling median.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.var.html#pandas-core-window-rolling-var"><span class="std std-ref">Rolling.var</span></a></dt><dd><p>Calculate unbiased rolling variance.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.std.html#pandas-core-window-rolling-std"><span class="std std-ref">Rolling.std</span></a></dt><dd><p>Calculate rolling standard deviation.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.min.html#pandas-core-window-rolling-min"><span class="std std-ref">Rolling.min</span></a></dt><dd><p>Calculate the rolling minimum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.max.html#pandas-core-window-rolling-max"><span class="std std-ref">Rolling.max</span></a></dt><dd><p>Calculate the rolling maximum.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.corr.html#pandas-core-window-rolling-corr"><span class="std std-ref">Rolling.corr</span></a></dt><dd><p>Calculate rolling correlation.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.cov.html#pandas-core-window-rolling-cov"><span class="std std-ref">Rolling.cov</span></a></dt><dd><p>Calculate the rolling sample covariance.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.skew.html#pandas-core-window-rolling-skew"><span class="std std-ref">Rolling.skew</span></a></dt><dd><p>Unbiased rolling skewness.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.kurt.html#pandas-core-window-rolling-kurt"><span class="std std-ref">Rolling.kurt</span></a></dt><dd><p>Calculate unbiased rolling kurtosis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.apply.html#pandas-core-window-rolling-apply"><span class="std std-ref">Rolling.apply</span></a></dt><dd><p>The rolling function’s apply function.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.aggregate.html#pandas-core-window-rolling-aggregate"><span class="std std-ref">Rolling.aggregate</span></a></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Rolling.quantile.html#pandas-core-window-rolling-quantile"><span class="std std-ref">Rolling.quantile</span></a></dt><dd><p>Calculate the rolling quantile.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Window.mean.html#pandas-core-window-window-mean"><span class="std std-ref">Window.mean</span></a></dt><dd><p>Calculate the window mean of the values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Window.sum.html#pandas-core-window-window-sum"><span class="std std-ref">Window.sum</span></a></dt><dd><p>Calculate window sum of given DataFrame or Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="standard-expanding-window-functions">
+<h2>Standard expanding window functions<a class="headerlink" href="#standard-expanding-window-functions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.count.html#pandas-core-window-expanding-count"><span class="std std-ref">Expanding.count</span></a></dt><dd><p>The expanding count of any non-NaN observations inside the window.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.sum.html#pandas-core-window-expanding-sum"><span class="std std-ref">Expanding.sum</span></a></dt><dd><p>Calculate expanding sum of given DataFrame or Series.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.mean.html#pandas-core-window-expanding-mean"><span class="std std-ref">Expanding.mean</span></a></dt><dd><p>Calculate the expanding mean of the values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.median.html#pandas-core-window-expanding-median"><span class="std std-ref">Expanding.median</span></a></dt><dd><p>Calculate the expanding median.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.var.html#pandas-core-window-expanding-var"><span class="std std-ref">Expanding.var</span></a></dt><dd><p>Calculate unbiased expanding variance.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.std.html#pandas-core-window-expanding-std"><span class="std std-ref">Expanding.std</span></a></dt><dd><p>Calculate expanding standard deviation.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.min.html#pandas-core-window-expanding-min"><span class="std std-ref">Expanding.min</span></a></dt><dd><p>Calculate the expanding minimum.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.max.html#pandas-core-window-expanding-max"><span class="std std-ref">Expanding.max</span></a></dt><dd><p>Calculate the expanding maximum.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.corr.html#pandas-core-window-expanding-corr"><span class="std std-ref">Expanding.corr</span></a></dt><dd><p>Calculate expanding correlation.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.cov.html#pandas-core-window-expanding-cov"><span class="std std-ref">Expanding.cov</span></a></dt><dd><p>Calculate the expanding sample covariance.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.skew.html#pandas-core-window-expanding-skew"><span class="std std-ref">Expanding.skew</span></a></dt><dd><p>Unbiased expanding skewness.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.kurt.html#pandas-core-window-expanding-kurt"><span class="std std-ref">Expanding.kurt</span></a></dt><dd><p>Calculate unbiased expanding kurtosis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.apply.html#pandas-core-window-expanding-apply"><span class="std std-ref">Expanding.apply</span></a></dt><dd><p>The expanding function’s apply function.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.aggregate.html#pandas-core-window-expanding-aggregate"><span class="std std-ref">Expanding.aggregate</span></a></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.Expanding.quantile.html#pandas-core-window-expanding-quantile"><span class="std std-ref">Expanding.quantile</span></a></dt><dd><p>Calculate the expanding quantile.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="exponentially-weighted-moving-window-functions">
+<h2>Exponentially-weighted moving window functions<a class="headerlink" href="#exponentially-weighted-moving-window-functions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.core.window.EWM.mean.html#pandas-core-window-ewm-mean"><span class="std std-ref">EWM.mean</span></a></dt><dd><p>Exponential weighted moving average.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.EWM.std.html#pandas-core-window-ewm-std"><span class="std std-ref">EWM.std</span></a></dt><dd><p>Exponential weighted moving stddev.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.EWM.var.html#pandas-core-window-ewm-var"><span class="std std-ref">EWM.var</span></a></dt><dd><p>Exponential weighted moving variance.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.EWM.corr.html#pandas-core-window-ewm-corr"><span class="std std-ref">EWM.corr</span></a></dt><dd><p>Exponential weighted sample correlation.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.core.window.EWM.cov.html#pandas-core-window-ewm-cov"><span class="std std-ref">EWM.cov</span></a></dt><dd><p>Exponential weighted sample covariance.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apireference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.series.html">Series: Columnar Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.dataframe.html">Dataframe: Tabular Data Structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Window</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api_ref.pandas.dataframe.html"
+                        title="previous chapter">DataFrame</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../examples.html"
+                        title="next chapter">List of examples</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>
