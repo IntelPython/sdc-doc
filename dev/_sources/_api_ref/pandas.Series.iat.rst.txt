@@ -17,13 +17,13 @@ or Series.
 
 Examples
 --------
-.. literalinclude:: ../../../examples/series_iat.py
+.. literalinclude:: ../../../examples/series/series_iat.py
    :language: python
    :lines: 27-
    :caption: Get value at specified index position.
    :name: ex_series_iat
 
-.. command-output:: python ./series_iat.py
+.. command-output:: python ./series/series_iat.py
    :cwd: ../../../examples
 
 .. seealso::

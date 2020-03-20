@@ -30,6 +30,11 @@ value is returned.
     ValueError
         If the Series is empty.
 
+Limitations
+-----------
+Parameter ``axis`` is supported only with default value ``None``.
+Parameter ``skipna`` cannot be ``False`` with data of string type.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_idxmax.py
@@ -40,9 +45,6 @@ Examples
 
 .. command-output:: python ./series/series_idxmax.py
    :cwd: ../../../examples
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
 
 .. seealso::
 

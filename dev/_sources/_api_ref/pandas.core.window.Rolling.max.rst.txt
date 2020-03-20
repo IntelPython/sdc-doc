@@ -23,6 +23,15 @@ Examples
 .. command-output:: python ./series/rolling/series_rolling_max.py
    :cwd: ../../../examples
 
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_max.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate the rolling maximum.
+   :name: ex_dataframe_rolling_max
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_max.py
+   :cwd: ../../../examples
+
 .. seealso::
     :ref:`Series.rolling <pandas.Series.rolling>`
         Calling object with a Series.

@@ -31,19 +31,16 @@ Return the mean of the values for the requested axis.
 
 Limitations
 -----------
-- Parameters level, numeric_only are currently unsupported by Intel Scalable Dataframe Compiler
+- Parameters ``axis``, ``level`` and ``numeric_only``         are currently unsupported by Intel Scalable Dataframe Compiler.
 
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_mean.py
    :language: python
    :lines: 27-
-   :caption: Return the mean of the values for the requested axis.
+   :caption: Return the mean of the values.
    :name: ex_series_mean
 
 .. command-output:: python ./series/series_mean.py
    :cwd: ../../../examples
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
 

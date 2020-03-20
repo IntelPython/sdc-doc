@@ -26,6 +26,15 @@ Examples
 .. command-output:: python ./series/rolling/series_rolling_kurt.py
    :cwd: ../../../examples
 
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_kurt.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate unbiased rolling kurtosis.
+   :name: ex_dataframe_rolling_kurt
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_kurt.py
+   :cwd: ../../../examples
+
 .. seealso::
     :ref:`Series.rolling <pandas.Series.rolling>`
         Calling object with a Series.

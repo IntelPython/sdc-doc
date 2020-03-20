@@ -79,9 +79,68 @@ has the right type of data in it.</p>
 The first <cite>n</cite> rows of the caller object.</p>
 </dd>
 </dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="ex-dataframe-head">
+<div class="code-block-caption"><span class="caption-text">Return the first n rows.</span><a class="headerlink" href="#ex-dataframe-head" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">dataframe_head</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;animal&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;alligator&#39;</span><span class="p">,</span> <span class="s1">&#39;bee&#39;</span><span class="p">,</span> <span class="s1">&#39;falcon&#39;</span><span class="p">,</span> <span class="s1">&#39;lion&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;monkey&#39;</span><span class="p">,</span> <span class="s1">&#39;parrot&#39;</span><span class="p">,</span> <span class="s1">&#39;shark&#39;</span><span class="p">,</span> <span class="s1">&#39;whale&#39;</span><span class="p">,</span> <span class="s1">&#39;zebra&#39;</span><span class="p">]})</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dataframe_head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./dataframe/dataframe_head.py
+Traceback (most recent call last):
+  File &quot;./dataframe/dataframe_head.py&quot;, line 50, in &lt;module&gt;
+    print(dataframe_head())
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+    raise e
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+    return self.compile(tuple(argtypes))
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+    cres = self._compiler.compile(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+    status, retval = self._compile_cached(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+    retval = self._compile_core(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+    pipeline_class=self.pipeline_class)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+    args, return_type, flags, locals)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+    targetctx.refresh()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+    self.load_additional_registries()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+    numba.entrypoints.init_all()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+    func = entry_point.load()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+    self.require(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="pandas.DataFrame.tail.html#pandas-dataframe-tail"><span class="std std-ref">DataFrame.tail</span></a></p>
+</div>
 </div>
 </div>
 

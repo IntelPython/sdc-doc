@@ -35,7 +35,7 @@ Calculate the rolling quantile.
 Limitations
 -----------
 Supported ``interpolation`` only can be `'linear'`.
-Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
+DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
 
 Examples
 --------
@@ -46,6 +46,15 @@ Examples
    :name: ex_series_rolling_quantile
 
 .. command-output:: python ./series/rolling/series_rolling_quantile.py
+   :cwd: ../../../examples
+
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_quantile.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate the rolling quantile.
+   :name: ex_dataframe_rolling_quantile
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_quantile.py
    :cwd: ../../../examples
 
 .. seealso::

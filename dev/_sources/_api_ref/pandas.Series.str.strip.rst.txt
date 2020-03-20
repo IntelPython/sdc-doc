@@ -19,8 +19,21 @@ Equivalent to :meth:`str.strip`.
 
 :return: Series/Index of objects
 
+Examples
+--------
+.. literalinclude:: ../../../examples/series/str/series_str_strip.py
+   :language: python
+   :lines: 27-
+   :caption: Remove leading and trailing characters.
+   :name: ex_series_str_strip
 
+.. command-output:: python ./series/str/series_str_strip.py
+   :cwd: ../../../examples
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+                :ref:`Series.str.strip <pandas.Series.str.strip>`
+                    Remove leading and trailing characters in Series/Index.
+                :ref:`Series.str.lstrip <pandas.Series.str.lstrip>`
+                    Remove leading characters in Series/Index.
+                :ref:`Series.str.strip <pandas.Series.str.strip>`
+                    Remove trailing characters in Series/Index.
 

@@ -93,9 +93,7 @@ The result of the operation.</p>
 </dl>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Parameters level, fill_value are currently unsupported by Intel Scalable Dataframe Compiler</p></li>
-</ul>
+<p>Parameters <code class="docutils literal notranslate"><span class="pre">level</span></code>, <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> and <code class="docutils literal notranslate"><span class="pre">axis</span></code> are unsupported.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -119,19 +117,48 @@ The result of the operation.</p>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_div.py
-0    0.25
-1    0.50
-2    0.25
-dtype: float64
+Traceback (most recent call last):
+  File &quot;./series/series_div.py&quot;, line 40, in &lt;module&gt;
+    print(series_div())
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+    raise e
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+    return self.compile(tuple(argtypes))
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+    cres = self._compiler.compile(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+    status, retval = self._compile_cached(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+    retval = self._compile_core(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+    pipeline_class=self.pipeline_class)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+    args, return_type, flags, locals)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+    targetctx.refresh()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+    self.load_additional_registries()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+    numba.entrypoints.init_all()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+    func = entry_point.load()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+    self.require(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler</p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="pandas.Series.rdiv.html#pandas-series-rdiv"><span class="std std-ref">Series.rdiv</span></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.rdiv.html#pandas-series-rdiv"><span class="std std-ref">Series.rdiv</span></a></dt><dd><p>Return Floating division of series and other, element-wise (binary operator rtruediv).</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>

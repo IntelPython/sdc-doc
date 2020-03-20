@@ -14,8 +14,6 @@ Constructor
    :ref:`Series <pandas.Series>`
        One-dimensional ndarray with axis labels (including time series).
 
-        **Unsupported by Intel SDC**.
-
 Attributes/Operators
 --------------------
 
@@ -65,6 +63,8 @@ Attributes/Operators
        Apply the `put` method to its `values` attribute if it has one.
 
         **Unsupported by Intel SDC**.
+   :ref:`Series.setitem <pandas.Series.setitem>`
+       Set value to Series by index
 
 Type Conversions
 ----------------
@@ -951,8 +951,6 @@ strings and apply several methods to it. These can be accessed like
         **Unsupported by Intel SDC**.
    :ref:`Series.str.lstrip <pandas.Series.str.lstrip>`
        Remove leading and trailing characters.
-
-        **Unsupported by Intel SDC**.
    :ref:`Series.str.match <pandas.Series.str.match>`
        Determine if each string matches a regular expression.
 
@@ -993,8 +991,6 @@ strings and apply several methods to it. These can be accessed like
         **Unsupported by Intel SDC**.
    :ref:`Series.str.rstrip <pandas.Series.str.rstrip>`
        Remove leading and trailing characters.
-
-        **Unsupported by Intel SDC**.
    :ref:`Series.str.slice <pandas.Series.str.slice>`
        Slice substrings from each element in the Series or Index.
 
@@ -1015,8 +1011,6 @@ strings and apply several methods to it. These can be accessed like
        Test if the start of each string element matches a pattern.
    :ref:`Series.str.strip <pandas.Series.str.strip>`
        Remove leading and trailing characters.
-
-        **Unsupported by Intel SDC**.
    :ref:`Series.str.swapcase <pandas.Series.str.swapcase>`
        Convert strings in the Series/Index to be swapcased.
    :ref:`Series.str.title <pandas.Series.str.title>`
@@ -1027,8 +1021,6 @@ strings and apply several methods to it. These can be accessed like
         **Unsupported by Intel SDC**.
    :ref:`Series.str.upper <pandas.Series.str.upper>`
        Convert strings in the Series/Index to uppercase.
-
-        **Unsupported by Intel SDC**.
    :ref:`Series.str.wrap <pandas.Series.str.wrap>`
        Wrap long strings in the Series/Index to be formatted in paragraphs with length less than a given width.
 

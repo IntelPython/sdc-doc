@@ -33,14 +33,14 @@ Return the largest `n` elements.
 
 Limitations
 -----------
-- Parameter 'keep' except 'first' is currently unsupported by Intel Scalable Dataframe Compiler
+Parameter ``keep`` is supported only with default value ``'first'``.
 
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_nlargest.py
    :language: python
    :lines: 27-
-   :caption: Return the largest n elements.
+   :caption: Returns the largest n elements.
    :name: ex_series_nlargest
 
 .. command-output:: python ./series/series_nlargest.py

@@ -28,24 +28,28 @@ indexing (this conforms with python/numpy *slice* semantics).
 
 See more at :ref:`Selection by Position <indexing.integer>`.
 
+Limitations
+-----------
+Iloc always returns Series.
+
 Examples
 --------
-.. literalinclude:: ../../../examples/series_iloc/series_iloc_value.py
+.. literalinclude:: ../../../examples/series/series_iloc/series_iloc_value.py
    :language: python
    :lines: 27-
    :caption: With a scalar integer.
    :name: ex_series_iloc
 
-.. command-output:: python ./series_iloc/series_iloc_value.py
+.. command-output:: python ./series/series_iloc/series_iloc_value.py
    :cwd: ../../../examples
 
-.. literalinclude:: ../../../examples/series_iloc/series_iloc_slice.py
+.. literalinclude:: ../../../examples/series/series_iloc/series_iloc_slice.py
    :language: python
    :lines: 33-
    :caption: With a slice object.
    :name: ex_series_iloc
 
-.. command-output:: python ./series_iloc/series_iloc_slice.py
+.. command-output:: python ./series/series_iloc/series_iloc_slice.py
    :cwd: ../../../examples
 
 .. seealso::

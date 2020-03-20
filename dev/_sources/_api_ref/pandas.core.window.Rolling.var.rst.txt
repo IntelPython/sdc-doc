@@ -22,7 +22,7 @@ argument.
 
 Limitations
 -----------
-Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
+DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
 
 Examples
 --------
@@ -33,6 +33,15 @@ Examples
    :name: ex_series_rolling_var
 
 .. command-output:: python ./series/rolling/series_rolling_var.py
+   :cwd: ../../../examples
+
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_var.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate unbiased rolling variance.
+   :name: ex_dataframe_rolling_var
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_var.py
    :cwd: ../../../examples
 
 .. seealso::

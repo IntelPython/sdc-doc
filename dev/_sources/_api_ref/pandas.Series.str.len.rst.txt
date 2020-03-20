@@ -15,7 +15,7 @@ a sequence (such as a string, tuple or list) or a collection
 
 Limitations
 -----------
-Series elements are expected to be Unicode strings. Elements cannot be NaN.
+Series elements are expected to be Unicode strings. Elements cannot be `NaNs`.
 
 Examples
 --------

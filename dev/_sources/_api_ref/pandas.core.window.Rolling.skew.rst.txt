@@ -23,6 +23,15 @@ Examples
 .. command-output:: python ./series/rolling/series_rolling_skew.py
    :cwd: ../../../examples
 
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_skew.py
+   :language: python
+   :lines: 27-
+   :caption: Unbiased rolling skewness.
+   :name: ex_dataframe_rolling_skew
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_skew.py
+   :cwd: ../../../examples
+
 .. seealso::
     :ref:`Series.rolling <pandas.Series.rolling>`
         Calling object with a Series.

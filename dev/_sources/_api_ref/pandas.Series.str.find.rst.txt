@@ -25,7 +25,8 @@ Return -1 on failure. Equivalent to standard :meth:`str.find`.
 
 Limitations
 -----------
-Series elements are expected to be Unicode strings. Elements cannot be NaN.
+Series elements are expected to be Unicode strings. Elements cannot be `NaNs`.
+Parameters ``start``, ``end`` are supported only with default value ``0`` and ``None`` respectively.
 
 Examples
 --------
@@ -38,9 +39,9 @@ Examples
 .. command-output:: python ./series/str/series_str_find.py
    :cwd: ../../../examples
 
-.. todo:: Add support of parameters ``start`` and ``end``
-
 .. seealso::
     :ref:`Series.str.rfind <pandas.Series.str.rfind>`
         Return highest indexes in each strings.
+
+.. todo:: Add support of parameters ``start`` and ``end``
 

@@ -36,19 +36,21 @@ Normalized by N-1 by default. This can be changed using the ddof argument
 
 Limitations
 -----------
-- Parameters level, numeric_only are currently unsupported by Intel Scalable Dataframe Compiler
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
+Parameters ``axis``, ``level`` and ``numeric_only`` are supported only with default value ``None``.
 
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_var.py
    :language: python
    :lines: 27-
-   :caption: Return unbiased variance over requested axis.
+   :caption: Returns unbiased variance over Series.
    :name: ex_series_var
 
 .. command-output:: python ./series/series_var.py
    :cwd: ../../../examples
+
+.. seealso::
+
+    :ref:`Series.std <pandas.Series.std>`
+        Returns sample standard deviation over Series.
 

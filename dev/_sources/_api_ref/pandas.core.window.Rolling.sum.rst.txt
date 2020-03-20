@@ -16,17 +16,26 @@ on the computed value.
 
 Limitations
 -----------
-Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
+DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
 
 Examples
 --------
 .. literalinclude:: ../../../examples/series/rolling/series_rolling_sum.py
    :language: python
    :lines: 27-
-   :caption: Calculate rolling sum of given Series.
+   :caption: Calculate rolling sum
    :name: ex_series_rolling_sum
 
 .. command-output:: python ./series/rolling/series_rolling_sum.py
+   :cwd: ../../../examples
+
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_sum.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate rolling sum
+   :name: ex_dataframe_rolling_sum
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_sum.py
    :cwd: ../../../examples
 
 .. seealso::

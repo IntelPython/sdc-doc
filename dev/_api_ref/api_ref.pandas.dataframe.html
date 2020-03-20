@@ -79,15 +79,12 @@
 <h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
 <p>This is the main <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> data structure representing a table of rows and columns.</p>
 <p>DataFrame is a two-dimensional structure with labeled axes. It can be thought of as a dictionary-like
-container for <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
+container for <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
 <div class="section" id="constructor">
 <h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl>
+<div><dl class="simple">
 <dt><a class="reference internal" href="pandas.DataFrame.html#pandas-dataframe"><span class="std std-ref">DataFrame</span></a></dt><dd><p>Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). Arithmetic operations align on both row and column labels. Can be thought of as a dict-like container for Series objects. The primary pandas data structure.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 </dl>
 </div></blockquote>
@@ -145,6 +142,8 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 <div><p><strong>Unsupported by Intel SDC</strong>.</p>
 </div></blockquote>
 </dd>
+<dt><a class="reference internal" href="pandas.DataFrame.getitem.html#pandas-dataframe-getitem"><span class="std std-ref">DataFrame.getitem</span></a></dt><dd><p>Get data from a DataFrame by indexer.</p>
+</dd>
 </dl>
 </div></blockquote>
 </div>
@@ -163,14 +162,8 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.copy.html#pandas-dataframe-copy"><span class="std std-ref">DataFrame.copy</span></a></dt><dd><p>Make a copy of this object’s indices and data.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.isna.html#pandas-dataframe-isna"><span class="std std-ref">DataFrame.isna</span></a></dt><dd><p>Detect missing values.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.notna.html#pandas-dataframe-notna"><span class="std std-ref">DataFrame.notna</span></a></dt><dd><p>Detect existing (non-missing) values.</p>
 <blockquote>
@@ -190,9 +183,6 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 <blockquote>
 <div><dl>
 <dt><a class="reference internal" href="pandas.DataFrame.head.html#pandas-dataframe-head"><span class="std std-ref">DataFrame.head</span></a></dt><dd><p>Return the first <cite>n</cite> rows.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.at.html#pandas-dataframe-at"><span class="std std-ref">DataFrame.at</span></a></dt><dd><p>Access a single value for a row/column label pair.</p>
 <blockquote>
@@ -200,9 +190,6 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.iat.html#pandas-dataframe-iat"><span class="std std-ref">DataFrame.iat</span></a></dt><dd><p>Access a single value for a row/column pair by integer position.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.loc.html#pandas-dataframe-loc"><span class="std std-ref">DataFrame.loc</span></a></dt><dd><p>Access a group of rows and columns by label(s) or a boolean array.</p>
 <blockquote>
@@ -297,7 +284,7 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 </dl>
 </div></blockquote>
 <p>For more information on <code class="docutils literal notranslate"><span class="pre">.at</span></code>, <code class="docutils literal notranslate"><span class="pre">.iat</span></code>, <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">.iloc</span></code>,  see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing" title="(in pandas v1.0.1)"><span class="xref std std-ref">indexing documentation</span></a>.</p>
+<code class="docutils literal notranslate"><span class="pre">.iloc</span></code>,  see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing" title="(in pandas v1.0.3)"><span class="xref std std-ref">indexing documentation</span></a>.</p>
 </div>
 <div class="section" id="binary-operator-functions">
 <h2>Binary Operator Functions<a class="headerlink" href="#binary-operator-functions" title="Permalink to this headline">¶</a></h2>
@@ -605,9 +592,6 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.pct_change.html#pandas-dataframe-pct-change"><span class="std std-ref">DataFrame.pct_change</span></a></dt><dd><p>Percentage change between the current and a prior element.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.prod.html#pandas-dataframe-prod"><span class="std std-ref">DataFrame.prod</span></a></dt><dd><p>Return the product of the values for the requested axis.</p>
 <blockquote>
@@ -724,9 +708,6 @@ container for <a class="reference external" href="https://pandas.pydata.org/pand
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.head.html#pandas-dataframe-head"><span class="std std-ref">DataFrame.head</span></a></dt><dd><p>Return the first <cite>n</cite> rows.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.DataFrame.idxmax.html#pandas-dataframe-idxmax"><span class="std std-ref">DataFrame.idxmax</span></a></dt><dd><p>Return index of first occurrence of maximum over requested axis. NA/null values are excluded.</p>
 <blockquote>
@@ -1258,6 +1239,7 @@ specific plotting methods of the form <code class="docutils literal notranslate"
 <li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../apireference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.io.html">Input/output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.series.html">Series: Columnar Data Structure</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Dataframe: Tabular Data Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.window.html">Window</a></li>

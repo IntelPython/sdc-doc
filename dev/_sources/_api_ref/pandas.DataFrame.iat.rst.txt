@@ -15,8 +15,25 @@ or Series.
     IndexError
         When integer position is out of bounds
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_iat.py
+   :language: python
+   :lines: 28-
+   :caption: Get value at specified index position.
+   :name: ex_dataframe_iat
 
+.. command-output:: python ./dataframe/dataframe_iat.py
+   :cwd: ../../../examples
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. seealso::
+
+    :ref:`DataFrame.at <pandas.DataFrame.at>`
+        Access a single value for a row/column label pair.
+
+    :ref:`DataFrame.loc <pandas.DataFrame.loc>`
+        Purely label-location based indexer for selection by label.
+
+    :ref:`DataFrame.iloc <pandas.DataFrame.iloc>`
+        Access group of rows and columns by integer position(s).
 

@@ -35,6 +35,12 @@ Excludes NA values by default.
 
 :return: Series
 
+Limitations
+-----------
+- Parameters ``normalize`` and ``bins`` are currently unsupported.
+- Parameter ``dropna`` is unsupported for String Series.
+- Elements with the same count might appear in result in a different order than in Pandas.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_value_counts.py
@@ -45,11 +51,6 @@ Examples
 
 .. command-output:: python ./series/series_value_counts.py
    :cwd: ../../../examples
-
-Limitations
------------
-- Parameter bins and dropna for Strings are currently unsupported by Intel Scalable Dataframe Compiler
-- Elements with the same count might appear in result in a different order than in Pandas
 
 .. seealso::
 

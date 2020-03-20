@@ -18,8 +18,18 @@ has the right type of data in it.
 :return: obj_head : same type as caller
     The first `n` rows of the caller object.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_head.py
+   :language: python
+   :lines: 37-
+   :caption: Return the first n rows.
+   :name: ex_dataframe_head
 
+.. command-output:: python ./dataframe/dataframe_head.py
+   :cwd: ../../../examples
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. seealso::
+
+    :ref:`DataFrame.tail <pandas.DataFrame.tail>`
 

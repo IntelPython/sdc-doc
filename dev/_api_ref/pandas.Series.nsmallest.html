@@ -103,14 +103,12 @@ The <cite>n</cite> smallest values in the Series, sorted in increasing order.</p
 </dl>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Parameter ‘keep’ except ‘first’ is currently unsupported by Intel Scalable Dataframe Compiler</p></li>
-</ul>
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">keep</span></code> is supported only with default value <code class="docutils literal notranslate"><span class="pre">'first'</span></code>.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="ex-series-nsmallest">
-<div class="code-block-caption"><span class="caption-text">Return the smallest n elements.</span><a class="headerlink" href="#ex-series-nsmallest" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Returns the smallest n elements.</span><a class="headerlink" href="#ex-series-nsmallest" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
@@ -128,11 +126,40 @@ The <cite>n</cite> smallest values in the Series, sorted in increasing order.</p
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_nsmallest.py
-0    0
-1    1
-2    2
-3    3
-dtype: int64
+Traceback (most recent call last):
+  File &quot;./series/series_nsmallest.py&quot;, line 39, in &lt;module&gt;
+    print(series_nsmallest())
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+    raise e
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+    return self.compile(tuple(argtypes))
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+    cres = self._compiler.compile(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+    status, retval = self._compile_cached(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+    retval = self._compile_core(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+    pipeline_class=self.pipeline_class)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+    args, return_type, flags, locals)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+    targetctx.refresh()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+    self.load_additional_registries()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+    numba.entrypoints.init_all()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+    func = entry_point.load()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+    self.require(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
 </div>
 <div class="admonition seealso">

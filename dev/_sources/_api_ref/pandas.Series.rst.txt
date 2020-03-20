@@ -43,8 +43,19 @@ index will be the sorted union of the two indexes.
     bool, default False
         Copy input data.
 
+Limitations
+-----------
+- Parameters ``dtype`` and ``copy`` are currently unsupported by Intel Scalable Dataframe Compiler.
+- Parameter ``dtype`` types iterable and dict are currently unsupported by Intel Scalable Dataframe Compiler.
 
+Examples
+--------
+Create Series with data [1, 2, 3] and index ['A', 'B', 'C'].
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+>>> pd.Series([1, 2, 3], ['A', 'B', 'C'])
+
+.. seealso::
+
+    :ref:`DataFrame <pandas.DataFrame>`
+        DataFrame constructor.
 

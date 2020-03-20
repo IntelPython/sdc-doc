@@ -23,7 +23,8 @@ Equivalent to :meth:`str.startswith`.
 
 Limitations
 -----------
-Series elements are expected to be Unicode strings. Elements cannot be NaN.
+Series elements are expected to be Unicode strings. Elements cannot be `NaNs`.
+Parameter ``na`` is supported only with default value ``None``.
 
 Examples
 --------
@@ -36,10 +37,6 @@ Examples
 .. command-output:: python ./series/str/series_str_startswith.py
    :cwd: ../../../examples
 
-.. todo::
-    - Add support of matching the start of each string by a pattern
-    - Add support of parameter ``na``
-
 .. seealso::
     `str.startswith <https://docs.python.org/3/library/stdtypes.html#str.startswith>`_
         Python standard library string method.
@@ -47,4 +44,8 @@ Examples
         Same as startswith, but tests the end of string.
     :ref:`Series.str.contains <pandas.Series.str.contains>`
         Tests if string element contains a pattern.
+
+.. todo::
+    - Add support of matching the start of each string by a pattern
+    - Add support of parameter ``na``
 

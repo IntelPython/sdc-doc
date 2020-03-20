@@ -33,8 +33,8 @@ Calculate the rolling sample covariance.
 
 Limitations
 -----------
-Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
-Resulting Series has default index and name.
+DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
+Resulting DataFrame/Series has default index and name.
 
 Examples
 --------
@@ -45,6 +45,15 @@ Examples
    :name: ex_series_rolling_cov
 
 .. command-output:: python ./series/rolling/series_rolling_cov.py
+   :cwd: ../../../examples
+
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_cov.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate rolling covariance.
+   :name: ex_dataframe_rolling_cov
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_cov.py
    :cwd: ../../../examples
 
 .. seealso::

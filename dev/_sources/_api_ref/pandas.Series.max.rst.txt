@@ -34,7 +34,7 @@ Return the maximum of the values for the requested axis.
 
 Limitations
 -----------
-- Parameters level, numeric_only are currently unsupported by Intel Scalable Dataframe Compiler
+Parameters ``axis``, ``level`` and ``numeric_only`` are currently unsupported.
 
 Examples
 --------
@@ -46,9 +46,6 @@ Examples
 
 .. command-output:: python ./series/series_max.py
    :cwd: ../../../examples
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
 
 .. seealso::
 

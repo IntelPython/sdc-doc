@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="DataFrame" href="api_ref.pandas.dataframe.html" />
-    <link rel="prev" title="API Reference" href="../apireference.html" />
+    <link rel="prev" title="Pandas Input/output" href="api_ref.pandas.io.html" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
 
   </head><body>
@@ -54,7 +54,7 @@
 	</a>
       </li>
       <li class="right">
-	<a href="../apireference.html" title="API Reference">
+	<a href="api_ref.pandas.io.html" title="Pandas Input/output">
 	  &laquo; previous
 	</a>
 	 |
@@ -82,11 +82,8 @@ one-dimensional ndarray with axis labels.</p>
 <div class="section" id="constructor">
 <h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl>
+<div><dl class="simple">
 <dt><a class="reference internal" href="pandas.Series.html#pandas-series"><span class="std std-ref">Series</span></a></dt><dd><p>One-dimensional ndarray with axis labels (including time series).</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 </dl>
 </div></blockquote>
@@ -148,6 +145,8 @@ one-dimensional ndarray with axis labels.</p>
 <blockquote>
 <div><p><strong>Unsupported by Intel SDC</strong>.</p>
 </div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.setitem.html#pandas-series-setitem"><span class="std std-ref">Series.setitem</span></a></dt><dd><p>Set value to Series by index</p>
 </dd>
 </dl>
 </div></blockquote>
@@ -258,7 +257,7 @@ one-dimensional ndarray with axis labels.</p>
 </dl>
 </div></blockquote>
 <p>For more information on <code class="docutils literal notranslate"><span class="pre">.at</span></code>, <code class="docutils literal notranslate"><span class="pre">.iat</span></code>, <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, and
-<code class="docutils literal notranslate"><span class="pre">.iloc</span></code>,  see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing" title="(in pandas v1.0.1)"><span class="xref std std-ref">indexing documentation</span></a>.</p>
+<code class="docutils literal notranslate"><span class="pre">.iloc</span></code>,  see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing" title="(in pandas v1.0.3)"><span class="xref std std-ref">indexing documentation</span></a>.</p>
 </div>
 <div class="section" id="binary-operator-functions">
 <h2>Binary Operator Functions<a class="headerlink" href="#binary-operator-functions" title="Permalink to this headline">¶</a></h2>
@@ -865,7 +864,7 @@ one-dimensional ndarray with axis labels.</p>
 <div class="section" id="accessors">
 <h2>Accessors<a class="headerlink" href="#accessors" title="Permalink to this headline">¶</a></h2>
 <p>Pandas provides dtype-specific methods under various accessors.
-These are separate namespaces within <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> that only apply
+These are separate namespaces within <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a> that only apply
 to specific data types.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1248,9 +1247,6 @@ strings and apply several methods to it. These can be accessed like
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.lstrip.html#pandas-series-str-lstrip"><span class="std std-ref">Series.str.lstrip</span></a></dt><dd><p>Remove leading and trailing characters.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.match.html#pandas-series-str-match"><span class="std std-ref">Series.str.match</span></a></dt><dd><p>Determine if each string matches a regular expression.</p>
 <blockquote>
@@ -1300,9 +1296,6 @@ strings and apply several methods to it. These can be accessed like
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.rstrip.html#pandas-series-str-rstrip"><span class="std std-ref">Series.str.rstrip</span></a></dt><dd><p>Remove leading and trailing characters.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.slice.html#pandas-series-str-slice"><span class="std std-ref">Series.str.slice</span></a></dt><dd><p>Slice substrings from each element in the Series or Index.</p>
 <blockquote>
@@ -1327,9 +1320,6 @@ strings and apply several methods to it. These can be accessed like
 <dt><a class="reference internal" href="pandas.Series.str.startswith.html#pandas-series-str-startswith"><span class="std std-ref">Series.str.startswith</span></a></dt><dd><p>Test if the start of each string element matches a pattern.</p>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.strip.html#pandas-series-str-strip"><span class="std std-ref">Series.str.strip</span></a></dt><dd><p>Remove leading and trailing characters.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.swapcase.html#pandas-series-str-swapcase"><span class="std std-ref">Series.str.swapcase</span></a></dt><dd><p>Convert strings in the Series/Index to be swapcased.</p>
 </dd>
@@ -1341,9 +1331,6 @@ strings and apply several methods to it. These can be accessed like
 </div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.upper.html#pandas-series-str-upper"><span class="std std-ref">Series.str.upper</span></a></dt><dd><p>Convert strings in the Series/Index to uppercase.</p>
-<blockquote>
-<div><p><strong>Unsupported by Intel SDC</strong>.</p>
-</div></blockquote>
 </dd>
 <dt><a class="reference internal" href="pandas.Series.str.wrap.html#pandas-series-str-wrap"><span class="std std-ref">Series.str.wrap</span></a></dt><dd><p>Wrap long strings in the Series/Index to be formatted in paragraphs with length less than a given width.</p>
 <blockquote>
@@ -1635,6 +1622,7 @@ specific plotting methods of the form <code class="docutils literal notranslate"
 <li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../apireference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.io.html">Input/output</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Series: Columnar Data Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.dataframe.html">Dataframe: Tabular Data Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.window.html">Window</a></li>
@@ -1652,8 +1640,8 @@ specific plotting methods of the form <code class="docutils literal notranslate"
   <input type="hidden" name="area" value="default" />
 </form>
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../apireference.html"
-                        title="previous chapter">API Reference</a></p>
+  <p class="topless"><a href="api_ref.pandas.io.html"
+                        title="previous chapter">Pandas Input/output</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="api_ref.pandas.dataframe.html"
                         title="next chapter">DataFrame</a></p>

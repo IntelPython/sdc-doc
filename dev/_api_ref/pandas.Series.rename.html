@@ -68,7 +68,7 @@
 a dict / Series will be left as-is. Extra labels listed don’t throw an
 error.</p>
 <p>Alternatively, change <code class="docutils literal notranslate"><span class="pre">Series.name</span></code> with a scalar value.</p>
-<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-rename" title="(in pandas v1.0.1)"><span class="xref std std-ref">user guide</span></a> for more.</p>
+<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-rename" title="(in pandas v1.0.3)"><span class="xref std std-ref">user guide</span></a> for more.</p>
 <dl class="field-list simple">
 <dt class="field-odd">param index</dt>
 <dd class="field-odd"><dl class="simple">
@@ -132,12 +132,40 @@ Series with index labels or name altered.</p>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_rename.py
-0    0
-1    1
-2    2
-3    3
-4    4
-dtype: int64
+Traceback (most recent call last):
+  File &quot;./series/series_rename.py&quot;, line 49, in &lt;module&gt;
+    print(series_rename())
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+    raise e
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+    return self.compile(tuple(argtypes))
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+    cres = self._compiler.compile(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+    status, retval = self._compile_cached(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+    retval = self._compile_core(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+    pipeline_class=self.pipeline_class)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+    args, return_type, flags, locals)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+    targetctx.refresh()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+    self.load_additional_registries()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+    numba.entrypoints.init_all()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+    func = entry_point.load()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+    self.require(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
 </div>
 </div>

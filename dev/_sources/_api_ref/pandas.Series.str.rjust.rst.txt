@@ -19,10 +19,6 @@ additional character. Equivalent to :meth:`str.rjust`.
 
 :return: filled : Series/Index of objects
 
-Limitations
------------
-Series elements are expected to be Unicode strings. Elements cannot be NaN.
-
 Examples
 --------
 .. literalinclude:: ../../../examples/series/str/series_str_rjust.py
@@ -33,6 +29,12 @@ Examples
 
 .. command-output:: python ./series/str/series_str_rjust.py
    :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.str.ljust <pandas.Series.str.ljust>`
+        Fills the right side of strings with an arbitrary character.
+    :ref:`Series.str.center <pandas.Series.str.center>`
+        Fills boths sides of strings with an arbitrary character.
 
 .. todo:: Add support of 32-bit Unicode for `str.rjust()`
 

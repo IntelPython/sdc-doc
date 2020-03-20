@@ -27,7 +27,8 @@ will be reflected in the shallow copy (and vice versa).
 
 Limitations
 -----------
-- Parameter deep except 'True' is currently unsupported by Intel Scalable Dataframe Compiler
+- When ``deep=False``, a new object will be created without copying the calling object’s data
+    and with a copy of the calling object’s indices.
 
 Examples
 --------

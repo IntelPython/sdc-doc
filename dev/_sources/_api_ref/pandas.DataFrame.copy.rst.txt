@@ -25,8 +25,18 @@ will be reflected in the shallow copy (and vice versa).
 :return: copy : Series or DataFrame
     Object type matches caller.
 
+Limitations
+-----------
+- Parameter deep=False is currently unsupported for indexes by Intel Scalable Dataframe Compiler
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_copy.py
+   :language: python
+   :lines: 36-
+   :caption: Make a copy of this object’s indices and data.
+   :name: ex_dataframe_copy
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/dataframe_copy.py
+   :cwd: ../../../examples
 

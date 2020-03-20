@@ -40,8 +40,7 @@ container for Series objects. The primary pandas data structure.
     boolean, default False
         Copy data from inputs. Only affects DataFrame / 2d ndarray input
 
-
-
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+Limitations
+-----------
+- Parameters `dtype` and `copy` are currently unsupported by Intel Scalable Dataframe Compiler.
 

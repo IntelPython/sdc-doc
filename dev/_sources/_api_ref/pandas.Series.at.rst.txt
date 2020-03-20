@@ -17,22 +17,22 @@ or Series.
 
 Examples
 --------
-.. literalinclude:: ../../../examples/series_at/series_at_single_result.py
+.. literalinclude:: ../../../examples/series/series_at/series_at_single_result.py
    :language: python
    :lines: 27-
    :caption: With a scalar integer. Returns single value.
    :name: ex_series_at
 
-.. command-output:: python ./series_at/series_at_single_result.py
+.. command-output:: python ./series/series_at/series_at_single_result.py
    :cwd: ../../../examples
 
-.. literalinclude:: ../../../examples/series_at/series_at_multiple_result.py
+.. literalinclude:: ../../../examples/series/series_at/series_at_multiple_result.py
    :language: python
    :lines: 27-
    :caption: With a scalar integer. Returns multiple value.
    :name: ex_series_at
 
-.. command-output:: python ./series_at/series_at_multiple_result.py
+.. command-output:: python ./series/series_at/series_at_multiple_result.py
    :cwd: ../../../examples
 
 .. seealso::

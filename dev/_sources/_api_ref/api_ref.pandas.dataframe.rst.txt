@@ -16,8 +16,6 @@ Constructor
    :ref:`DataFrame <pandas.DataFrame>`
        Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). Arithmetic operations align on both row and column labels. Can be thought of as a dict-like container for Series objects. The primary pandas data structure.
 
-        **Unsupported by Intel SDC**.
-
 Attributes/Operators
 --------------------
 
@@ -61,6 +59,8 @@ Attributes/Operators
        Indicator whether DataFrame is empty.
 
         **Unsupported by Intel SDC**.
+   :ref:`DataFrame.getitem <pandas.DataFrame.getitem>`
+       Get data from a DataFrame by indexer.
 
 Type Conversions
 ----------------
@@ -75,12 +75,8 @@ Type Conversions
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.copy <pandas.DataFrame.copy>`
        Make a copy of this object's indices and data.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.isna <pandas.DataFrame.isna>`
        Detect missing values.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.notna <pandas.DataFrame.notna>`
        Detect existing (non-missing) values.
 
@@ -95,16 +91,12 @@ Indexing and Iteration
 
    :ref:`DataFrame.head <pandas.DataFrame.head>`
        Return the first `n` rows.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.at <pandas.DataFrame.at>`
        Access a single value for a row/column label pair.
 
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.iat <pandas.DataFrame.iat>`
        Access a single value for a row/column pair by integer position.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.loc <pandas.DataFrame.loc>`
        Access a group of rows and columns by label(s) or a boolean array.
 
@@ -426,8 +418,6 @@ Computations, Descriptive Statistics
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.pct_change <pandas.DataFrame.pct_change>`
        Percentage change between the current and a prior element.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.prod <pandas.DataFrame.prod>`
        Return the product of the values for the requested axis.
 
@@ -520,8 +510,6 @@ Re-Indexing, Selection, Label Manipulation
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.head <pandas.DataFrame.head>`
        Return the first `n` rows.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.idxmax <pandas.DataFrame.idxmax>`
        Return index of first occurrence of maximum over requested axis. NA/null values are excluded.
 

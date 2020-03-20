@@ -76,7 +76,7 @@ Series/Index.</p>
 </dl>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<p>Series elements are expected to be Unicode strings. Elements cannot be NaN.</p>
+<p>Series elements are expected to be Unicode strings. Elements cannot be <cite>NaNs</cite>.</p>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -99,33 +99,62 @@ Series/Index.</p>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/str/series_str_isnumeric.py
-0    False
-1    False
-2     True
-3    False
-dtype: bool
+Traceback (most recent call last):
+  File &quot;./series/str/series_str_isnumeric.py&quot;, line 39, in &lt;module&gt;
+    print(series_str_isnumeric())
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+    raise e
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+    return self.compile(tuple(argtypes))
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+    return func(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+    cres = self._compiler.compile(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+    status, retval = self._compile_cached(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+    retval = self._compile_core(args, return_type)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+    pipeline_class=self.pipeline_class)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+    args, return_type, flags, locals)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+    targetctx.refresh()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+    self.load_additional_registries()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+    numba.entrypoints.init_all()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+    func = entry_point.load()
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+    self.require(*args, **kwargs)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+    items = working_set.resolve(reqs, env, installer, extras=self.extras)
+  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="pandas.Series.str.isalpha.html#pandas-series-str-isalpha"><span class="std std-ref">Series.str.isalpha</span></a></dt><dd><p>Check whether all characters are alphabetic.</p>
+<dt><a class="reference internal" href="pandas.Series.str.isalpha.html#pandas-series-str-isalpha"><span class="std std-ref">Series.str.isalpha</span></a></dt><dd><p>Checks whether all characters are alphabetic.</p>
 </dd>
-<dt><a class="reference internal" href="#pandas-series-str-isnumeric"><span class="std std-ref">Series.str.isnumeric</span></a></dt><dd><p>Check whether all characters are numeric.</p>
+<dt><a class="reference internal" href="#pandas-series-str-isnumeric"><span class="std std-ref">Series.str.isnumeric</span></a></dt><dd><p>Checks whether all characters are numeric.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.isalnum.html#pandas-series-str-isalnum"><span class="std std-ref">Series.str.isalnum</span></a></dt><dd><p>Check whether all characters are alphanumeric.</p>
+<dt><a class="reference internal" href="pandas.Series.str.isalnum.html#pandas-series-str-isalnum"><span class="std std-ref">Series.str.isalnum</span></a></dt><dd><p>Checks whether all characters are alphanumeric.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.isdigit.html#pandas-series-str-isdigit"><span class="std std-ref">Series.str.isdigit</span></a></dt><dd><p>Check whether all characters are digits.</p>
+<dt><a class="reference internal" href="pandas.Series.str.isdigit.html#pandas-series-str-isdigit"><span class="std std-ref">Series.str.isdigit</span></a></dt><dd><p>Checks whether all characters are digits.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.isdecimal.html#pandas-series-str-isdecimal"><span class="std std-ref">Series.str.isdecimal</span></a></dt><dd><p>Check whether all characters are decimal.</p>
+<dt><a class="reference internal" href="pandas.Series.str.isdecimal.html#pandas-series-str-isdecimal"><span class="std std-ref">Series.str.isdecimal</span></a></dt><dd><p>Checks whether all characters are decimal.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.isspace.html#pandas-series-str-isspace"><span class="std std-ref">Series.str.isspace</span></a></dt><dd><p>Check whether all characters are whitespace.</p>
+<dt><a class="reference internal" href="pandas.Series.str.isspace.html#pandas-series-str-isspace"><span class="std std-ref">Series.str.isspace</span></a></dt><dd><p>Checks whether all characters are whitespace.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.islower.html#pandas-series-str-islower"><span class="std std-ref">Series.str.islower</span></a></dt><dd><p>Check whether all characters are lowercase.</p>
+<dt><a class="reference internal" href="pandas.Series.str.islower.html#pandas-series-str-islower"><span class="std std-ref">Series.str.islower</span></a></dt><dd><p>Checks whether all characters are lowercase.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.isupper.html#pandas-series-str-isupper"><span class="std std-ref">Series.str.isupper</span></a></dt><dd><p>Check whether all characters are uppercase.</p>
+<dt><a class="reference internal" href="pandas.Series.str.isupper.html#pandas-series-str-isupper"><span class="std std-ref">Series.str.isupper</span></a></dt><dd><p>Checks whether all characters are uppercase.</p>
 </dd>
-<dt><a class="reference internal" href="pandas.Series.str.istitle.html#pandas-series-str-istitle"><span class="std std-ref">Series.str.istitle</span></a></dt><dd><p>Check whether all characters are titlecase.</p>
+<dt><a class="reference internal" href="pandas.Series.str.istitle.html#pandas-series-str-istitle"><span class="std std-ref">Series.str.istitle</span></a></dt><dd><p>Checks whether all characters are titlecase.</p>
 </dd>
 </dl>
 </div>

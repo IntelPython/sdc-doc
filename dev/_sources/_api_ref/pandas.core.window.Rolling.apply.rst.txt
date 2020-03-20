@@ -38,7 +38,7 @@ The rolling function's apply function.
 Limitations
 -----------
 Supported ``raw`` only can be `None` or `True`. Parameters ``args``, ``kwargs`` unsupported.
-Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
+DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
 
 Examples
 --------
@@ -49,6 +49,15 @@ Examples
    :name: ex_series_rolling_apply
 
 .. command-output:: python ./series/rolling/series_rolling_apply.py
+   :cwd: ../../../examples
+
+.. literalinclude:: ../../../examples/dataframe/rolling/dataframe_rolling_apply.py
+   :language: python
+   :lines: 27-
+   :caption: Calculate the rolling apply.
+   :name: ex_dataframe_rolling_apply
+
+.. command-output:: python ./dataframe/rolling/dataframe_rolling_apply.py
    :cwd: ../../../examples
 
 .. seealso::

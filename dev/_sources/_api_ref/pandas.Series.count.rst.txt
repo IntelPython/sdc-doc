@@ -17,7 +17,7 @@ Return number of non-NA/null observations in the Series.
 
 Limitations
 -----------
-- Parameter level is currently unsupported by Intel Scalable Dataframe Compiler
+Parameter ``level`` is currently unsupported.
 
 Examples
 --------
@@ -33,6 +33,8 @@ Examples
 .. seealso::
 
     :ref:`Series.value_counts <pandas.Series.value_counts>`
-    :ref:`Series.value_counts <pandas.Series.value_counts>`
+        Return a Series containing counts of unique values.
+
     :ref:`Series.str.len <pandas.Series.str.len>`
+        Count the length of each element in the Series.
 

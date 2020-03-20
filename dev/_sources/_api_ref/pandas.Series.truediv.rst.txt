@@ -30,7 +30,7 @@ missing data in one of the inputs.
 
 Limitations
 -----------
-- Parameters level, fill_value are currently unsupported by Intel Scalable Dataframe Compiler
+Parameters ``level``, ``fill_value`` and ``axis`` are currently unsupported.
 
 Examples
 --------
@@ -42,9 +42,6 @@ Examples
 
 .. command-output:: python ./series/series_truediv.py
    :cwd: ../../../examples
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
 
 .. seealso::
 
