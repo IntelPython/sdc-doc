@@ -129,14 +129,10 @@ the sqlite3 legacy mode.</p>
 </dl>
 </dd>
 <dt class="field-odd">param method</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt>{None, ‘multi’, callable}, default None</dt><dd><p>Controls the SQL insertion clause used:</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">param * None</dt>
-<dd class="field-even"><dl>
-<dt>Uses standard SQL <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> clause (one per row).</dt><dd><ul class="simple">
+<ul class="simple">
+<li><p>None : Uses standard SQL <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> clause (one per row).</p></li>
 <li><p>‘multi’: Pass multiple values in a single <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> clause.</p></li>
 <li><p>callable with signature <code class="docutils literal notranslate"><span class="pre">(pd_table,</span> <span class="pre">conn,</span> <span class="pre">keys,</span> <span class="pre">data_iter)</span></code>.</p></li>
 </ul>
@@ -148,8 +144,8 @@ section <a class="reference external" href="https://pandas.pydata.org/pandas-doc
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">raises</dt>
-<dd class="field-odd"><dl class="simple">
+<dt class="field-even">raises</dt>
+<dd class="field-even"><dl class="simple">
 <dt>ValueError</dt><dd><p>When the table already exists and <cite>if_exists</cite> is ‘fail’ (the
 default).</p>
 </dd>
@@ -173,8 +169,6 @@ default).</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

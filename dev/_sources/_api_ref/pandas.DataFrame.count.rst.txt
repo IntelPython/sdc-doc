@@ -29,8 +29,26 @@ on `pandas.options.mode.use_inf_as_na`) are considered NA.
     For each column/row the number of non-NA/null entries.
     If `level` is specified returns a `DataFrame`.
 
+Limitations
+-----------
+Parameters ``axis``, ``level`` and ``numeric_only`` are unsupported.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_count.py
+   :language: python
+   :lines: 33-
+   :caption: Count non-NA cells for each column or row.
+   :name: ex_dataframe_count
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/dataframe_count.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.count <pandas.Series.count>`
+        Number of non-NA elements in a Series.
+    :ref:`DataFrame.shape <pandas.DataFrame.shape>`
+        Number of DataFrame rows and columns (including NA elements).
+    :ref:`DataFrame.isna <pandas.DataFrame.isna>`
+        Boolean same-sized DataFrame showing places of NA elements.
 

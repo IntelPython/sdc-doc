@@ -14,16 +14,12 @@ The expanding function's apply function.
 
 :param raw:
     bool, default None
-
-:param \* ``False``:
-    passes each row or column as a Series to the
-        function.
-
-:param \* ``True`` or ``None``:
-    the passed function will receive ndarray
-        objects instead.
-        If you are just applying a NumPy reduction function this will
-        achieve much better performance.
+        - ``False`` : passes each row or column as a Series to the
+            function.
+        - ``True`` or ``None`` : the passed function will receive ndarray
+            objects instead.
+            If you are just applying a NumPy reduction function this will
+            achieve much better performance.
 
         The `raw` parameter is required and will show a FutureWarning if
         not passed. In the future `raw` will default to False.

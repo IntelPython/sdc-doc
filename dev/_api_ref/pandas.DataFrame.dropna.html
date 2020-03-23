@@ -68,37 +68,31 @@
 considered missing, and how to work with missing data.</p>
 <dl class="field-list">
 <dt class="field-odd">param axis</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt>{0 or ‘index’, 1 or ‘columns’}, default 0</dt><dd><p>Determine if rows or columns which contain missing values are
 removed.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">param * 0, or ‘index’</dt>
-<dd class="field-even"><p>Drop rows which contain missing values.</p>
-</dd>
-<dt class="field-odd">param * 1, or ‘columns’</dt>
-<dd class="field-odd"><p>Drop columns which contain missing value.</p>
-<blockquote>
-<div><div class="deprecated">
+<ul class="simple">
+<li><p>0, or ‘index’ : Drop rows which contain missing values.</p></li>
+<li><p>1, or ‘columns’ : Drop columns which contain missing value.</p></li>
+</ul>
+<div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.23.0.</span></p>
 </div>
 <p>Pass tuple or list to drop on multiple axes.
 Only a single axis is allowed.</p>
-</div></blockquote>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">param how</dt>
 <dd class="field-even"><dl class="simple">
 <dt>{‘any’, ‘all’}, default ‘any’</dt><dd><p>Determine if row or column is removed from DataFrame, when we have
 at least one NA or all NA.</p>
+<ul class="simple">
+<li><p>‘any’ : If any NA values are present, drop that row or column.</p></li>
+<li><p>‘all’ : If all values are NA, drop that row or column.</p></li>
+</ul>
 </dd>
 </dl>
-</dd>
-<dt class="field-odd">param * ‘any’</dt>
-<dd class="field-odd"><p>If any NA values are present, drop that row or column.</p>
-</dd>
-<dt class="field-even">param * ‘all’</dt>
-<dd class="field-even"><p>If all values are NA, drop that row or column.</p>
 </dd>
 <dt class="field-odd">param thresh</dt>
 <dd class="field-odd"><dl class="simple">
@@ -141,8 +135,6 @@ DataFrame with NA entries dropped from it.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

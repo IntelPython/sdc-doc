@@ -83,21 +83,17 @@ pandas objects).</p>
 </dl>
 </dd>
 <dt class="field-odd">param errors</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt>{‘raise’, ‘ignore’}, default ‘raise’</dt><dd><p>Control raising of exceptions on invalid data for provided dtype.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">param - <code class="docutils literal notranslate"><span class="pre">raise</span></code></dt>
-<dd class="field-even"><p>allow exceptions to be raised</p>
-</dd>
-<dt class="field-odd">param - <code class="docutils literal notranslate"><span class="pre">ignore</span></code></dt>
-<dd class="field-odd"><p>suppress exceptions. On error return original object</p>
-<blockquote>
-<div><div class="versionadded">
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">raise</span></code> : allow exceptions to be raised</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ignore</span></code> : suppress exceptions. On error return original object</p></li>
+</ul>
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20.0.</span></p>
 </div>
-</div></blockquote>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">param kwargs</dt>
 <dd class="field-even"><p>keyword arguments to pass on to the constructor</p>
@@ -136,35 +132,35 @@ pandas objects).</p>
 Traceback (most recent call last):
   File &quot;./series/series_astype.py&quot;, line 48, in &lt;module&gt;
     print(series_astype())
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
     raise e
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
     return self.compile(tuple(argtypes))
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
     return func(*args, **kwargs)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
     cres = self._compiler.compile(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
     status, retval = self._compile_cached(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
     retval = self._compile_core(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
     pipeline_class=self.pipeline_class)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
     args, return_type, flags, locals)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
     targetctx.refresh()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
     self.load_additional_registries()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
     numba.entrypoints.init_all()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
     func = entry_point.load()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
     self.require(*args, **kwargs)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
     items = working_set.resolve(reqs, env, installer, extras=self.extras)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
     raise DistributionNotFound(req, requirers)
 pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
@@ -202,8 +198,6 @@ pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not fou
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

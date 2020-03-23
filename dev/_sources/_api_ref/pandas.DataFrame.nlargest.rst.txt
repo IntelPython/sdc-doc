@@ -27,15 +27,10 @@ performant.
     {'first', 'last', 'all'}, default 'first'
         Where there are duplicate values:
 
-:param - `first`:
-    prioritize the first occurrence(s)
-
-:param - `last`:
-    prioritize the last occurrence(s)
-
-:param - ``all``:
-    do not drop any duplicates, even it means
-        selecting more than `n` items.
+        - `first` : prioritize the first occurrence(s)
+        - `last` : prioritize the last occurrence(s)
+        - ``all`` : do not drop any duplicates, even it means
+            selecting more than `n` items.
 
         .. versionadded:: 0.24.0
 

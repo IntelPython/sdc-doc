@@ -13,17 +13,11 @@ last occurrence of duplicates can be indicated.
 
 :param keep:
     {'first', 'last', False}, default 'first'
-
-:param - 'first':
-    Mark duplicates as ``True`` except for the first
-        occurrence.
-
-:param - 'last':
-    Mark duplicates as ``True`` except for the last
-        occurrence.
-
-:param - ``False``:
-    Mark all duplicates as ``True``.
+        - 'first' : Mark duplicates as ``True`` except for the first
+            occurrence.
+        - 'last' : Mark duplicates as ``True`` except for the last
+            occurrence.
+        - ``False`` : Mark all duplicates as ``True``.
 
 :return: Series
     Series indicating whether each value has occurred in the

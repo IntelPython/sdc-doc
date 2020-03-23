@@ -20,9 +20,8 @@ Rename categories.
 
         .. versionadded:: 0.21.0
 
-:param \* callable:
-    a callable that is called on all items in the old
-        categories and whose return values comprise the new categories.
+        - callable : a callable that is called on all items in the old
+            categories and whose return values comprise the new categories.
 
         .. versionadded:: 0.23.0
 

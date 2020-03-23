@@ -60,7 +60,9 @@ Attributes/Operators
 
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.getitem <pandas.DataFrame.getitem>`
-       Get data from a DataFrame by indexer.
+       
+   :ref:`DataFrame.setitem <pandas.DataFrame.setitem>`
+       Set data to a DataFrame by indexer.
 
 Type Conversions
 ----------------
@@ -350,8 +352,6 @@ Computations, Descriptive Statistics
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.count <pandas.DataFrame.count>`
        Count non-NA cells for each column or row.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.cov <pandas.DataFrame.cov>`
        Compute pairwise covariance of columns, excluding NA/null values.
 
@@ -398,8 +398,6 @@ Computations, Descriptive Statistics
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.max <pandas.DataFrame.max>`
        Return the maximum of the values for the requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.mean <pandas.DataFrame.mean>`
        Return the mean of the values for the requested axis.
 
@@ -410,8 +408,6 @@ Computations, Descriptive Statistics
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.min <pandas.DataFrame.min>`
        Return the minimum of the values for the requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.mode <pandas.DataFrame.mode>`
        Get the mode(s) of each element along the selected axis.
 
@@ -448,16 +444,12 @@ Computations, Descriptive Statistics
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.sum <pandas.DataFrame.sum>`
        Return the sum of the values for the requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.std <pandas.DataFrame.std>`
        Return sample standard deviation over requested axis.
 
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.var <pandas.DataFrame.var>`
        Return unbiased variance over requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.nunique <pandas.DataFrame.nunique>`
        Count distinct observations over requested axis.
 

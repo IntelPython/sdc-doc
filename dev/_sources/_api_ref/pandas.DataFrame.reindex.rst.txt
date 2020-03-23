@@ -13,9 +13,7 @@ is produced unless the new index is equivalent to the current one and
 :param labels:
     array-like, optional
         New labels / index to conform the axis specified by 'axis' to.
-
-:param index, columns:
-    array-like, optional
+        index, columns : array-like, optional
         New labels / index to conform to, should be specified using
         keywords. Preferably an Index object to avoid duplicating data
 

@@ -14,11 +14,8 @@ It can be multiple values.
     {0 or 'index', 1 or 'columns'}, default 0
         The axis to iterate over while searching for the mode:
 
-:param \* 0 or 'index':
-    get mode of each column
-
-:param \* 1 or 'columns':
-    get mode of each row
+        - 0 or 'index' : get mode of each column
+        - 1 or 'columns' : get mode of each row
 
 :param numeric_only:
     bool, default False

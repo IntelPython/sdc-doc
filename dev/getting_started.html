@@ -81,25 +81,54 @@ of <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> i
 with <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> operations.</p>
 <p>Like in <a class="reference external" href="https://numba.pydata.org/">Numba*</a> the compilation is controlled by a regular <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator and respective compilation
 directives which control its behavior.</p>
-<p>The code below illustrates a typical workflow that Intel® SDC is intended to compile</p>
-<div class="admonition-todo admonition" id="id2">
-<p class="admonition-title">Todo</p>
-<p>Short code illustrating how Intel SDC can compile read_csv and compute aggregators over columns</p>
+<p>The code below illustrates a typical workflow that Intel® SDC is intended to compile:</p>
+<div class="literal-block-wrapper docutils container" id="ex-getting-started-basic-workflow">
+<div class="code-block-caption"><span class="caption-text">Example 1: Compiling Basic Pandas* Workflow</span><a class="headerlink" href="#ex-getting-started-basic-workflow" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+<span class="c1"># Dataset for analysis</span>
+<span class="n">FNAME</span> <span class="o">=</span> <span class="s2">&quot;employees.csv&quot;</span>
+
+
+<span class="c1"># This function gets compiled by Numba*</span>
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">get_analyzed_data</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FNAME</span><span class="p">)</span>
+    <span class="n">s_bonus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Bonus %&#39;</span><span class="p">])</span>
+    <span class="n">s_first_name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;First Name&#39;</span><span class="p">])</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">s_bonus</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">s_first_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">,</span> <span class="n">names</span>
+
+
+<span class="c1"># Printing names and their average bonus percent</span>
+<span class="n">mean_bonus</span><span class="p">,</span> <span class="n">sorted_first_names</span> <span class="o">=</span> <span class="n">get_analyzed_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_first_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average Bonus %:&#39;</span><span class="p">,</span> <span class="n">mean_bonus</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+<p>The workflow typically starts with reading data from a file (or multiple files) into a dataframe (or multiple
+dataframes) followed by data transformations of dataframes and/or individual columns, cleaning the data, grouping and
+binning, and finally by feeding the cleaned data into machine learning algorithm for training or inference.</p>
+<a class="reference internal image-reference" href="_images/workflow.png"><img alt="Data analytics workflows" class="align-center" src="_images/workflow.png" style="width: 526px;" /></a>
 <p>We also recommend to read <a class="reference external" href="https://numba.pydata.org/numba-doc/dev/user/5minguide.html">A ~5 minute guide to Numba</a>
 for getting started with <a class="reference external" href="https://numba.pydata.org/">Numba*</a>.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>Intel</p>
-<div class="admonition-todo admonition" id="id3">
+<p>You can use conda and pip package managers to install Intel® SDC into your Python* environment.</p>
+<div class="admonition-todo admonition" id="id2">
 <p class="admonition-title">Todo</p>
-<p>instructions how to install hpat using 1) conda, 2) pip</p>
+<p>Provide installation instructions for public packages on Anaconda.org and PyPI</p>
 </div>
-<p>Experienced users can also compile Intel® SDC  from sources&lt;link to github build instructions for hpat&gt;</p>
+<p>Experienced users can also buildIntel SDC from sources
+<a href="#id8"><span class="problematic" id="id9">`for Linux*&lt;https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-linux&gt;`_</span></a> and
+<a href="#id10"><span class="problematic" id="id11">`for Windows*&lt;https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-windows&gt;`_</span></a>.</p>
 </div>
 <div class="section" id="basic-usage">
 <h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id4">
+<div class="admonition-todo admonition" id="id3">
 <p class="admonition-title">Todo</p>
 <dl>
 <dt>Provide a few code snapshots illustrating typical usages of Intel® SDC:</dt><dd><ul class="simple">
@@ -108,15 +137,17 @@ for getting started with <a class="reference external" href="https://numba.pydat
 <li><p>Working with a dataframe</p></li>
 <li><p>Working with a machine learning library, e.g. scikit-learn, xgboost, daal</p></li>
 </ul>
-<p>Each snapshot can have two flavors - serial and parallel to illustrate easiness of getting parallel performance. Each code snapshot provides the link to full examples located at GitHub repo&gt;</p>
+<p>Each snapshot can have two flavors - serial and parallel to illustrate easiness of getting parallel performance.</p>
 </dd>
 </dl>
 </div>
-<p>Here’s an example which describes reading data from a csv file and performing basic operation like finding mean and sorting values of a specific column:</p>
+<p>Each code snapshot provides the link to full examples located at GitHub repo&gt;</p>
+<p>Here’s an example which describes reading data from a csv file and performing basic operation like finding mean and
+sorting values of a specific column:</p>
 </div>
 <div class="section" id="what-if-i-get-a-compilation-error">
 <h2>What If I Get A Compilation Error<a class="headerlink" href="#what-if-i-get-a-compilation-error" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id5">
+<div class="admonition-todo admonition" id="id4">
 <p class="admonition-title">Todo</p>
 <p>Need to give basic information that hpat and numba do not support full set of Pandas and Numpy APIs, provide the link to the API Reference section for Intel® SDC, relevant reference to Numba documentation.</p>
 </div>
@@ -124,14 +155,14 @@ for getting started with <a class="reference external" href="https://numba.pydat
 </div>
 <div class="section" id="measuring-performance">
 <h2>Measuring Performance<a class="headerlink" href="#measuring-performance" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id6">
+<div class="admonition-todo admonition" id="id5">
 <p class="admonition-title">Todo</p>
 <p>Short intro how to measure performance. Compilation time and run time. Illustrate by example. Reference to relevant discussion in Numba documentation</p>
 </div>
 </div>
 <div class="section" id="what-if-i-get-poor-performance">
 <h2>What If I Get Poor Performance?<a class="headerlink" href="#what-if-i-get-poor-performance" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id7">
+<div class="admonition-todo admonition" id="id6">
 <p class="admonition-title">Todo</p>
 <p>Short introduction why performance may be slower than expected. GIL, Object mode and nopython mode. Overheads related to boxing and unboxing Python objects.
 Reference to relevant sections of Intel® SDC and Numba documentation for detailed discussion</p>
@@ -139,7 +170,7 @@ Reference to relevant sections of Intel® SDC and Numba documentation for detail
 </div>
 <div class="section" id="build-instructions">
 <h2>Build Instructions<a class="headerlink" href="#build-instructions" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="id8">
+<div class="admonition-todo admonition" id="id7">
 <p class="admonition-title">Todo</p>
 <p>Provide step-by-step build instructions for Linux*, Windows*, and Mac*.</p>
 </div>
@@ -157,8 +188,6 @@ Reference to relevant sections of Intel® SDC and Numba documentation for detail
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">List of examples</a></li>

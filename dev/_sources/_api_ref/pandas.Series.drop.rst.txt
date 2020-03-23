@@ -18,9 +18,7 @@ by specifying the level.
 :param axis:
     0, default 0
         Redundant for application on Series.
-
-:param index, columns:
-    None
+        index, columns : None
         Redundant for application on Series, but index can be used instead
         of labels.
 

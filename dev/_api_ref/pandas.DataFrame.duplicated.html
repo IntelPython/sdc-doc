@@ -65,7 +65,7 @@
 <h1>pandas.DataFrame.duplicated<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Return boolean Series denoting duplicate rows, optionally only
 considering certain columns.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">param subset</dt>
 <dd class="field-odd"><dl class="simple">
 <dt>column label or sequence of labels, optional</dt><dd><p>Only consider certain columns for identifying duplicates, by
@@ -74,25 +74,25 @@ default use all of the columns</p>
 </dl>
 </dd>
 <dt class="field-even">param keep</dt>
-<dd class="field-even"><p>{‘first’, ‘last’, False}, default ‘first’</p>
+<dd class="field-even"><dl>
+<dt>{‘first’, ‘last’, False}, default ‘first’</dt><dd><ul>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">first</span></code><span class="classifier">Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the</span></dt><dd><p>first occurrence.</p>
 </dd>
-<dt class="field-odd">param - <code class="docutils literal notranslate"><span class="pre">first</span></code></dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the</dt><dd><p>first occurrence.</p>
+</dl>
+</li>
+<li><dl>
+<dt><code class="docutils literal notranslate"><span class="pre">last</span></code><span class="classifier">Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the</span></dt><dd><p>last occurrence.</p>
+</dd>
+</dl>
+</li>
+<li><p>False : Mark all duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">param - <code class="docutils literal notranslate"><span class="pre">last</span></code></dt>
-<dd class="field-even"><dl class="simple">
-<dt>Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the</dt><dd><p>last occurrence.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">param - False</dt>
-<dd class="field-odd"><p>Mark all duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-</dd>
-<dt class="field-even">return</dt>
-<dd class="field-even"><p>Series</p>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Series</p>
 </dd>
 </dl>
 <div class="admonition warning">
@@ -112,8 +112,6 @@ default use all of the columns</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

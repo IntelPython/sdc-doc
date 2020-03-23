@@ -26,37 +26,29 @@ below for more detail.
         A white list of data types to include in the result. Ignored
         for ``Series``. Here are the options:
 
-:param - 'all':
-    All columns of the input will be included in the output.
-
-:param - A list-like of dtypes:
-    Limits the results to the
-        provided data types.
-        To limit the result to numeric types submit
-        ``numpy.number``. To limit it instead to object columns submit
-        the ``numpy.object`` data type. Strings
-        can also be used in the style of
-        ``select_dtypes`` (e.g. ``df.describe(include=['O'])``). To
-        select pandas categorical columns, use ``'category'``
-
-:param - None (default):
-    The result will include all numeric columns.
+        - 'all' : All columns of the input will be included in the output.
+        - A list-like of dtypes : Limits the results to the
+            provided data types.
+            To limit the result to numeric types submit
+            ``numpy.number``. To limit it instead to object columns submit
+            the ``numpy.object`` data type. Strings
+            can also be used in the style of
+            ``select_dtypes`` (e.g. ``df.describe(include=['O'])``). To
+            select pandas categorical columns, use ``'category'``
+        - None (default) : The result will include all numeric columns.
 
 :param exclude:
     list-like of dtypes or None (default), optional,
         A black list of data types to omit from the result. Ignored
         for ``Series``. Here are the options:
 
-:param - A list-like of dtypes:
-    Excludes the provided data types
-        from the result. To exclude numeric types submit
-        ``numpy.number``. To exclude object columns submit the data
-        type ``numpy.object``. Strings can also be used in the style of
-        ``select_dtypes`` (e.g. ``df.describe(include=['O'])``). To
-        exclude pandas categorical columns, use ``'category'``
-
-:param - None (default):
-    The result will exclude nothing.
+        - A list-like of dtypes : Excludes the provided data types
+            from the result. To exclude numeric types submit
+            ``numpy.number``. To exclude object columns submit the data
+            type ``numpy.object``. Strings can also be used in the style of
+            ``select_dtypes`` (e.g. ``df.describe(include=['O'])``). To
+            exclude pandas categorical columns, use ``'category'``
+        - None (default) : The result will exclude nothing.
 
 :return: Series or DataFrame
     Summary statistics of the Series or Dataframe provided.

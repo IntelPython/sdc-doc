@@ -27,15 +27,10 @@ performant.
     {'first', 'last', 'all'}, default 'first'
         Where there are duplicate values:
 
-:param - ``first``:
-    take the first occurrence.
-
-:param - ``last``:
-    take the last occurrence.
-
-:param - ``all``:
-    do not drop any duplicates, even it means
-        selecting more than `n` items.
+        - ``first`` : take the first occurrence.
+        - ``last`` : take the last occurrence.
+        - ``all`` : do not drop any duplicates, even it means
+            selecting more than `n` items.
 
         .. versionadded:: 0.24.0
 

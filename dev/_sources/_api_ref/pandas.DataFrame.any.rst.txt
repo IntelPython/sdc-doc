@@ -15,16 +15,11 @@ non-empty).
     {0 or 'index', 1 or 'columns', None}, default 0
         Indicate which axis or axes should be reduced.
 
-:param \* 0 / 'index':
-    reduce the index, return a Series whose index is the
-        original column labels.
-
-:param \* 1 / 'columns':
-    reduce the columns, return a Series whose index is the
-        original index.
-
-:param \* None:
-    reduce all axes, return a scalar.
+        - 0 / 'index' : reduce the index, return a Series whose index is the
+            original column labels.
+        - 1 / 'columns' : reduce the columns, return a Series whose index is the
+            original index.
+        - None : reduce all axes, return a scalar.
 
 :param bool_only:
     bool, default None
@@ -42,9 +37,7 @@ non-empty).
     int or level name, default None
         If the axis is a MultiIndex (hierarchical), count along a
         particular level, collapsing into a Series.
-
-:param \*\*kwargs:
-    any, default None
+        \*\*kwargs : any, default None
         Additional keywords have no effect but might be accepted for
         compatibility with NumPy.
 

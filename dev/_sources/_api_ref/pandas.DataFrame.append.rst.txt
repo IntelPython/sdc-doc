@@ -35,8 +35,10 @@ Columns in `other` that are not in the caller are added as new columns.
 
 Limitations
 -----------
-- Parameters ``ignore_index``, ``verify_integrity`` and ``sort`` are unsupported.
+- Parameters ``verify_integrity`` and ``sort`` are unsupported.
 - Parameter ``other`` can be only :obj:`pandas.DataFrame`.
+- Indexes of dataframes are expected to have comparable (both Numeric or String) types if parameter ignore_index
+    is set to False.
 
 Examples
 --------

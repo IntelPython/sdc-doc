@@ -58,8 +58,7 @@ newly created, appended to, or overwritten.
     {None, 'multi', callable}, default None
         Controls the SQL insertion clause used:
 
-:param \* None:
-    Uses standard SQL ``INSERT`` clause (one per row).
+        - None : Uses standard SQL ``INSERT`` clause (one per row).
         - 'multi': Pass multiple values in a single ``INSERT`` clause.
         - callable with signature ``(pd_table, conn, keys, data_iter)``.
 

@@ -84,28 +84,25 @@ performant.</p>
 </dl>
 </dd>
 <dt class="field-odd">param keep</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt>{‘first’, ‘last’, ‘all’}, default ‘first’</dt><dd><p>Where there are duplicate values:</p>
+<ul class="simple">
+<li><p><cite>first</cite> : prioritize the first occurrence(s)</p></li>
+<li><p><cite>last</cite> : prioritize the last occurrence(s)</p></li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">all</span></code><span class="classifier">do not drop any duplicates, even it means</span></dt><dd><p>selecting more than <cite>n</cite> items.</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">param - <cite>first</cite></dt>
-<dd class="field-even"><p>prioritize the first occurrence(s)</p>
-</dd>
-<dt class="field-odd">param - <cite>last</cite></dt>
-<dd class="field-odd"><p>prioritize the last occurrence(s)</p>
-</dd>
-<dt class="field-even">param - <code class="docutils literal notranslate"><span class="pre">all</span></code></dt>
-<dd class="field-even"><dl>
-<dt>do not drop any duplicates, even it means</dt><dd><p>selecting more than <cite>n</cite> items.</p>
+</li>
+</ul>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.0.</span></p>
 </div>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">return</dt>
-<dd class="field-odd"><p>DataFrame
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>DataFrame
 The first <cite>n</cite> rows ordered by the given columns in descending
 order.</p>
 </dd>
@@ -127,8 +124,6 @@ order.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

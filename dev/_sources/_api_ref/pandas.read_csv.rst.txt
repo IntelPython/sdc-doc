@@ -200,10 +200,8 @@ Additional help can be found in the online docs for
             each as a separate date column.
         - list of lists. e.g.  If [[1, 3]] -> combine columns 1 and 3 and parse as
             a single date column.
-
-:param \* dict, e.g. {'foo':
-    [1, 3]} -> parse columns 1, 3 as date and call
-        result 'foo'
+        - dict, e.g. {'foo' : [1, 3]} -> parse columns 1, 3 as date and call
+            result 'foo'
 
         If a column or index cannot be represented as an array of datetimes,
         say because of an unparseable value or a mixture of timezones, the column

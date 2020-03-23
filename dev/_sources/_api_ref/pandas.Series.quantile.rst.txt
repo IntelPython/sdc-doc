@@ -30,6 +30,10 @@ Return value at the given quantile.
     index is ``q`` and the values are the quantiles, otherwise
     a float will be returned.
 
+Limitations
+-----------
+Parameter ``interpolation`` is currently unsupported.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_quantile.py
@@ -41,10 +45,12 @@ Examples
 .. command-output:: python ./series/series_quantile.py
    :cwd: ../../../examples
 
-.. note::
-    Parameter interpolation is currently unsupported by Intel Scalable Dataframe Compiler
-
 .. seealso::
 
-    `numpy.absolute <https://docs.scipy.org/doc/numpy/reference/generated/numpy.percentile.html#numpy.percentile>`_
+    :ref:`core.window.Rolling.quantile <pandas.core.window.Rolling.quantile>`
+        Calculate the rolling quantile.
+
+    `numpy.percentile
+    <https://docs.scipy.org/doc/numpy/reference/generated/numpy.percentile.html#numpy.percentile>`_
+        Compute the q-th percentile of the data along the specified axis.
 

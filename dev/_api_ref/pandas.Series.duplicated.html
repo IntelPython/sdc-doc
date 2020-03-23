@@ -67,27 +67,27 @@
 <p>Duplicated values are indicated as <code class="docutils literal notranslate"><span class="pre">True</span></code> values in the resulting
 Series. Either all duplicates, all except the first or all except the
 last occurrence of duplicates can be indicated.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">param keep</dt>
-<dd class="field-odd"><p>{‘first’, ‘last’, False}, default ‘first’</p>
+<dd class="field-odd"><dl>
+<dt>{‘first’, ‘last’, False}, default ‘first’</dt><dd><ul>
+<li><dl>
+<dt>‘first’<span class="classifier">Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the first</span></dt><dd><p>occurrence.</p>
 </dd>
-<dt class="field-even">param - ‘first’</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the first</dt><dd><p>occurrence.</p>
+</dl>
+</li>
+<li><dl>
+<dt>‘last’<span class="classifier">Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the last</span></dt><dd><p>occurrence.</p>
+</dd>
+</dl>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code> : Mark all duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">param - ‘last’</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Mark duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code> except for the last</dt><dd><p>occurrence.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">param - <code class="docutils literal notranslate"><span class="pre">False</span></code></dt>
-<dd class="field-even"><p>Mark all duplicates as <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-</dd>
-<dt class="field-odd">return</dt>
-<dd class="field-odd"><p>Series
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>Series
 Series indicating whether each value has occurred in the
 preceding values.</p>
 </dd>
@@ -109,8 +109,6 @@ preceding values.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

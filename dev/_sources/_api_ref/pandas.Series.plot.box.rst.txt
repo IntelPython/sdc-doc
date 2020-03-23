@@ -24,9 +24,7 @@ can overlap, which is very common when plotting small sets of data.
 :param by:
     string or sequence
         Column in the DataFrame to group by.
-
-:param \*\*kwds:
-    optional
+        \*\*kwds : optional
         Additional keywords are documented in
         :meth:`DataFrame.plot`.
 

@@ -99,6 +99,10 @@ index is <code class="docutils literal notranslate"><span class="pre">q</span></
 a float will be returned.</p>
 </dd>
 </dl>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<p>Parameter <code class="docutils literal notranslate"><span class="pre">interpolation</span></code> is currently unsupported.</p>
+</div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="ex-series-quantile">
@@ -124,46 +128,49 @@ a float will be returned.</p>
 Traceback (most recent call last):
   File &quot;./series/series_quantile.py&quot;, line 40, in &lt;module&gt;
     print(series_quantile())
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
     raise e
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
     return self.compile(tuple(argtypes))
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
     return func(*args, **kwargs)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
     cres = self._compiler.compile(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
     status, retval = self._compile_cached(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
     retval = self._compile_core(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
     pipeline_class=self.pipeline_class)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
     args, return_type, flags, locals)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
     targetctx.refresh()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
     self.load_additional_registries()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
     numba.entrypoints.init_all()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
     func = entry_point.load()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
     self.require(*args, **kwargs)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
     items = working_set.resolve(reqs, env, installer, extras=self.extras)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
     raise DistributionNotFound(req, requirers)
 pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Parameter interpolation is currently unsupported by Intel Scalable Dataframe Compiler</p>
-</div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.percentile.html#numpy.percentile">numpy.absolute</a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.core.window.Rolling.quantile.html#pandas-core-window-rolling-quantile"><span class="std std-ref">core.window.Rolling.quantile</span></a></dt><dd><p>Calculate the rolling quantile.</p>
+</dd>
+</dl>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.percentile.html#numpy.percentile">numpy.percentile</a></p>
+<blockquote>
+<div><p>Compute the q-th percentile of the data along the specified axis.</p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -179,8 +186,6 @@ pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not fou
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

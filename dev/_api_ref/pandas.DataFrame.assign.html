@@ -66,24 +66,18 @@
 <p>Assign new columns to a DataFrame.</p>
 <p>Returns a new object with all original columns in addition to new ones.
 Existing columns that are re-assigned will be overwritten.</p>
-<dl class="field-list simple">
-<dt class="field-odd">param **kwargs</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict of {str: callable or Series}</dt><dd><p>The column names are keywords. If the values are
+<p>**kwargs : dict of {str: callable or Series}
+The column names are keywords. If the values are
 callable, they are computed on the DataFrame and
 assigned to the new columns. The callable must not
 change input DataFrame (though pandas doesn’t check it).
 If the values are not callable, (e.g. a Series, scalar, or array),
-they are simply assigned.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">return</dt>
-<dd class="field-even"><p>DataFrame
-A new DataFrame with the new columns in addition to
+they are simply assigned.
+:return: DataFrame</p>
+<blockquote>
+<div><p>A new DataFrame with the new columns in addition to
 all the existing columns.</p>
-</dd>
-</dl>
+</div></blockquote>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
@@ -101,8 +95,6 @@ all the existing columns.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

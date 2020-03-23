@@ -16,17 +16,12 @@ Return the smallest `n` elements.
         When there are duplicate values that cannot all fit in a
         Series of `n` elements:
 
-:param - ``first``:
-    return the first `n` occurrences in order
-        of appearance.
-
-:param - ``last``:
-    return the last `n` occurrences in reverse
-        order of appearance.
-
-:param - ``all``:
-    keep all occurrences. This can result in a Series of
-        size larger than `n`.
+        - ``first`` : return the first `n` occurrences in order
+            of appearance.
+        - ``last`` : return the last `n` occurrences in reverse
+            order of appearance.
+        - ``all`` : keep all occurrences. This can result in a Series of
+            size larger than `n`.
 
 :return: Series
     The `n` smallest values in the Series, sorted in increasing order.

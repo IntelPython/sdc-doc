@@ -7,10 +7,8 @@ pandas.DataFrame.swaplevel
 
 Swap levels i and j in a MultiIndex on a particular axis.
 
-:param i, j:
-    int, string (can be mixed)
-        Level of index to be swapped. Can pass level name as string.
-
+i, j : int, string (can be mixed)
+Level of index to be swapped. Can pass level name as string.
 :return: DataFrame
 
     .. versionchanged:: 0.18.1

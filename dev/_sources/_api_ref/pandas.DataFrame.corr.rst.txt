@@ -9,15 +9,9 @@ Compute pairwise correlation of columns, excluding NA/null values.
 
 :param method:
     {'pearson', 'kendall', 'spearman'} or callable
-
-:param \* pearson:
-    standard correlation coefficient
-
-:param \* kendall:
-    Kendall Tau correlation coefficient
-
-:param \* spearman:
-    Spearman rank correlation
+        - pearson : standard correlation coefficient
+        - kendall : Kendall Tau correlation coefficient
+        - spearman : Spearman rank correlation
         - callable: callable with input two 1d ndarrays
             and returning a float. Note that the returned matrix from corr
             will have 1 along the diagonals and will be symmetric

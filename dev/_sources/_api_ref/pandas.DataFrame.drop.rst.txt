@@ -57,7 +57,11 @@ the level.
 
 Limitations
 -----------
-Parameter columns is expected to be a Literal value with one column name or Tuple with columns names.
+- Parameters ``labels``, ``axis``, ``index``, ``level`` and ``inplace`` are currently unsupported.
+- Parameter ``columns`` is required and is expected to be a Literal value with one column name
+    or Tuple with columns names.
+- Supported ``errors`` can be {``raise``, ``ignore``}, default ``raise``. If ``ignore``, suppress error and only
+    existing labels are dropped.
 
 Examples
 --------
@@ -69,11 +73,6 @@ Examples
 
 .. command-output:: python ./dataframe/dataframe_drop.py
     :cwd: ../../../examples
-
-.. note::
-    Parameters axis, index, level, inplace, errors are currently unsupported
-    by Intel Scalable Dataframe Compiler
-    Currently multi-indexing is not supported.
 
 .. seealso::
     :ref:`DataFrame.loc <pandas.DataFrame.loc>`

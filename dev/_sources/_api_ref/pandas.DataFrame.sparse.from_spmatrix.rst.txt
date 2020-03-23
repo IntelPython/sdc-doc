@@ -12,9 +12,7 @@ Create a new DataFrame from a scipy sparse matrix.
 :param data:
     scipy.sparse.spmatrix
         Must be convertible to csc format.
-
-:param index, columns:
-    Index, optional
+        index, columns : Index, optional
         Row and column labels to use for the resulting DataFrame.
         Defaults to a RangeIndex.
 

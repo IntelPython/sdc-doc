@@ -22,9 +22,7 @@ This function wraps the matplotlib area function.
     bool, default True
         Area plots are stacked by default. Set to False to create a
         unstacked plot.
-
-:param \*\*kwds:
-    optional
+        \*\*kwds : optional
         Additional keyword arguments are documented in
         :meth:`DataFrame.plot`.
 

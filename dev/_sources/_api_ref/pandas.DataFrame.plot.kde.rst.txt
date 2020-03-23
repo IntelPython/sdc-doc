@@ -27,9 +27,7 @@ bandwidth determination.
         1000 equally spaced points are used. If `ind` is a NumPy array, the
         KDE is evaluated at the points passed. If `ind` is an integer,
         `ind` number of equally spaced points are used.
-
-:param \*\*kwds:
-    optional
+        \*\*kwds : optional
         Additional keyword arguments are documented in
         :meth:`pandas.%(this-datatype)s.plot`.
 

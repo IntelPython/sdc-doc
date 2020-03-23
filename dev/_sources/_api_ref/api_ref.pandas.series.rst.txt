@@ -63,6 +63,8 @@ Attributes/Operators
        Apply the `put` method to its `values` attribute if it has one.
 
         **Unsupported by Intel SDC**.
+   :ref:`Series.getitem <pandas.Series.getitem>`
+       Get value(s) of Series by key.
    :ref:`Series.setitem <pandas.Series.setitem>`
        Set value to Series by index
 

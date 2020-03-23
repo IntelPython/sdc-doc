@@ -12,9 +12,7 @@ allowing dtype specification.
 
 :param data:
     dict
-
-:param Of the form {field:
-    array-like} or {field : dict}.
+        Of the form {field : array-like} or {field : dict}.
 
 :param orient:
     {'columns', 'index'}, default 'columns'

@@ -45,9 +45,7 @@ Draw histogram of the input series using matplotlib.
         bin edges are calculated and returned. If bins is a sequence, gives
         bin edges, including left edge of first bin and right edge of last
         bin. In this case, bins is returned unmodified.
-
-:param `\*\*kwds`:
-    keywords
+        `\*\*kwds` : keywords
         To be passed to the actual plotting function
 
 :return: matplotlib.AxesSubplot

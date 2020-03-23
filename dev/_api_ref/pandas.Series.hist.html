@@ -118,18 +118,14 @@
 <dt>integer or sequence, default 10</dt><dd><p>Number of histogram bins to be used. If an integer is given, bins + 1
 bin edges are calculated and returned. If bins is a sequence, gives
 bin edges, including left edge of first bin and right edge of last
-bin. In this case, bins is returned unmodified.</p>
+bin. In this case, bins is returned unmodified.
+<cite>**kwds</cite> : keywords
+To be passed to the actual plotting function</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">param <cite>**kwds</cite></dt>
-<dd class="field-even"><dl class="simple">
-<dt>keywords</dt><dd><p>To be passed to the actual plotting function</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">return</dt>
-<dd class="field-odd"><p>matplotlib.AxesSubplot
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>matplotlib.AxesSubplot
 A histogram plot.</p>
 </dd>
 </dl>
@@ -150,8 +146,6 @@ A histogram plot.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

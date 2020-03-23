@@ -7,10 +7,8 @@ pandas.Series.swaplevel
 
 Swap levels i and j in a MultiIndex.
 
-:param i, j:
-    int, str (can be mixed)
-        Level of index to be swapped. Can pass level name as string.
-
+i, j : int, str (can be mixed)
+Level of index to be swapped. Can pass level name as string.
 :return: Series
     Series with levels swapped in MultiIndex.
 

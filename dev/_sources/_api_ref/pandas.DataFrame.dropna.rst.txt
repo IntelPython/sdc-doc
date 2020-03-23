@@ -15,11 +15,8 @@ considered missing, and how to work with missing data.
         Determine if rows or columns which contain missing values are
         removed.
 
-:param \* 0, or 'index':
-    Drop rows which contain missing values.
-
-:param \* 1, or 'columns':
-    Drop columns which contain missing value.
+        - 0, or 'index' : Drop rows which contain missing values.
+        - 1, or 'columns' : Drop columns which contain missing value.
 
         .. deprecated:: 0.23.0
 
@@ -31,11 +28,8 @@ considered missing, and how to work with missing data.
         Determine if row or column is removed from DataFrame, when we have
         at least one NA or all NA.
 
-:param \* 'any':
-    If any NA values are present, drop that row or column.
-
-:param \* 'all':
-    If all values are NA, drop that row or column.
+        - 'any' : If any NA values are present, drop that row or column.
+        - 'all' : If all values are NA, drop that row or column.
 
 :param thresh:
     int, optional

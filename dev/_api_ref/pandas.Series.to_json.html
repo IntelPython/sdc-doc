@@ -75,7 +75,7 @@ a string.</p>
 </dl>
 </dd>
 <dt class="field-even">param orient</dt>
-<dd class="field-even"><dl class="simple">
+<dd class="field-even"><dl>
 <dt>string</dt><dd><p>Indication of expected JSON string format.</p>
 <ul class="simple">
 <li><p>Series</p></li>
@@ -89,35 +89,26 @@ a string.</p>
 </dl>
 </li>
 <li><p>The format of the JSON string</p></li>
-</ul>
+<li><dl class="simple">
+<dt>‘split’<span class="classifier">dict like {‘index’ -&gt; [index],</span></dt><dd><p>‘columns’ -&gt; [columns], ‘data’ -&gt; [values]}</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-odd">param - ‘split’</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict like {‘index’ -&gt; [index],</dt><dd><p>‘columns’ -&gt; [columns], ‘data’ -&gt; [values]}</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">param - ‘records’</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list like</dt><dd><p>[{column -&gt; value}, … , {column -&gt; value}]</p>
+</li>
+<li><dl class="simple">
+<dt>‘records’<span class="classifier">list like</span></dt><dd><p>[{column -&gt; value}, … , {column -&gt; value}]</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-odd">param - ‘index’</dt>
-<dd class="field-odd"><p>dict like {index -&gt; {column -&gt; value}}</p>
-</dd>
-<dt class="field-even">param - ‘columns’</dt>
-<dd class="field-even"><p>dict like {column -&gt; {index -&gt; value}}</p>
-</dd>
-<dt class="field-odd">param - ‘values’</dt>
-<dd class="field-odd"><p>just the values array</p>
-</dd>
-<dt class="field-even">param - ‘table’</dt>
-<dd class="field-even"><dl>
-<dt>dict like {‘schema’: {schema}, ‘data’: {data}}</dt><dd><p>describing the data, and the data component is
+</li>
+<li><p>‘index’ : dict like {index -&gt; {column -&gt; value}}</p></li>
+<li><p>‘columns’ : dict like {column -&gt; {index -&gt; value}}</p></li>
+<li><p>‘values’ : just the values array</p></li>
+<li><dl class="simple">
+<dt>‘table’<span class="classifier">dict like {‘schema’: {schema}, ‘data’: {data}}</span></dt><dd><p>describing the data, and the data component is
 like <code class="docutils literal notranslate"><span class="pre">orient='records'</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.20.0.</span></p>
 </div>
@@ -219,8 +210,6 @@ string. Otherwise returns None.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

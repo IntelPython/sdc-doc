@@ -15,17 +15,11 @@ considering certain columns.
 
 :param keep:
     {'first', 'last', False}, default 'first'
-
-:param - ``first``:
-    Mark duplicates as ``True`` except for the
-        first occurrence.
-
-:param - ``last``:
-    Mark duplicates as ``True`` except for the
-        last occurrence.
-
-:param - False:
-    Mark all duplicates as ``True``.
+        - ``first`` : Mark duplicates as ``True`` except for the
+            first occurrence.
+        - ``last`` : Mark duplicates as ``True`` except for the
+            last occurrence.
+        - False : Mark all duplicates as ``True``.
 
 :return: Series
 

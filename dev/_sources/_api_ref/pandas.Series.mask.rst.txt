@@ -44,11 +44,8 @@ Replace values where the condition is True.
         Note that currently this parameter won't affect
         the results and will always coerce to a suitable dtype.
 
-:param - 'raise':
-    allow exceptions to be raised.
-
-:param - 'ignore':
-    suppress exceptions. On error return original object.
+        - 'raise' : allow exceptions to be raised.
+        - 'ignore' : suppress exceptions. On error return original object.
 
 :param try_cast:
     bool, default False

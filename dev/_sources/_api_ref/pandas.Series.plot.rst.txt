@@ -23,39 +23,17 @@ option ``plotting.backend``. By default, matplotlib is used.
 
 :param kind:
     str
-
-:param - 'line':
-    line plot (default)
-
-:param - 'bar':
-    vertical bar plot
-
-:param - 'barh':
-    horizontal bar plot
-
-:param - 'hist':
-    histogram
-
-:param - 'box':
-    boxplot
-
-:param - 'kde':
-    Kernel Density Estimation plot
-
-:param - 'density':
-    same as 'kde'
-
-:param - 'area':
-    area plot
-
-:param - 'pie':
-    pie plot
-
-:param - 'scatter':
-    scatter plot
-
-:param - 'hexbin':
-    hexbin plot
+        - 'line' : line plot (default)
+        - 'bar' : vertical bar plot
+        - 'barh' : horizontal bar plot
+        - 'hist' : histogram
+        - 'box' : boxplot
+        - 'kde' : Kernel Density Estimation plot
+        - 'density' : same as 'kde'
+        - 'area' : area plot
+        - 'pie' : pie plot
+        - 'scatter' : scatter plot
+        - 'hexbin' : hexbin plot
 
 :param figsize:
     a tuple (width, height) in inches
@@ -156,9 +134,7 @@ option ``plotting.backend``. By default, matplotlib is used.
     bool, default True
         When using a secondary_y axis, automatically mark the column
         labels with "(right)" in the legend
-
-:param `\*\*kwds`:
-    keywords
+        `\*\*kwds` : keywords
         Options to pass to matplotlib plotting method
 
 :return: :class:`matplotlib.axes.Axes` or numpy.ndarray of them

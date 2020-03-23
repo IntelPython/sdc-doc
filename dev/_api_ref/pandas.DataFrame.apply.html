@@ -87,21 +87,21 @@ it depends on the <cite>result_type</cite> argument.</p>
 </dl>
 </dd>
 <dt class="field-odd">param broadcast</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt>bool, optional</dt><dd><p>Only relevant for aggregation functions:</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">param * <code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code></dt>
-<dd class="field-even"><dl class="simple">
-<dt>returns a Series whose length is the</dt><dd><p>length of the index or the number of columns (based on the
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code><span class="classifier">returns a Series whose length is the</span></dt><dd><p>length of the index or the number of columns (based on the
 <cite>axis</cite> parameter)</p>
 </dd>
 </dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">True</span></code><span class="classifier">results will be broadcast to the original shape</span></dt><dd><p>of the frame, the original index and columns will be retained.</p>
 </dd>
-<dt class="field-odd">param * <code class="docutils literal notranslate"><span class="pre">True</span></code></dt>
-<dd class="field-odd"><dl>
-<dt>results will be broadcast to the original shape</dt><dd><p>of the frame, the original index and columns will be retained.</p>
+</dl>
+</li>
+</ul>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 0.23.0.</span></p>
 </div>
@@ -110,19 +110,21 @@ it depends on the <cite>result_type</cite> argument.</p>
 </dl>
 </dd>
 <dt class="field-even">param raw</dt>
-<dd class="field-even"><p>bool, default False</p>
-</dd>
-<dt class="field-odd">param * <code class="docutils literal notranslate"><span class="pre">False</span></code></dt>
-<dd class="field-odd"><dl class="simple">
-<dt>passes each row or column as a Series to the</dt><dd><p>function.</p>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default False</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">False</span></code><span class="classifier">passes each row or column as a Series to the</span></dt><dd><p>function.</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">param * <code class="docutils literal notranslate"><span class="pre">True</span></code></dt>
-<dd class="field-even"><dl class="simple">
-<dt>the passed function will receive ndarray objects</dt><dd><p>instead.
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">True</span></code><span class="classifier">the passed function will receive ndarray objects</span></dt><dd><p>instead.
 If you are just applying a NumPy reduction function this will
 achieve much better performance.</p>
+</dd>
+</dl>
+</li>
+</ul>
 </dd>
 </dl>
 </dd>
@@ -145,24 +147,22 @@ If <code class="docutils literal notranslate"><span class="pre">reduce=True</spa
 </dl>
 </dd>
 <dt class="field-even">param result_type</dt>
-<dd class="field-even"><dl class="simple">
+<dd class="field-even"><dl>
 <dt>{‘expand’, ‘reduce’, ‘broadcast’, None}, default None</dt><dd><p>These only act when <code class="docutils literal notranslate"><span class="pre">axis=1</span></code> (columns):</p>
+<ul class="simple">
+<li><p>‘expand’ : list-like results will be turned into columns.</p></li>
+<li><dl class="simple">
+<dt>‘reduce’<span class="classifier">returns a Series if possible rather than expanding</span></dt><dd><p>list-like results. This is the opposite of ‘expand’.</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-odd">param * ‘expand’</dt>
-<dd class="field-odd"><p>list-like results will be turned into columns.</p>
-</dd>
-<dt class="field-even">param * ‘reduce’</dt>
-<dd class="field-even"><dl class="simple">
-<dt>returns a Series if possible rather than expanding</dt><dd><p>list-like results. This is the opposite of ‘expand’.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">param * ‘broadcast’</dt>
-<dd class="field-odd"><dl>
-<dt>results will be broadcast to the original shape</dt><dd><p>of the DataFrame, the original index and columns will be
+</li>
+<li><dl class="simple">
+<dt>‘broadcast’<span class="classifier">results will be broadcast to the original shape</span></dt><dd><p>of the DataFrame, the original index and columns will be
 retained.</p>
+</dd>
+</dl>
+</li>
+</ul>
 <p>The default behaviour (None) depends on the return value of the
 applied function: list-like results will be returned as a Series
 of those. However if the apply function returns a Series these
@@ -173,8 +173,8 @@ are expanded to columns.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">param args</dt>
-<dd class="field-even"><dl class="simple">
+<dt class="field-odd">param args</dt>
+<dd class="field-odd"><dl class="simple">
 <dt>tuple</dt><dd><p>Positional arguments to pass to <cite>func</cite> in addition to the
 array/series.
 **kwds
@@ -183,8 +183,8 @@ Additional keyword arguments to pass as keywords arguments to
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">return</dt>
-<dd class="field-odd"><p>Series or DataFrame
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>Series or DataFrame
 Result of applying <code class="docutils literal notranslate"><span class="pre">func</span></code> along the given axis of the
 DataFrame.</p>
 </dd>
@@ -206,8 +206,6 @@ DataFrame.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

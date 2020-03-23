@@ -84,15 +84,10 @@ fall between 0 and 1. The default is
 <dd class="field-even"><dl class="simple">
 <dt>‘all’, list-like of dtypes or None (default), optional</dt><dd><p>A white list of data types to include in the result. Ignored
 for <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Here are the options:</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">param - ‘all’</dt>
-<dd class="field-odd"><p>All columns of the input will be included in the output.</p>
-</dd>
-<dt class="field-even">param - A list-like of dtypes</dt>
-<dd class="field-even"><dl class="simple">
-<dt>Limits the results to the</dt><dd><p>provided data types.
+<ul class="simple">
+<li><p>‘all’ : All columns of the input will be included in the output.</p></li>
+<li><dl class="simple">
+<dt>A list-like of dtypes<span class="classifier">Limits the results to the</span></dt><dd><p>provided data types.
 To limit the result to numeric types submit
 <code class="docutils literal notranslate"><span class="pre">numpy.number</span></code>. To limit it instead to object columns submit
 the <code class="docutils literal notranslate"><span class="pre">numpy.object</span></code> data type. Strings
@@ -101,32 +96,33 @@ can also be used in the style of
 select pandas categorical columns, use <code class="docutils literal notranslate"><span class="pre">'category'</span></code></p>
 </dd>
 </dl>
-</dd>
-<dt class="field-odd">param - None (default)</dt>
-<dd class="field-odd"><p>The result will include all numeric columns.</p>
-</dd>
-<dt class="field-even">param exclude</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list-like of dtypes or None (default), optional,</dt><dd><p>A black list of data types to omit from the result. Ignored
-for <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Here are the options:</p>
+</li>
+<li><p>None (default) : The result will include all numeric columns.</p></li>
+</ul>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">param - A list-like of dtypes</dt>
+<dt class="field-odd">param exclude</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>Excludes the provided data types</dt><dd><p>from the result. To exclude numeric types submit
+<dt>list-like of dtypes or None (default), optional,</dt><dd><p>A black list of data types to omit from the result. Ignored
+for <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Here are the options:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>A list-like of dtypes<span class="classifier">Excludes the provided data types</span></dt><dd><p>from the result. To exclude numeric types submit
 <code class="docutils literal notranslate"><span class="pre">numpy.number</span></code>. To exclude object columns submit the data
 type <code class="docutils literal notranslate"><span class="pre">numpy.object</span></code>. Strings can also be used in the style of
 <code class="docutils literal notranslate"><span class="pre">select_dtypes</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">df.describe(include=['O'])</span></code>). To
 exclude pandas categorical columns, use <code class="docutils literal notranslate"><span class="pre">'category'</span></code></p>
 </dd>
 </dl>
+</li>
+<li><p>None (default) : The result will exclude nothing.</p></li>
+</ul>
 </dd>
-<dt class="field-even">param - None (default)</dt>
-<dd class="field-even"><p>The result will exclude nothing.</p>
+</dl>
 </dd>
-<dt class="field-odd">return</dt>
-<dd class="field-odd"><p>Series or DataFrame
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>Series or DataFrame
 Summary statistics of the Series or Dataframe provided.</p>
 </dd>
 </dl>
@@ -164,35 +160,35 @@ Summary statistics of the Series or Dataframe provided.</p>
 Traceback (most recent call last):
   File &quot;./series/series_describe.py&quot;, line 51, in &lt;module&gt;
     print(series_describe())
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 420, in _compile_for_args
     raise e
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 353, in _compile_for_args
     return self.compile(tuple(argtypes))
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler_lock.py&quot;, line 32, in _acquire_compile_lock
     return func(*args, **kwargs)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 768, in compile
     cres = self._compiler.compile(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 77, in compile
     status, retval = self._compile_cached(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 91, in _compile_cached
     retval = self._compile_core(args, return_type)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/dispatcher.py&quot;, line 109, in _compile_core
     pipeline_class=self.pipeline_class)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 550, in compile_extra
     args, return_type, flags, locals)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/compiler.py&quot;, line 281, in __init__
     targetctx.refresh()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/base.py&quot;, line 281, in refresh
     self.load_additional_registries()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/targets/cpu.py&quot;, line 80, in load_additional_registries
     numba.entrypoints.init_all()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/entrypoints.py&quot;, line 23, in init_all
     func = entry_point.load()
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2444, in load
     self.require(*args, **kwargs)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 2467, in require
     items = working_set.resolve(reqs, env, installer, extras=self.extras)
-  File &quot;/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
+  File &quot;/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/pkg_resources/__init__.py&quot;, line 787, in resolve
     raise DistributionNotFound(req, requirers)
 pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not found and is required by the application
 </pre></div>
@@ -228,8 +224,6 @@ pkg_resources.DistributionNotFound: The &#39;scipy&#39; distribution was not fou
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

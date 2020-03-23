@@ -24,11 +24,8 @@ Cast a pandas object to a specified dtype ``dtype``.
     {'raise', 'ignore'}, default 'raise'
         Control raising of exceptions on invalid data for provided dtype.
 
-:param - ``raise``:
-    allow exceptions to be raised
-
-:param - ``ignore``:
-    suppress exceptions. On error return original object
+        - ``raise`` : allow exceptions to be raised
+        - ``ignore`` : suppress exceptions. On error return original object
 
         .. versionadded:: 0.20.0
 

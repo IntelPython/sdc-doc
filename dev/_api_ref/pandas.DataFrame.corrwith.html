@@ -86,17 +86,11 @@ aligned along both axes before computing the correlations.</p>
 </dl>
 </dd>
 <dt class="field-even">param method</dt>
-<dd class="field-even"><p>{‘pearson’, ‘kendall’, ‘spearman’} or callable</p>
-</dd>
-<dt class="field-odd">param * pearson</dt>
-<dd class="field-odd"><p>standard correlation coefficient</p>
-</dd>
-<dt class="field-even">param * kendall</dt>
-<dd class="field-even"><p>Kendall Tau correlation coefficient</p>
-</dd>
-<dt class="field-odd">param * spearman</dt>
-<dd class="field-odd"><dl>
-<dt>Spearman rank correlation</dt><dd><ul class="simple">
+<dd class="field-even"><dl>
+<dt>{‘pearson’, ‘kendall’, ‘spearman’} or callable</dt><dd><ul class="simple">
+<li><p>pearson : standard correlation coefficient</p></li>
+<li><p>kendall : Kendall Tau correlation coefficient</p></li>
+<li><p>spearman : Spearman rank correlation</p></li>
 <li><dl class="simple">
 <dt>callable: callable with input two 1d ndarrays</dt><dd><p>and returning a float</p>
 </dd>
@@ -109,8 +103,8 @@ aligned along both axes before computing the correlations.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">return</dt>
-<dd class="field-even"><p>Series
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Series
 Pairwise correlations.</p>
 </dd>
 </dl>
@@ -131,8 +125,6 @@ Pairwise correlations.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

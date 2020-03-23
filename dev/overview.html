@@ -110,41 +110,8 @@ Intel SDC generates machine code using the <a class="reference external" href="h
 </div>
 </div>
 <p>On a single machine Intel SDC uses multi-threading (based on <a class="reference external" href="https://github.com/intel/tbb/">Intel® TBB</a> or <a class="reference external" href="https://openmp.org/">OpenMP*</a> )
-to parallelize <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> and <a class="reference external" href="https://numpy.org/">Numpy*</a> operations. To turn on the multi-threading you just need to add
-<code class="docutils literal notranslate"><span class="pre">parallel=True</span></code> option to <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator:</p>
-<div class="literal-block-wrapper docutils container" id="ex-basic-workflow-parallel">
-<div class="code-block-caption"><span class="caption-text">Example 2: Parallelizing <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> Workflow</span><a class="headerlink" href="#ex-basic-workflow-parallel" title="Permalink to this code">¶</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
-
-<span class="c1"># Dataset for analysis</span>
-<span class="n">FNAME</span> <span class="o">=</span> <span class="s2">&quot;employees.csv&quot;</span>
-
-
-<span class="c1"># This function gets compiled by Numba* and multi-threaded</span>
-<span class="hll"><span class="nd">@njit</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span class="hll"><span class="k">def</span> <span class="nf">get_analyzed_data</span><span class="p">():</span>
-</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FNAME</span><span class="p">)</span>
-    <span class="n">s_bonus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Bonus %&#39;</span><span class="p">])</span>
-    <span class="n">s_first_name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;First Name&#39;</span><span class="p">])</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">s_bonus</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    <span class="n">names</span> <span class="o">=</span> <span class="n">s_first_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">m</span><span class="p">,</span> <span class="n">names</span>
-
-
-<span class="c1"># Printing names and their average bonus percent</span>
-<span class="n">mean_bonus</span><span class="p">,</span> <span class="n">sorted_first_names</span> <span class="o">=</span> <span class="n">get_analyzed_data</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">sorted_first_names</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average Bonus %:&#39;</span><span class="p">,</span> <span class="n">mean_bonus</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Using the same <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator the Intel SDC is designed to scale to many nodes automatically
-without the need to use frameworks like <a class="reference external" href="https://dask.org/">Dask*</a> , <a class="reference external" href="https://ray.readthedocs.io/">Ray*</a>, and <a class="reference external" href="https://spark.apache.org/">Spark*</a>.</p>
-<p>This feature is in active development, and will become available in a future Intel SDC release.</p>
-</div>
+to parallelize <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> and <a class="reference external" href="https://numpy.org/">Numpy*</a> operations. Most of these operations are parallelized on function-level,
+so that no extra action is required from users in most cases.</p>
 </div>
 
 
@@ -158,8 +125,6 @@ without the need to use frameworks like <a class="reference external" href="http
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">List of examples</a></li>

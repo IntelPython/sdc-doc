@@ -68,38 +68,28 @@
 (see below).</p>
 <dl class="field-list">
 <dt class="field-odd">param orient</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt>str {‘dict’, ‘list’, ‘series’, ‘split’, ‘records’, ‘index’}</dt><dd><p>Determines the type of the values of the dictionary.</p>
+<ul class="simple">
+<li><p>‘dict’ (default) : dict like {column -&gt; {index -&gt; value}}</p></li>
+<li><p>‘list’ : dict like {column -&gt; [values]}</p></li>
+<li><p>‘series’ : dict like {column -&gt; Series(values)}</p></li>
+<li><dl class="simple">
+<dt>‘split’<span class="classifier">dict like</span></dt><dd><p>{‘index’ -&gt; [index], ‘columns’ -&gt; [columns], ‘data’ -&gt; [values]}</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">param - ‘dict’ (default)</dt>
-<dd class="field-even"><p>dict like {column -&gt; {index -&gt; value}}</p>
-</dd>
-<dt class="field-odd">param - ‘list’</dt>
-<dd class="field-odd"><p>dict like {column -&gt; [values]}</p>
-</dd>
-<dt class="field-even">param - ‘series’</dt>
-<dd class="field-even"><p>dict like {column -&gt; Series(values)}</p>
-</dd>
-<dt class="field-odd">param - ‘split’</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>dict like</dt><dd><p>{‘index’ -&gt; [index], ‘columns’ -&gt; [columns], ‘data’ -&gt; [values]}</p>
+</li>
+<li><dl class="simple">
+<dt>‘records’<span class="classifier">list like</span></dt><dd><p>[{column -&gt; value}, … , {column -&gt; value}]</p>
 </dd>
 </dl>
-</dd>
-<dt class="field-even">param - ‘records’</dt>
-<dd class="field-even"><dl class="simple">
-<dt>list like</dt><dd><p>[{column -&gt; value}, … , {column -&gt; value}]</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">param - ‘index’</dt>
-<dd class="field-odd"><p>dict like {index -&gt; {column -&gt; value}}</p>
-<blockquote>
-<div><p>Abbreviations are allowed. <cite>s</cite> indicates <cite>series</cite> and <cite>sp</cite>
+</li>
+<li><p>‘index’ : dict like {index -&gt; {column -&gt; value}}</p></li>
+</ul>
+<p>Abbreviations are allowed. <cite>s</cite> indicates <cite>series</cite> and <cite>sp</cite>
 indicates <cite>split</cite>.</p>
-</div></blockquote>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">param into</dt>
 <dd class="field-even"><dl>
@@ -136,8 +126,6 @@ The resulting transformation depends on the <cite>orient</cite> parameter.</p>
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#compilation-overheads">Compilation Overheads</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../performance.html#automatic-parallelization">Automatic Parallelization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>

@@ -7,11 +7,9 @@ pandas.DataFrame.select_dtypes
 
 Return a subset of the DataFrame's columns based on the column dtypes.
 
-:param include, exclude:
-    scalar or list-like
-        A selection of dtypes or strings to be included/excluded. At least
-        one of these parameters must be supplied.
-
+include, exclude : scalar or list-like
+A selection of dtypes or strings to be included/excluded. At least
+one of these parameters must be supplied.
 :return: DataFrame
     The subset of the frame including the dtypes in ``include`` and
     excluding the dtypes in ``exclude``.

@@ -10,9 +10,7 @@ Set the name of the axis for the index or columns.
 :param mapper:
     scalar, list-like, optional
         Value to set the axis name attribute.
-
-:param index, columns:
-    scalar, list-like, dict-like or function, optional
+        index, columns : scalar, list-like, dict-like or function, optional
         A scalar, list-like, dict-like or functions transformations to
         apply to that axis' values.
 

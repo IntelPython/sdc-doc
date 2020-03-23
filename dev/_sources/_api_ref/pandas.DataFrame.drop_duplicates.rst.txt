@@ -16,15 +16,9 @@ are ignored.
 
 :param keep:
     {'first', 'last', False}, default 'first'
-
-:param - ``first``:
-    Drop duplicates except for the first occurrence.
-
-:param - ``last``:
-    Drop duplicates except for the last occurrence.
-
-:param - False:
-    Drop all duplicates.
+        - ``first`` : Drop duplicates except for the first occurrence.
+        - ``last`` : Drop duplicates except for the last occurrence.
+        - False : Drop all duplicates.
 
 :param inplace:
     boolean, default False
