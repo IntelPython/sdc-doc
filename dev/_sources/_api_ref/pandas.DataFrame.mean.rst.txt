@@ -29,8 +29,22 @@ Return the mean of the values for the requested axis.
 
 :return: Series or DataFrame (if level specified)
 
+Limitations
+-----------
+Parameters ``axis``, ``level`` and ``numeric_only`` are unsupported.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_mean.py
+   :language: python
+   :lines: 35-
+   :caption: Return the mean of the values for the columns.
+   :name: ex_dataframe_mean
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/dataframe_mean.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.mean <pandas.Series.mean>`
+        Return the mean of the values for the Series.
 

@@ -40,8 +40,22 @@ Return the product of the values for the requested axis.
 
 :return: Series or DataFrame (if level specified)
 
+Limitations
+-----------
+Parameters ``axis``, ``level``, ``numeric_only`` and ``min_count`` are unsupported.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_prod.py
+   :language: python
+   :lines: 35-
+   :caption: Return the product of the values for the columns.
+   :name: ex_dataframe_prod
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/dataframe_prod.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.prod <pandas.Series.prod>`
+        Returns the product of the values for the Series.
 

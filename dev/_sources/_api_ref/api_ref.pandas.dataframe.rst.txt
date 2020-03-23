@@ -400,12 +400,8 @@ Computations, Descriptive Statistics
        Return the maximum of the values for the requested axis.
    :ref:`DataFrame.mean <pandas.DataFrame.mean>`
        Return the mean of the values for the requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.median <pandas.DataFrame.median>`
        Return the median of the values for the requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.min <pandas.DataFrame.min>`
        Return the minimum of the values for the requested axis.
    :ref:`DataFrame.mode <pandas.DataFrame.mode>`
@@ -416,8 +412,6 @@ Computations, Descriptive Statistics
        Percentage change between the current and a prior element.
    :ref:`DataFrame.prod <pandas.DataFrame.prod>`
        Return the product of the values for the requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.product <pandas.DataFrame.product>`
        Return the product of the values for the requested axis.
 
