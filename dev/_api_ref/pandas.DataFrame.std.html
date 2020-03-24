@@ -101,9 +101,52 @@ everything, then use only numeric data. Not implemented for Series.</p>
 <dd class="field-even"><p>Series or DataFrame (if level specified)</p>
 </dd>
 </dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<p>Parameters <code class="docutils literal notranslate"><span class="pre">axis</span></code>, <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">numeric_only</span></code> are unsupported.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="ex-dataframe-std">
+<div class="code-block-caption"><span class="caption-text">Return sample standard deviation over columns.</span><a class="headerlink" href="#ex-dataframe-std" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">dataframe_std</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">.</span><span class="mi">0</span><span class="p">,</span> <span class="o">.</span><span class="mi">6</span><span class="p">,</span> <span class="o">.</span><span class="mi">2</span><span class="p">],</span>
+                       <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+                       <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]})</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dataframe_std</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./dataframe/dataframe_std.py
+/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
+  warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
+A    0.251661
+B    2.516611
+C         NaN
+dtype: float64
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.std.html#pandas-series-std"><span class="std std-ref">Series.std</span></a></dt><dd><p>Returns sample standard deviation over Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.var.html#pandas-series-var"><span class="std std-ref">Series.var</span></a></dt><dd><p>Returns unbiased variance over Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.var.html#pandas-dataframe-var"><span class="std std-ref">DataFrame.var</span></a></dt><dd><p>Returns unbiased variance over DataFrame.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 

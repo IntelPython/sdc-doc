@@ -440,8 +440,6 @@ Computations, Descriptive Statistics
        Return the sum of the values for the requested axis.
    :ref:`DataFrame.std <pandas.DataFrame.std>`
        Return sample standard deviation over requested axis.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.var <pandas.DataFrame.var>`
        Return unbiased variance over requested axis.
    :ref:`DataFrame.nunique <pandas.DataFrame.nunique>`

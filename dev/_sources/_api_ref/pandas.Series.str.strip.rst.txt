@@ -19,6 +19,10 @@ Equivalent to :meth:`str.strip`.
 
 :return: Series/Index of objects
 
+Limitations
+-----------
+All values in Series equal to `None` are converted to `NaNs`.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/series/str/series_str_strip.py

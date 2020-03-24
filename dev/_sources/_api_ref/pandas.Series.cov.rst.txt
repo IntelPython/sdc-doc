@@ -34,3 +34,7 @@ Examples
 .. command-output:: python ./series/series_cov.py
    :cwd: ../../../examples
 
+.. seealso::
+    :ref:`Series.corr <pandas.Series.corr>`
+        Compute correlation with other Series, excluding missing values.
+

@@ -34,8 +34,26 @@ Normalized by N-1 by default. This can be changed using the ddof argument
 
 :return: Series or DataFrame (if level specified)
 
+Limitations
+-----------
+Parameters ``axis``, ``level`` and ``numeric_only`` are unsupported.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_std.py
+   :language: python
+   :lines: 35-
+   :caption: Return sample standard deviation over columns.
+   :name: ex_dataframe_std
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/dataframe_std.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.std <pandas.Series.std>`
+        Returns sample standard deviation over Series.
+    :ref:`Series.var <pandas.Series.var>`
+        Returns unbiased variance over Series.
+    :ref:`DataFrame.var <pandas.DataFrame.var>`
+        Returns unbiased variance over DataFrame.
 

@@ -45,3 +45,7 @@ Examples
 .. command-output:: python ./series/series_corr.py
    :cwd: ../../../examples
 
+.. seealso::
+    :ref:`Series.cov <pandas.Series.cov>`
+        Compute covariance with Series, excluding missing values.
+

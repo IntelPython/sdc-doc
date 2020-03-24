@@ -949,8 +949,6 @@ strings and apply several methods to it. These can be accessed like
        Filling right side of strings in the Series/Index with an additional character. Equivalent to :meth:`str.ljust`.
    :ref:`Series.str.lower <pandas.Series.str.lower>`
        Convert strings in the Series/Index to lowercase.
-
-        **Unsupported by Intel SDC**.
    :ref:`Series.str.lstrip <pandas.Series.str.lstrip>`
        Remove leading and trailing characters.
    :ref:`Series.str.match <pandas.Series.str.match>`

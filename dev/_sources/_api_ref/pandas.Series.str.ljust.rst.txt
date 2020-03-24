@@ -19,10 +19,6 @@ additional character. Equivalent to :meth:`str.ljust`.
 
 :return: filled : Series/Index of objects
 
-Limitations
------------
-Series elements are expected to be Unicode strings. Elements cannot be `NaNs`.
-
 Examples
 --------
 .. literalinclude:: ../../../examples/series/str/series_str_ljust.py
