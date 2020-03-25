@@ -27,6 +27,11 @@ matches an element in the passed sequence of `values` exactly.
     TypeError
         - If `values` is a string
 
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/series/series_isin.py

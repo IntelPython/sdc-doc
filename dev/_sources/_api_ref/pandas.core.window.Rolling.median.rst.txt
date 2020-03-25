@@ -13,6 +13,11 @@ on the computed median.
 :return: Series or DataFrame
     Returned type is the same as the original object.
 
+Limitations
+-----------
+This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+between staying in JIT-region with that function or going back to interpreter mode.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/series/rolling/series_rolling_median.py

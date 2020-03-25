@@ -30,6 +30,8 @@ Limitations
 - Parameter ``axis`` is supported only with default value ``0``.
 - Parameter ``order`` is supported only with default value ``None``.
 - Parameter ``kind`` is supported only with values ``'mergesort'`` and ``'quicksort'``.
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
 
 Examples
 --------

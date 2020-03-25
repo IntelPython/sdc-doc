@@ -82,7 +82,14 @@ If None then whitespaces are removed.</p>
 </dl>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<p>All values in Series equal to <cite>None</cite> are converted to <cite>NaNs</cite>.</p>
+<ul class="simple">
+<li><p>All values in Series equal to <cite>None</cite> are converted to <cite>NaNs</cite>.</p></li>
+<li><dl class="simple">
+<dt>This function may reveal slower performance than Pandas* on user system. Users should exercise a tradeoff</dt><dd><p>between staying in JIT-region with that function or going back to interpreter mode.</p>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -102,6 +109,26 @@ If None then whitespaces are removed.</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">series_str_rstrip</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/str/series_str_rstrip.py
+/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
+  warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
+0    1. Ant
+1    2. Bee
+2    3. Cat
+dtype: object
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.str.strip.html#pandas-series-str-strip"><span class="std std-ref">Series.str.strip</span></a></dt><dd><p>Remove leading and trailing characters in Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.lstrip.html#pandas-series-str-lstrip"><span class="std std-ref">Series.str.lstrip</span></a></dt><dd><p>Remove leading characters in Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.strip.html#pandas-series-str-strip"><span class="std std-ref">Series.str.strip</span></a></dt><dd><p>Remove trailing characters in Series.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>

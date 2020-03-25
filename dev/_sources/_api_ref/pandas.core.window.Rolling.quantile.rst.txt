@@ -34,6 +34,8 @@ Calculate the rolling quantile.
 
 Limitations
 -----------
+This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+between staying in JIT-region with that function or going back to interpreter mode.
 Supported ``interpolation`` only can be `'linear'`.
 DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.
 

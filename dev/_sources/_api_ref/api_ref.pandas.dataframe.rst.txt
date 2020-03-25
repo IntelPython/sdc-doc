@@ -60,7 +60,7 @@ Attributes/Operators
 
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.getitem <pandas.DataFrame.getitem>`
-       
+       Get data from a DataFrame by indexer.
    :ref:`DataFrame.setitem <pandas.DataFrame.setitem>`
        Set data to a DataFrame by indexer.
 

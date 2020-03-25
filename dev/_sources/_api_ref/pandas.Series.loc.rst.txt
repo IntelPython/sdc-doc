@@ -37,6 +37,8 @@ Limitations
 - Loc always returns Series.
 - Loc slice is supported only with numeric values and specified ``start``.
 - Loc callable is not supported yet.
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
 
 Examples
 --------

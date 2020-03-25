@@ -41,6 +41,8 @@ Limitations
 - Parameter ``inplace`` is supported only with default value ``False``.
 - Parameter ``axis`` is currently unsupported by Intel Scalable Dataframe Compiler.
 - Parameter ``kind`` is supported only with values ``'mergesort'`` and ``'quicksort'``.
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
 
 Examples
 --------

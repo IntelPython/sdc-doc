@@ -40,6 +40,8 @@ Limitations
 - Parameters ``normalize`` and ``bins`` are currently unsupported.
 - Parameter ``dropna`` is unsupported for String Series.
 - Elements with the same count might appear in result in a different order than in Pandas.
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
 
 Examples
 --------

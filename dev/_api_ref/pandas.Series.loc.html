@@ -109,6 +109,11 @@ start and the stop are included</p>
 <li><p>Loc always returns Series.</p></li>
 <li><p>Loc slice is supported only with numeric values and specified <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p></li>
 <li><p>Loc callable is not supported yet.</p></li>
+<li><dl class="simple">
+<dt>This function may reveal slower performance than Pandas* on user system. Users should exercise a tradeoff</dt><dd><p>between staying in JIT-region with that function or going back to interpreter mode.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 <div class="section" id="examples">
@@ -132,7 +137,7 @@ start and the stop are included</p>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_loc/series_loc_single_result.py
-/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
+/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
   warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
 4    3
 dtype: int64
@@ -157,7 +162,7 @@ dtype: int64
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_loc/series_loc_multiple_result.py
-/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
+/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
   warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
 0    5
 0    3
@@ -184,7 +189,7 @@ dtype: int64
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_loc/series_loc_slice.py
-/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
+/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
   warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
 1    4
 2    3

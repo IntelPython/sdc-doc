@@ -76,6 +76,11 @@ The unique values returned as a NumPy array. See Notes.</p>
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Return values order is unspecified</p></li>
+<li><dl class="simple">
+<dt>This function may reveal slower performance than Pandas* on user system. Users should exercise a tradeoff</dt><dd><p>between staying in JIT-region with that function or going back to interpreter mode.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 <div class="section" id="examples">
@@ -99,7 +104,7 @@ The unique values returned as a NumPy array. See Notes.</p>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_unique.py
-/localdisk/tools/tc/agent1/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
+/localdisk/tools/tc/agent4/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
   warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
 [1 2 3]
 </pre></div>
