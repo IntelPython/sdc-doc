@@ -51,8 +51,8 @@ Fill NA/NaN values using the specified method.
 
 Limitations
 -----------
-- Parameters method, limit, downcast are currently unsupported by Intel Scalable Dataframe Compiler
-- Parameter inplace supported as literal value only
+- Parameters ``method``, ``limit`` and ``downcast`` are currently unsupported by Intel Scalable Dataframe Compiler.
+- Parameter ``inplace`` is supported as literal value only.
 
 Examples
 --------

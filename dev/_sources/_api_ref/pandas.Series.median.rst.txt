@@ -31,10 +31,8 @@ Return the median of the values for the requested axis.
 
 Limitations
 -----------
-- Parameters level, numeric_only are currently unsupported by Intel Scalable Dataframe Compiler
 
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
+- Parameters ``axis``, ``level`` and ``numeric_only`` are supported only with default value ``None``.
 
 Examples
 --------
@@ -46,4 +44,8 @@ Examples
 
 .. command-output:: python ./series/series_median.py
    :cwd: ../../../examples
+
+.. seealso::
+    :ref:`DataFrame.median <pandas.DataFrame.median>`
+        Return the median of the values for the columns.
 

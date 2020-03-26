@@ -71,8 +71,9 @@ groups.
 
 Limitations
 -----------
-- Parameters level, as_index, group_keys, squeeze, observed
-    are currently unsupported by Intel Scalable Dataframe Compiler
+- Parameters ``axis``, ``level``, ``as_index``, ``group_keys``, ``squeeze`` and ``observed`` are currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``by`` is supported as single literal column name only
+- Mutating the contents of a DataFrame between creating a groupby object and calling it's methods is unsupported
 
 Examples
 --------
@@ -89,7 +90,4 @@ Examples
 
     :ref:`Series.resample <pandas.Series.resample>`
         Resample time-series data.
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
 

@@ -55,8 +55,8 @@ below for more detail.
 
 Limitations
 -----------
-- Differs from Pandas in returning statistics as Series of strings when applied to
-    Series of strings or date-time values
+- Parameters ``include`` and ``exclude`` are currently unsupported by Intel Scalable Dataframe Compiler.
+- For string Series resulting values are returned as strings.
 
 Examples
 --------

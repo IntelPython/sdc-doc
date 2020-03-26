@@ -1,0 +1,31 @@
+.. _pandas.core.groupby.GroupBy.median:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.median
+**********************************
+
+Compute median of groups, excluding missing values.
+
+For multiple groupings, the result index will be a MultiIndex
+
+:return: Series or DataFrame
+    Median of values within each group.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_median.py
+   :language: python
+   :lines: 27-
+   :caption: Compute median of groups, excluding missing values.
+   :name: ex_dataframe_groupby_median
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_median.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.groupby <pandas.Series.groupby>`
+        Group Series using a mapper or by a Series of columns.
+    :ref:`DataFrame.groupby <pandas.DataFrame.groupby>`
+        Group DataFrame using a mapper or by a Series of columns.
+

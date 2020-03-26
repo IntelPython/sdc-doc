@@ -31,8 +31,7 @@ Compute correlation with `other` Series, excluding missing values.
 
 Limitations
 -----------
-- 'method' parameter accepts only 'pearson' value. Other values are not supported
-- Unsupported mixed numeric and string data
+- Parameter ``method`` is supported only with default value 'pearson'
 
 Examples
 --------

@@ -308,8 +308,6 @@ User-Defined Functions, GroupBy & Window
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.groupby <pandas.DataFrame.groupby>`
        Group DataFrame or Series using a mapper or by a Series of columns.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.rolling <pandas.DataFrame.rolling>`
        Provide rolling window calculations.
    :ref:`DataFrame.expanding <pandas.DataFrame.expanding>`

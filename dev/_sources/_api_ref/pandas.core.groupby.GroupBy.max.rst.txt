@@ -1,0 +1,23 @@
+.. _pandas.core.groupby.GroupBy.max:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.max
+*******************************
+
+Compute max of group values.
+
+:return: Series or DataFrame
+    Computed max of values within each group.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_max.py
+   :language: python
+   :lines: 27-
+   :caption: Compute max of group values.
+   :name: ex_dataframe_groupby_max
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_max.py
+   :cwd: ../../../examples
+

@@ -1,0 +1,23 @@
+.. _pandas.core.groupby.GroupBy.var:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.var
+*******************************
+
+Compute variance of groups, excluding missing values.
+
+For multiple groupings, the result index will be a MultiIndex.
+
+:param ddof:
+    integer, default 1
+        degrees of freedom
+
+:return: Series or DataFrame
+    Variance of values within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

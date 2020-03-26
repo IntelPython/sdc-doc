@@ -1,0 +1,17 @@
+.. _pandas.core.groupby.GroupBy.__iter__:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.__iter__
+************************************
+
+Groupby iterator.
+
+:return: Generator yielding sequence of (name, subsetted object)
+    for each group
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

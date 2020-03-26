@@ -1,0 +1,31 @@
+.. _pandas.core.groupby.GroupBy.nth:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.nth
+*******************************
+
+Take the nth row from each group if n is an int, or a subset of rows
+if n is a list of ints.
+
+If dropna, will take the nth non-null row, dropna is either
+'all' or 'any'; this is equivalent to calling dropna(how=dropna)
+before the groupby.
+
+:param n:
+    int or list of ints
+        a single nth value for the row or a list of nth values
+
+:param dropna:
+    None or str, optional
+        apply the specified dropna operation before counting which row is
+        the nth row. Needs to be None, 'any' or 'all'
+
+:return: Series or DataFrame
+    N-th value within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

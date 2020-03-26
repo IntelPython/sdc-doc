@@ -1,0 +1,29 @@
+.. _pandas.core.groupby.GroupBy.sum:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.sum
+*******************************
+
+Compute sum of group values.
+
+:return: Series or DataFrame
+    Computed sum of values within each group.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_sum.py
+   :language: python
+   :lines: 27-
+   :caption: Compute variance of groups, excluding missing values.
+   :name: ex_dataframe_groupby_sum
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_sum.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.groupby <pandas.Series.groupby>`
+        Group Series using a mapper or by a Series of columns.
+    :ref:`DataFrame.groupby <pandas.DataFrame.groupby>`
+        Group DataFrame using a mapper or by a Series of columns.
+

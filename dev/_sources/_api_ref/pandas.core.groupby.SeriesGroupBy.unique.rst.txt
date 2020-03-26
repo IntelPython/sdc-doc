@@ -1,0 +1,20 @@
+.. _pandas.core.groupby.SeriesGroupBy.unique:
+
+:orphan:
+
+pandas.core.groupby.SeriesGroupBy.unique
+****************************************
+
+Return unique values of Series object.
+
+Uniques are returned in order of appearance. Hash table-based unique,
+therefore does NOT sort.
+
+:return: ndarray or ExtensionArray
+    The unique values returned as a NumPy array. See Notes.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

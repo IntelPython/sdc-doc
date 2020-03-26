@@ -25,7 +25,7 @@ considered missing, and how to work with missing data.
 
 Limitations
 -----------
-- Parameter inplace is currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``inplace`` is currently unsupported by Intel Scalable Dataframe Compiler
 
 Examples
 --------

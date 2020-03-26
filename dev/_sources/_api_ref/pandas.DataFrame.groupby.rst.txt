@@ -69,8 +69,24 @@ groups.
     Depends on the calling object and returns groupby object that
     contains information about the groups.
 
+Limitations
+-----------
+- Parameters ``axis``, ``level``, ``as_index``, ``group_keys``, ``squeeze`` and ``observed`` are currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``by`` is supported as single literal column name only
+- Mutating the contents of a DataFrame between creating a groupby object and calling it's methods is unsupported
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_min.py
+   :language: python
+   :lines: 27-
+   :caption: Groupby and calculate the minimum in each group.
+   :name: ex_dataframe_groupby
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_min.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`resample <pandas.DataFrame.resample>`
+        Resample time-series data.
 

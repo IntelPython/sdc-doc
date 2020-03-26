@@ -1,0 +1,21 @@
+.. _pandas.core.groupby.GroupBy.ffill:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.ffill
+*********************************
+
+Forward fill the values.
+
+:param limit:
+    integer, optional
+        limit of how many values to fill
+
+:return: Series or DataFrame
+    Object with missing values filled.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

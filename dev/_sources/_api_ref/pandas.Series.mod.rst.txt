@@ -30,7 +30,8 @@ missing data in one of the inputs.
 
 Limitations
 -----------
-- Parameters level, fill_value are currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``axis`` is supported only with default value ``0``.
+- Parameters ``level`` and ``fill_value`` are supported only with default value ``None``.
 
 Examples
 --------
@@ -42,7 +43,4 @@ Examples
 
 .. command-output:: python ./series/series_mod.py
    :cwd: ../../../examples
-
-.. note::
-    Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler
 

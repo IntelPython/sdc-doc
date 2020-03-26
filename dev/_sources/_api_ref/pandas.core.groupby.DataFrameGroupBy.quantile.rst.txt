@@ -1,0 +1,25 @@
+.. _pandas.core.groupby.DataFrameGroupBy.quantile:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.quantile
+*********************************************
+
+Return group values at the given quantile, a la numpy.percentile.
+
+:param q:
+    float or array-like, default 0.5 (50% quantile)
+        Value(s) between 0 and 1 providing the quantile(s) to compute.
+
+:param interpolation:
+    {'linear', 'lower', 'higher', 'midpoint', 'nearest'}
+        Method to use when the desired quantile falls between two points.
+
+:return: Series or DataFrame
+    Return type determined by caller of GroupBy object.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

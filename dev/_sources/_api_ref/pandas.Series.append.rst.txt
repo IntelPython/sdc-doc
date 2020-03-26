@@ -26,8 +26,8 @@ Concatenate two or more Series.
 
 Limitations
 -----------
-- Parameter verify_integrity is currently unsupported by Intel Scalable Dataframe Compiler
-- Parameter ignore_index supported as literal value only
+- Parameter ``verify_integrity`` is currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``ignore_index`` is supported as literal value only
 - This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
     between staying in JIT-region with that function or going back to interpreter mode.
 

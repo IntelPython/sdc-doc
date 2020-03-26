@@ -94,7 +94,8 @@ The result of the operation.</p>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Parameters level, fill_value are currently unsupported by Intel Scalable Dataframe Compiler</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">axis</span></code> is supported only with default value <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Parameters <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">fill_value</span></code> are supported only with default value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="examples">
@@ -118,8 +119,6 @@ The result of the operation.</p>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_floordiv.py
-/localdisk/tools/tc/agent2/work/d3686067e4683a0d/base/envs/sdc_env/lib/python3.7/site-packages/numba/decorators.py:234: RuntimeWarning: nopython is set for njit and is ignored
-  warnings.warn(&#39;nopython is set for njit and is ignored&#39;, RuntimeWarning)
 0    0
 1    2
 2    1
@@ -127,10 +126,6 @@ The result of the operation.</p>
 4    0
 dtype: int64
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler</p>
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -172,7 +167,7 @@ dtype: int64
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2019-2020, Intel Corporation.<br/>
-    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
   </p>
 </footer>
   </body>

@@ -1157,6 +1157,16 @@
    :cwd: ../../examples
 
 
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_min.py
+   :language: python
+   :lines: 27-
+   :caption: Groupby and calculate the minimum in each group.
+   :name: ex_dataframe_groupby
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_min.py
+   :cwd: ../../examples
+
+
 .. literalinclude:: ../../examples/dataframe/rolling/dataframe_rolling_min.py
    :language: python
    :lines: 27-
@@ -1561,6 +1571,86 @@
    :name: ex_dataframe_rolling_quantile
 
 .. command-output:: python ./dataframe/rolling/dataframe_rolling_quantile.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_count.py
+   :language: python
+   :lines: 27-
+   :caption: Compute count of group, excluding missing values.
+   :name: ex_dataframe_groupby_count
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_count.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_max.py
+   :language: python
+   :lines: 27-
+   :caption: Compute max of group values.
+   :name: ex_dataframe_groupby_max
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_max.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_mean.py
+   :language: python
+   :lines: 27-
+   :caption: Compute mean of groups, excluding missing values.
+   :name: ex_dataframe_groupby_mean
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_mean.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_median.py
+   :language: python
+   :lines: 27-
+   :caption: Compute median of groups, excluding missing values.
+   :name: ex_dataframe_groupby_median
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_median.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_min.py
+   :language: python
+   :lines: 27-
+   :caption: Compute min of group values.
+   :name: ex_dataframe_groupby_min
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_min.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_prod.py
+   :language: python
+   :lines: 27-
+   :caption: Compute prod of group values.
+   :name: ex_dataframe_groupby_prod
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_prod.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_std.py
+   :language: python
+   :lines: 27-
+   :caption: Compute standard deviation of groups, excluding missing values.
+   :name: ex_dataframe_groupby_std
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_std.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_sum.py
+   :language: python
+   :lines: 27-
+   :caption: Compute variance of groups, excluding missing values.
+   :name: ex_dataframe_groupby_sum
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_sum.py
    :cwd: ../../examples
 
 

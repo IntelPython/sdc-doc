@@ -1,0 +1,17 @@
+.. _pandas.core.groupby.GroupBy.last:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.last
+********************************
+
+Compute last of group values.
+
+:return: Series or DataFrame
+    Computed last of values within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

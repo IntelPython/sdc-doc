@@ -1,0 +1,14 @@
+.. _pandas.core.groupby.SeriesGroupBy.value_counts:
+
+:orphan:
+
+pandas.core.groupby.SeriesGroupBy.value_counts
+**********************************************
+
+
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

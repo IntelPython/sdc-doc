@@ -35,7 +35,6 @@ series of elements.
 
 Limitations
 -----------
-- Unsupported mixed numeric and string data
 - Parameters limit, freq are currently unsupported by Intel Scalable Dataframe Compiler
 - This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
     between staying in JIT-region with that function or going back to interpreter mode.

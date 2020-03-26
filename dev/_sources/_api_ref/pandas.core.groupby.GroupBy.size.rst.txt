@@ -1,0 +1,17 @@
+.. _pandas.core.groupby.GroupBy.size:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.size
+********************************
+
+Compute group sizes.
+
+:return: Series
+    Number of rows in each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

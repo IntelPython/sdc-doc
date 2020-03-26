@@ -147,11 +147,9 @@ contains information about the groups.</p>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><dl class="simple">
-<dt>Parameters level, as_index, group_keys, squeeze, observed</dt><dd><p>are currently unsupported by Intel Scalable Dataframe Compiler</p>
-</dd>
-</dl>
-</li>
+<li><p>Parameters <code class="docutils literal notranslate"><span class="pre">axis</span></code>, <code class="docutils literal notranslate"><span class="pre">level</span></code>, <code class="docutils literal notranslate"><span class="pre">as_index</span></code>, <code class="docutils literal notranslate"><span class="pre">group_keys</span></code>, <code class="docutils literal notranslate"><span class="pre">squeeze</span></code> and <code class="docutils literal notranslate"><span class="pre">observed</span></code> are currently unsupported by Intel Scalable Dataframe Compiler</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">by</span></code> is supported as single literal column name only</p></li>
+<li><p>Mutating the contents of a DataFrame between creating a groupby object and calling it’s methods is unsupported</p></li>
 </ul>
 </div>
 <div class="section" id="examples">
@@ -168,14 +166,18 @@ contains information about the groups.</p>
     <span class="n">S</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">390.</span><span class="p">,</span> <span class="mf">350.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">])</span>
     <span class="n">by</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
+    <span class="c1"># Expect Series of pd.Series([210.0, 185.0], index=[0, 1])</span>
     <span class="k">return</span> <span class="n">S</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 
-<span class="c1"># print(series_groupby())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">series_groupby</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/series_groupby.py
+0    210.0
+1    185.0
+dtype: float64
 </pre></div>
 </div>
 <div class="admonition seealso">
@@ -184,10 +186,6 @@ contains information about the groups.</p>
 <dt><a class="reference internal" href="pandas.Series.resample.html#pandas-series-resample"><span class="std std-ref">Series.resample</span></a></dt><dd><p>Resample time-series data.</p>
 </dd>
 </dl>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Parameter axis is currently unsupported by Intel Scalable Dataframe Compiler</p>
 </div>
 </div>
 </div>
@@ -225,7 +223,7 @@ contains information about the groups.</p>
     <a href="#">Back to Top</a></p>
   <p>
     &copy; Copyright 2019-2020, Intel Corporation.<br/>
-    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.0. &nbsp;
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
   </p>
 </footer>
   </body>
