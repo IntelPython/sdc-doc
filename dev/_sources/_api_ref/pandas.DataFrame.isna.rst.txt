@@ -40,6 +40,6 @@ Examples
     :ref:`DataFrame.dropna <pandas.DataFrame.dropna>`
         Omit axes labels with missing values.
 
-    `pandas.absolute <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isna.html#pandas.isna>`_
+    `pandas.isna <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isna.html#pandas.isna>`_
         Top-level isna.
 

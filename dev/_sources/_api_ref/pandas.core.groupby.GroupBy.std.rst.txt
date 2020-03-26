@@ -16,6 +16,10 @@ For multiple groupings, the result index will be a MultiIndex.
 :return: Series or DataFrame
     Standard deviation of values within each group.
 
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system.    Users should exercise a tradeoff between staying in JIT-region with that function or    going back to interpreter mode.
+
 Examples
 --------
 .. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_std.py

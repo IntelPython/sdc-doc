@@ -78,7 +78,18 @@ The values of the DataFrame.</p>
 </dl>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
-<p>Only numeric values supported as an output</p>
+<ul class="simple">
+<li><p>Only numeric values supported as an output</p></li>
+<li><dl class="simple">
+<dt>The dtype will be a lower-common-denominator dtype (implicit upcasting);</dt><dd><p>that is to say if the dtypes (even of numeric types) are mixed, the one that accommodates all will be chosen.
+Use this with care if you are not dealing with the blocks.
+e.g. If the dtypes are float16 and float32, dtype will be upcast to float32. If dtypes are int32 and uint8,
+dtype will be upcast to int32. By numpy.find_common_type() convention,
+mixing int64 and uint64 will result in a float64 dtype.</p>
+</dd>
+</dl>
+</li>
+</ul>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
@@ -115,15 +126,6 @@ The values of the DataFrame.</p>
 <dt><a class="reference internal" href="pandas.DataFrame.columns.html#pandas-dataframe-columns"><span class="std std-ref">DataFrame.columns</span></a></dt><dd><p>Retrieving the column names.</p>
 </dd>
 </dl>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The dtype will be a lower-common-denominator dtype (implicit upcasting);
-that is to say if the dtypes (even of numeric types) are mixed, the one that accommodates all will be chosen.
-Use this with care if you are not dealing with the blocks.
-e.g. If the dtypes are float16 and float32, dtype will be upcast to float32. If dtypes are int32 and uint8,
-dtype will be upcast to int32. By numpy.find_common_type() convention,
-mixing int64 and uint64 will result in a float64 dtype.</p>
 </div>
 </div>
 </div>

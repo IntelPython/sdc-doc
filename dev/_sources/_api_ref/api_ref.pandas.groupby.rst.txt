@@ -144,8 +144,6 @@ Computations / descriptive stats
        Compute sum of group values.
    :ref:`GroupBy.var <pandas.core.groupby.GroupBy.var>`
        Compute variance of groups, excluding missing values.
-
-        **Unsupported by Intel SDC**.
    :ref:`GroupBy.tail <pandas.core.groupby.GroupBy.tail>`
        Return last n rows of each group.
 

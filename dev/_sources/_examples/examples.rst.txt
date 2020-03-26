@@ -1043,10 +1043,10 @@
 
 
 .. literalinclude:: ../../examples/dataframe/dataframe_index.py
-   :language: python
-   :lines: 27-
-   :caption: The index (row labels) of the DataFrame.
-   :name: ex_dataframe_index
+    :language: python
+    :lines: 27-
+    :caption: The index (row labels) of the DataFrame.
+    :name: ex_dataframe_index
 
 .. command-output:: python ./dataframe/dataframe_index.py
     :cwd: ../../examples
@@ -1647,10 +1647,20 @@
 .. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_sum.py
    :language: python
    :lines: 27-
-   :caption: Compute variance of groups, excluding missing values.
+   :caption: Compute sum of groups, excluding missing values.
    :name: ex_dataframe_groupby_sum
 
 .. command-output:: python ./dataframe/groupby/dataframe_groupby_sum.py
+   :cwd: ../../examples
+
+
+.. literalinclude:: ../../examples/dataframe/groupby/dataframe_groupby_var.py
+   :language: python
+   :lines: 27-
+   :caption: Compute variance of groups, excluding missing values.
+   :name: ex_dataframe_groupby_var
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_var.py
    :cwd: ../../examples
 
 

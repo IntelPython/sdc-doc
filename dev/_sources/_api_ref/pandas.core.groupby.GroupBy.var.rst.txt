@@ -16,8 +16,24 @@ For multiple groupings, the result index will be a MultiIndex.
 :return: Series or DataFrame
     Variance of values within each group.
 
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system.    Users should exercise a tradeoff between staying in JIT-region with that function or    going back to interpreter mode.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_var.py
+   :language: python
+   :lines: 27-
+   :caption: Compute variance of groups, excluding missing values.
+   :name: ex_dataframe_groupby_var
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_var.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.groupby <pandas.Series.groupby>`
+        Group Series using a mapper or by a Series of columns.
+    :ref:`DataFrame.groupby <pandas.DataFrame.groupby>`
+        Group DataFrame using a mapper or by a Series of columns.
 
