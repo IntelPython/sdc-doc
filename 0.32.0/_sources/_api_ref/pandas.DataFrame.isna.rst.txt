@@ -1,0 +1,45 @@
+.. _pandas.DataFrame.isna:
+
+:orphan:
+
+pandas.DataFrame.isna
+*********************
+
+Detect missing values.
+
+Return a boolean same-sized object indicating if the values are NA.
+NA values, such as None or :attr:`numpy.NaN`, gets mapped to True
+values.
+Everything else gets mapped to False values. Characters such as empty
+strings ``''`` or :attr:`numpy.inf` are not considered NA values
+(unless you set ``pandas.options.mode.use_inf_as_na = True``).
+
+:return: DataFrame
+    Mask of bool values for each element in DataFrame that
+    indicates whether an element is not an NA value.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/dataframe_isna.py
+   :language: python
+   :lines: 35-
+   :caption: Detect missing values.
+   :name: ex_dataframe_isna
+
+.. command-output:: python ./dataframe/dataframe_isna.py
+   :cwd: ../../../examples
+
+.. seealso::
+
+    :ref:`DataFrame.isnull <pandas.DataFrame.isnull>`
+        Alias of isna.
+
+    :ref:`DataFrame.notna <pandas.DataFrame.notna>`
+        Boolean inverse of isna.
+
+    :ref:`DataFrame.dropna <pandas.DataFrame.dropna>`
+        Omit axes labels with missing values.
+
+    `pandas.isna <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.isna.html#pandas.isna>`_
+        Top-level isna.
+

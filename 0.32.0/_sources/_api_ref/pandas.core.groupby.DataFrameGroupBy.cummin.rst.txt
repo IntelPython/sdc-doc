@@ -1,0 +1,16 @@
+.. _pandas.core.groupby.DataFrameGroupBy.cummin:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.cummin
+*******************************************
+
+Cumulative min for each group.
+
+:return: Series or DataFrame
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

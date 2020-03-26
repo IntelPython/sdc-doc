@@ -1,0 +1,30 @@
+.. _pandas.core.groupby.DataFrameGroupBy.resample:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.resample
+*********************************************
+
+Provide resampling when using a TimeGrouper.
+
+Given a grouper, the function resamples it according to a string
+"string" -> "frequency".
+
+See the :ref:`frequency aliases <timeseries.offset_aliases>`
+documentation for more details.
+
+:param rule:
+    str or DateOffset
+        The offset string or object representing target grouper conversion.
+        \*args, \*\*kwargs
+        Possible arguments are `how`, `fill_method`, `limit`, `kind` and
+        `on`, and other arguments of `TimeGrouper`.
+
+:return: Grouper
+    Return a new grouper with our resampler appended.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

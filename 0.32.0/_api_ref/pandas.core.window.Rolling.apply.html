@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.core.window.Rolling.apply &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.core.window.Rolling.apply<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>The rolling function’s apply function.</p>
+<dl class="field-list">
+<dt class="field-odd">param func</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>function</dt><dd><p>Must produce a single value from an ndarray input if <code class="docutils literal notranslate"><span class="pre">raw=True</span></code>
+or a single value from a Series if <code class="docutils literal notranslate"><span class="pre">raw=False</span></code>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param raw</dt>
+<dd class="field-even"><dl>
+<dt>bool, default None</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">False</span></code><span class="classifier">passes each row or column as a Series to the</span></dt><dd><p>function.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code><span class="classifier">the passed function will receive ndarray</span></dt><dd><p>objects instead.
+If you are just applying a NumPy reduction function this will
+achieve much better performance.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>The <cite>raw</cite> parameter is required and will show a FutureWarning if
+not passed. In the future <cite>raw</cite> will default to False.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+<p>Arguments and keyword arguments to be passed into func.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Series or DataFrame
+Return type is determined by the caller.</p>
+</dd>
+</dl>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>This function may reveal slower performance than Pandas* on user system. Users should exercise a tradeoff</dt><dd><p>between staying in JIT-region with that function or going back to interpreter mode.</p>
+</dd>
+</dl>
+</li>
+<li><p>Supported <code class="docutils literal notranslate"><span class="pre">raw</span></code> only can be <cite>None</cite> or <cite>True</cite>. Parameters <code class="docutils literal notranslate"><span class="pre">args</span></code>, <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> unsupported.</p></li>
+<li><p>DataFrame/Series elements cannot be max/min float/integer. Otherwise SDC and Pandas results are different.</p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="ex-series-rolling-apply">
+<div class="code-block-caption"><span class="caption-text">Calculate the rolling apply.</span><a class="headerlink" href="#ex-series-rolling-apply" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">series_rolling_apply</span><span class="p">():</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>  <span class="c1"># Series of 4, 3, 5, 2, 6</span>
+
+    <span class="k">def</span> <span class="nf">get_median</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">out_series</span> <span class="o">=</span> <span class="n">series</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_median</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">out_series</span>  <span class="c1"># Expect series of NaN, NaN, 4.0, 3.0, 5.0</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">series_rolling_apply</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/rolling/series_rolling_apply.py
+0    NaN
+1    NaN
+2    4.0
+3    3.0
+4    5.0
+dtype: float64
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="ex-dataframe-rolling-apply">
+<div class="code-block-caption"><span class="caption-text">Calculate the rolling apply.</span><a class="headerlink" href="#ex-dataframe-rolling-apply" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">df_rolling_apply</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">]})</span>
+
+    <span class="k">def</span> <span class="nf">get_median</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">out_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_median</span><span class="p">)</span>
+
+    <span class="c1"># Expect DataFrame of</span>
+    <span class="c1"># {&#39;A&#39;: [NaN, NaN, 4.0, 3.0, 5.0], &#39;B&#39;: [NaN, NaN, -4.0, -3.0, -5.0]}</span>
+    <span class="k">return</span> <span class="n">out_df</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_rolling_apply</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./dataframe/rolling/dataframe_rolling_apply.py
+     A    B
+0  NaN  NaN
+1  NaN  NaN
+2  4.0 -4.0
+3  3.0 -3.0
+4  5.0 -5.0
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.rolling.html#pandas-series-rolling"><span class="std std-ref">Series.rolling</span></a></dt><dd><p>Calling object with a Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rolling.html#pandas-dataframe-rolling"><span class="std std-ref">DataFrame.rolling</span></a></dt><dd><p>Calling object with a DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.apply.html#pandas-series-apply"><span class="std std-ref">Series.apply</span></a></dt><dd><p>Similar method for Series.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.apply.html#pandas-dataframe-apply"><span class="std std-ref">DataFrame.apply</span></a></dt><dd><p>Similar method for DataFrame.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

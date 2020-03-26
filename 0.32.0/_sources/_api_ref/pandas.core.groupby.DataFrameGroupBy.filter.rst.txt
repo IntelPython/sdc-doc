@@ -1,0 +1,25 @@
+.. _pandas.core.groupby.DataFrameGroupBy.filter:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.filter
+*******************************************
+
+Return a copy of a DataFrame excluding elements from groups that
+do not satisfy the boolean criterion specified by func.
+
+:param f:
+    function
+        Function to apply to each subframe. Should return True or False.
+
+:param dropna:
+    Drop groups that do not pass the filter. True by default;
+        if False, groups that evaluate False are filled with NaNs.
+
+:return: filtered : DataFrame
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

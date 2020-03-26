@@ -1,0 +1,16 @@
+.. _pandas.core.groupby.GroupBy.cumprod:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.cumprod
+***********************************
+
+Cumulative product for each group.
+
+:return: Series or DataFrame
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

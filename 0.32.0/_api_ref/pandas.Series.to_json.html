@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.to_json &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.Series.to_json<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Convert the object to a JSON string.</p>
+<p>Note NaN’s and None will be converted to null and datetime objects
+will be converted to UNIX timestamps.</p>
+<dl class="field-list">
+<dt class="field-odd">param path_or_buf</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>string or file handle, optional</dt><dd><p>File path or object. If not specified, the result is returned as
+a string.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param orient</dt>
+<dd class="field-even"><dl>
+<dt>string</dt><dd><p>Indication of expected JSON string format.</p>
+<ul class="simple">
+<li><p>Series</p></li>
+<li><p>default is ‘index’</p></li>
+<li><p>allowed values are: {‘split’,’records’,’index’,’table’}</p></li>
+<li><p>DataFrame</p></li>
+<li><p>default is ‘columns’</p></li>
+<li><dl class="simple">
+<dt>allowed values are:</dt><dd><p>{‘split’,’records’,’index’,’columns’,’values’,’table’}</p>
+</dd>
+</dl>
+</li>
+<li><p>The format of the JSON string</p></li>
+<li><dl class="simple">
+<dt>‘split’<span class="classifier">dict like {‘index’ -&gt; [index],</span></dt><dd><p>‘columns’ -&gt; [columns], ‘data’ -&gt; [values]}</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘records’<span class="classifier">list like</span></dt><dd><p>[{column -&gt; value}, … , {column -&gt; value}]</p>
+</dd>
+</dl>
+</li>
+<li><p>‘index’ : dict like {index -&gt; {column -&gt; value}}</p></li>
+<li><p>‘columns’ : dict like {column -&gt; {index -&gt; value}}</p></li>
+<li><p>‘values’ : just the values array</p></li>
+<li><dl class="simple">
+<dt>‘table’<span class="classifier">dict like {‘schema’: {schema}, ‘data’: {data}}</span></dt><dd><p>describing the data, and the data component is
+like <code class="docutils literal notranslate"><span class="pre">orient='records'</span></code>.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.20.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param date_format</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{None, ‘epoch’, ‘iso’}</dt><dd><p>Type of date conversion. ‘epoch’ = epoch milliseconds,
+‘iso’ = ISO8601. The default depends on the <cite>orient</cite>. For
+<code class="docutils literal notranslate"><span class="pre">orient='table'</span></code>, the default is ‘iso’. For all other orients,
+the default is ‘epoch’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param double_precision</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int, default 10</dt><dd><p>The number of decimal places to use when encoding
+floating point values.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param force_ascii</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Force encoded string to be ASCII.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param date_unit</dt>
+<dd class="field-even"><dl class="simple">
+<dt>string, default ‘ms’ (milliseconds)</dt><dd><p>The time unit to encode to, governs timestamp and ISO8601
+precision.  One of ‘s’, ‘ms’, ‘us’, ‘ns’ for second, millisecond,
+microsecond, and nanosecond respectively.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param default_handler</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>callable, default None</dt><dd><p>Handler to call if object cannot otherwise be converted to a
+suitable format for JSON. Should receive a single argument which is
+the object to convert and return a serialisable object.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param lines</dt>
+<dd class="field-even"><dl>
+<dt>bool, default False</dt><dd><p>If ‘orient’ is ‘records’ write out line delimited json format. Will
+throw ValueError if incorrect ‘orient’ since others are not list
+like.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param compression</dt>
+<dd class="field-odd"><p>{‘infer’, ‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}</p>
+<blockquote>
+<div><p>A string representing the compression to use in the output file,
+only used when the first argument is a filename. By default, the
+compression is inferred from the filename.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+</div>
+<p>‘infer’ option added and set to default</p>
+</div></blockquote>
+</dd>
+<dt class="field-even">param index</dt>
+<dd class="field-even"><dl>
+<dt>bool, default True</dt><dd><p>Whether to include the index values in the JSON string. Not
+including the index (<code class="docutils literal notranslate"><span class="pre">index=False</span></code>) is only supported when
+orient is ‘split’ or ‘table’.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>None or str
+If path_or_buf is None, returns the resulting json format as a
+string. Otherwise returns None.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

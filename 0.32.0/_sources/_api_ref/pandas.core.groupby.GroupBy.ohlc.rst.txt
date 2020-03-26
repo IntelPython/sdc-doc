@@ -1,0 +1,19 @@
+.. _pandas.core.groupby.GroupBy.ohlc:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.ohlc
+********************************
+
+Compute sum of values, excluding missing values.
+
+For multiple groupings, the result index will be a MultiIndex
+
+:return: DataFrame
+    Open, high, low and close values within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

@@ -1,0 +1,32 @@
+.. _pandas.core.groupby.DataFrameGroupBy.shift:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.shift
+******************************************
+
+Shift each group by periods observations.
+
+:param periods:
+    integer, default 1
+        number of periods to shift
+
+:param freq:
+    frequency string
+
+:param axis:
+    axis to shift, default 0
+
+:param fill_value:
+    optional
+
+        .. versionadded:: 0.24.0
+
+:return: Series or DataFrame
+    Object shifted within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

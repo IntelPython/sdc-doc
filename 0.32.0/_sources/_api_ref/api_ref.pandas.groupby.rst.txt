@@ -1,0 +1,315 @@
+.. _api_ref.pandas.groupby:
+.. include:: ./../ext_links.txt
+
+Pandas Groupby
+=============
+.. currentmodule:: pandas.core.groupby
+
+Indexing, iteration
+--------------------------------
+
+   :ref:`GroupBy.__iter__ <pandas.core.groupby.GroupBy.__iter__>`
+       Groupby iterator.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.groups <pandas.core.groupby.GroupBy.groups>`
+       Dict {group name -> group labels}.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.indices <pandas.core.groupby.GroupBy.indices>`
+       Dict {group name -> group indices}.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.get_group <pandas.core.groupby.GroupBy.get_group>`
+       Construct DataFrame from group with provided name.
+
+        **Unsupported by Intel SDC**.
+   :ref:`Grouper <pandas.core.groupby.Grouper>`
+       A Grouper allows the user to specify a groupby instruction for a target object
+
+        **Unsupported by Intel SDC**.
+
+Function application
+-----------------------------------
+
+   :ref:`GroupBy.apply <pandas.core.groupby.GroupBy.apply>`
+       Apply function `func`  group-wise and combine the results together.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.agg <pandas.core.groupby.GroupBy.agg>`
+       **Unsupported by Intel SDC**.
+   :ref:`GroupBy.aggregate <pandas.core.groupby.GroupBy.aggregate>`
+       **Unsupported by Intel SDC**.
+   :ref:`GroupBy.transform <pandas.core.groupby.GroupBy.transform>`
+       **Unsupported by Intel SDC**.
+   :ref:`GroupBy.pipe <pandas.core.groupby.GroupBy.pipe>`
+       Apply a function `func` with arguments to this GroupBy object and return the function's result.
+
+        **Unsupported by Intel SDC**.
+
+Computations / descriptive stats
+----------------------------------------------
+
+   :ref:`GroupBy.all <pandas.core.groupby.GroupBy.all>`
+       Return True if all values in the group are truthful, else False.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.any <pandas.core.groupby.GroupBy.any>`
+       Return True if any value in the group is truthful, else False.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.bfill <pandas.core.groupby.GroupBy.bfill>`
+       Backward fill the values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.count <pandas.core.groupby.GroupBy.count>`
+       Compute count of group, excluding missing values.
+   :ref:`GroupBy.cumcount <pandas.core.groupby.GroupBy.cumcount>`
+       Number each item in each group from 0 to the length of that group - 1.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.cummax <pandas.core.groupby.GroupBy.cummax>`
+       Cumulative max for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.cummin <pandas.core.groupby.GroupBy.cummin>`
+       Cumulative min for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.cumprod <pandas.core.groupby.GroupBy.cumprod>`
+       Cumulative product for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.cumsum <pandas.core.groupby.GroupBy.cumsum>`
+       Cumulative sum for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.ffill <pandas.core.groupby.GroupBy.ffill>`
+       Forward fill the values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.first <pandas.core.groupby.GroupBy.first>`
+       Compute first of group values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.head <pandas.core.groupby.GroupBy.head>`
+       Return first n rows of each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.last <pandas.core.groupby.GroupBy.last>`
+       Compute last of group values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.max <pandas.core.groupby.GroupBy.max>`
+       Compute max of group values.
+   :ref:`GroupBy.mean <pandas.core.groupby.GroupBy.mean>`
+       Compute mean of groups, excluding missing values.
+   :ref:`GroupBy.median <pandas.core.groupby.GroupBy.median>`
+       Compute median of groups, excluding missing values.
+   :ref:`GroupBy.min <pandas.core.groupby.GroupBy.min>`
+       Compute min of group values.
+   :ref:`GroupBy.ngroup <pandas.core.groupby.GroupBy.ngroup>`
+       Number each group from 0 to the number of groups - 1.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.nth <pandas.core.groupby.GroupBy.nth>`
+       Take the nth row from each group if n is an int, or a subset of rows if n is a list of ints.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.ohlc <pandas.core.groupby.GroupBy.ohlc>`
+       Compute sum of values, excluding missing values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.prod <pandas.core.groupby.GroupBy.prod>`
+       Compute prod of group values.
+   :ref:`GroupBy.rank <pandas.core.groupby.GroupBy.rank>`
+       Provide the rank of values within each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.pct_change <pandas.core.groupby.GroupBy.pct_change>`
+       Calculate pct_change of each value to previous entry in group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.size <pandas.core.groupby.GroupBy.size>`
+       Compute group sizes.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.sem <pandas.core.groupby.GroupBy.sem>`
+       Compute standard error of the mean of groups, excluding missing values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`GroupBy.std <pandas.core.groupby.GroupBy.std>`
+       Compute standard deviation of groups, excluding missing values.
+   :ref:`GroupBy.sum <pandas.core.groupby.GroupBy.sum>`
+       Compute sum of group values.
+   :ref:`GroupBy.var <pandas.core.groupby.GroupBy.var>`
+       Compute variance of groups, excluding missing values.
+   :ref:`GroupBy.tail <pandas.core.groupby.GroupBy.tail>`
+       Return last n rows of each group.
+
+        **Unsupported by Intel SDC**.
+
+The following methods are available in both ``SeriesGroupBy`` and  ``DataFrameGroupBy`` objects, but may differ slightly,
+usually in that the ``DataFrameGroupBy`` version usually permits the specification of an axis argument,
+and often an argument indicating whether to restrict application to columns of a specific data type.
+
+   :ref:`DataFrameGroupBy.all <pandas.core.groupby.DataFrameGroupBy.all>`
+       Return True if all values in the group are truthful, else False.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.any <pandas.core.groupby.DataFrameGroupBy.any>`
+       Return True if any value in the group is truthful, else False.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.bfill <pandas.core.groupby.DataFrameGroupBy.bfill>`
+       Backward fill the values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.corr <pandas.core.groupby.DataFrameGroupBy.corr>`
+       Compute pairwise correlation of columns, excluding NA/null values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.count <pandas.core.groupby.DataFrameGroupBy.count>`
+       Compute count of group, excluding missing values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.cov <pandas.core.groupby.DataFrameGroupBy.cov>`
+       Compute pairwise covariance of columns, excluding NA/null values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.cummax <pandas.core.groupby.DataFrameGroupBy.cummax>`
+       Cumulative max for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.cummin <pandas.core.groupby.DataFrameGroupBy.cummin>`
+       Cumulative min for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.cumprod <pandas.core.groupby.DataFrameGroupBy.cumprod>`
+       Cumulative product for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.cumsum <pandas.core.groupby.DataFrameGroupBy.cumsum>`
+       Cumulative sum for each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.describe <pandas.core.groupby.DataFrameGroupBy.describe>`
+       Generate descriptive statistics that summarize the central tendency, dispersion and shape of a dataset's distribution, excluding ``NaN`` values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.diff <pandas.core.groupby.DataFrameGroupBy.diff>`
+       First discrete difference of element.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.ffill <pandas.core.groupby.DataFrameGroupBy.ffill>`
+       Forward fill the values.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.fillna <pandas.core.groupby.DataFrameGroupBy.fillna>`
+       Fill NA/NaN values using the specified method.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.filter <pandas.core.groupby.DataFrameGroupBy.filter>`
+       Return a copy of a DataFrame excluding elements from groups that do not satisfy the boolean criterion specified by func.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.hist <pandas.core.groupby.DataFrameGroupBy.hist>`
+       Make a histogram of the DataFrame's.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.idxmax <pandas.core.groupby.DataFrameGroupBy.idxmax>`
+       Return index of first occurrence of maximum over requested axis. NA/null values are excluded.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.idxmin <pandas.core.groupby.DataFrameGroupBy.idxmin>`
+       Return index of first occurrence of minimum over requested axis. NA/null values are excluded.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.mad <pandas.core.groupby.DataFrameGroupBy.mad>`
+       Return the mean absolute deviation of the values for the requested axis.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.nunique <pandas.core.groupby.DataFrameGroupBy.nunique>`
+       Return DataFrame with number of distinct observations per group for each column.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.pct_change <pandas.core.groupby.DataFrameGroupBy.pct_change>`
+       Calculate pct_change of each value to previous entry in group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.plot <pandas.core.groupby.DataFrameGroupBy.plot>`
+       Class implementing the .plot attribute for groupby objects.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.quantile <pandas.core.groupby.DataFrameGroupBy.quantile>`
+       Return group values at the given quantile, a la numpy.percentile.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.rank <pandas.core.groupby.DataFrameGroupBy.rank>`
+       Provide the rank of values within each group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.resample <pandas.core.groupby.DataFrameGroupBy.resample>`
+       Provide resampling when using a TimeGrouper.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.shift <pandas.core.groupby.DataFrameGroupBy.shift>`
+       Shift each group by periods observations.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.size <pandas.core.groupby.DataFrameGroupBy.size>`
+       Compute group sizes.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.skew <pandas.core.groupby.DataFrameGroupBy.skew>`
+       Return unbiased skew over requested axis Normalized by N-1.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.take <pandas.core.groupby.DataFrameGroupBy.take>`
+       Return the elements in the given *positional* indices along an axis.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.tshift <pandas.core.groupby.DataFrameGroupBy.tshift>`
+       Shift the time index, using the index's frequency if available.
+
+        **Unsupported by Intel SDC**.
+
+The following methods are available only for ``SeriesGroupBy`` objects.
+
+   :ref:`SeriesGroupBy.nlargest <pandas.core.groupby.SeriesGroupBy.nlargest>`
+       Return the largest `n` elements.
+
+        **Unsupported by Intel SDC**.
+   :ref:`SeriesGroupBy.nsmallest <pandas.core.groupby.SeriesGroupBy.nsmallest>`
+       Return the smallest `n` elements.
+
+        **Unsupported by Intel SDC**.
+   :ref:`SeriesGroupBy.nunique <pandas.core.groupby.SeriesGroupBy.nunique>`
+       Return number of unique elements in the group.
+
+        **Unsupported by Intel SDC**.
+   :ref:`SeriesGroupBy.unique <pandas.core.groupby.SeriesGroupBy.unique>`
+       Return unique values of Series object.
+
+        **Unsupported by Intel SDC**.
+   :ref:`SeriesGroupBy.value_counts <pandas.core.groupby.SeriesGroupBy.value_counts>`
+       **Unsupported by Intel SDC**.
+   :ref:`SeriesGroupBy.is_monotonic_increasing <pandas.core.groupby.SeriesGroupBy.is_monotonic_increasing>`
+       Return boolean if values in the object are monotonic_increasing.
+
+        **Unsupported by Intel SDC**.
+   :ref:`SeriesGroupBy.is_monotonic_decreasing <pandas.core.groupby.SeriesGroupBy.is_monotonic_decreasing>`
+       Return boolean if values in the object are monotonic_decreasing.
+
+        **Unsupported by Intel SDC**.
+
+The following methods are available only for DataFrameGroupBy objects.
+
+   :ref:`DataFrameGroupBy.corrwith <pandas.core.groupby.DataFrameGroupBy.corrwith>`
+       Compute pairwise correlation between rows or columns of DataFrame with rows or columns of Series or DataFrame.  DataFrames are first aligned along both axes before computing the correlations.
+
+        **Unsupported by Intel SDC**.
+   :ref:`DataFrameGroupBy.boxplot <pandas.core.groupby.DataFrameGroupBy.boxplot>`
+       Make box plots from DataFrameGroupBy data.
+
+        **Unsupported by Intel SDC**.

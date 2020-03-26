@@ -1,0 +1,14 @@
+.. _pandas.core.groupby.GroupBy.indices:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.indices
+***********************************
+
+Dict {group name -> group indices}.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

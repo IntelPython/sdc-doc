@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.resample &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.Series.resample<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Resample time-series data.</p>
+<p>Convenience method for frequency conversion and resampling of time
+series. Object must have a datetime-like index (<cite>DatetimeIndex</cite>,
+<cite>PeriodIndex</cite>, or <cite>TimedeltaIndex</cite>), or pass datetime-like values
+to the <cite>on</cite> or <cite>level</cite> keyword.</p>
+<dl class="field-list">
+<dt class="field-odd">param rule</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>DateOffset, Timedelta or str</dt><dd><p>The offset string or object representing target conversion.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param how</dt>
+<dd class="field-even"><dl>
+<dt>str</dt><dd><p>Method for down/re-sampling, default to ‘mean’ for downsampling.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.18.0.</span></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">.resample(...).apply(&lt;func&gt;)</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param axis</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{0 or ‘index’, 1 or ‘columns’}, default 0</dt><dd><p>Which axis to use for up- or down-sampling. For <cite>Series</cite> this
+will default to 0, i.e. along the rows. Must be
+<cite>DatetimeIndex</cite>, <cite>TimedeltaIndex</cite> or <cite>PeriodIndex</cite>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param fill_method</dt>
+<dd class="field-even"><dl>
+<dt>str, default None</dt><dd><p>Filling method for upsampling.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.18.0.</span></p>
+</div>
+<p>e.g. <code class="docutils literal notranslate"><span class="pre">.resample(...).pad()</span></code></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param closed</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{‘right’, ‘left’}, default None</dt><dd><p>Which side of bin interval is closed. The default is ‘left’
+for all frequency offsets except for ‘M’, ‘A’, ‘Q’, ‘BM’,
+‘BA’, ‘BQ’, and ‘W’ which all have a default of ‘right’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param label</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{‘right’, ‘left’}, default None</dt><dd><p>Which bin edge label to label bucket with. The default is ‘left’
+for all frequency offsets except for ‘M’, ‘A’, ‘Q’, ‘BM’,
+‘BA’, ‘BQ’, and ‘W’ which all have a default of ‘right’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param convention</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{‘start’, ‘end’, ‘s’, ‘e’}, default ‘start’</dt><dd><p>For <cite>PeriodIndex</cite> only, controls whether to use the start or
+end of <cite>rule</cite>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param kind</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{‘timestamp’, ‘period’}, optional, default None</dt><dd><p>Pass ‘timestamp’ to convert the resulting index to a
+<cite>DateTimeIndex</cite> or ‘period’ to convert it to a <cite>PeriodIndex</cite>.
+By default the input representation is retained.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param loffset</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>timedelta, default None</dt><dd><p>Adjust the resampled time labels.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param limit</dt>
+<dd class="field-even"><dl>
+<dt>int, default None</dt><dd><p>Maximum size gap when reindexing with <cite>fill_method</cite>.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 0.18.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param base</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int, default 0</dt><dd><p>For frequencies that evenly subdivide 1 day, the “origin” of the
+aggregated intervals. For example, for ‘5min’ frequency, base could
+range from 0 through 4. Defaults to 0.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param on</dt>
+<dd class="field-even"><dl>
+<dt>str, optional</dt><dd><p>For a DataFrame, column to use instead of index for resampling.
+Column must be datetime-like.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param level</dt>
+<dd class="field-odd"><dl>
+<dt>str or int, optional</dt><dd><p>For a MultiIndex, level (name or number) to use for
+resampling. <cite>level</cite> must be datetime-like.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>Resampler object</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

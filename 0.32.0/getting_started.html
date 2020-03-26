@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Started &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Compiling With Intel® SDC" href="compilation.html" />
+    <link rel="prev" title="What is Intel® SDC?" href="overview.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="compilation.html" title="Compiling With Intel® SDC">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="overview.html" title="What is Intel® SDC?">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>Getting Started</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="getting-started"></span><div class="section" id="id1">
+<h1>Getting Started<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Intel® Scalable Dataframe Compiler (Intel® SDC) extends capabilities of <a class="reference external" href="https://numba.pydata.org/">Numba*</a> to compile a subset
+of <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> into native code. Being integral part of <a class="reference external" href="https://numba.pydata.org/">Numba*</a> it allows to combine regular <a class="reference external" href="https://numpy.org/">NumPy*</a> codes
+with <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> operations.</p>
+<p>Like in <a class="reference external" href="https://numba.pydata.org/">Numba*</a> the compilation is controlled by a regular <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator and respective compilation
+directives which control its behavior.</p>
+<p>The code below illustrates a typical workflow that Intel® SDC is intended to compile:</p>
+<div class="literal-block-wrapper docutils container" id="ex-getting-started-basic-workflow">
+<div class="code-block-caption"><span class="caption-text">Example 1: Compiling Basic Pandas* Workflow</span><a class="headerlink" href="#ex-getting-started-basic-workflow" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+<span class="c1"># Dataset for analysis</span>
+<span class="n">FNAME</span> <span class="o">=</span> <span class="s2">&quot;employees.csv&quot;</span>
+
+
+<span class="c1"># This function gets compiled by Numba*</span>
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">get_analyzed_data</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FNAME</span><span class="p">)</span>
+    <span class="n">s_bonus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Bonus %&#39;</span><span class="p">])</span>
+    <span class="n">s_first_name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;First Name&#39;</span><span class="p">])</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">s_bonus</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="n">s_first_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">,</span> <span class="n">names</span>
+
+
+<span class="c1"># Printing names and their average bonus percent</span>
+<span class="n">mean_bonus</span><span class="p">,</span> <span class="n">sorted_first_names</span> <span class="o">=</span> <span class="n">get_analyzed_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_first_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average Bonus %:&#39;</span><span class="p">,</span> <span class="n">mean_bonus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The workflow typically starts with reading data from a file (or multiple files) into a dataframe (or multiple
+dataframes) followed by data transformations of dataframes and/or individual columns, cleaning the data, grouping and
+binning, and finally by feeding the cleaned data into machine learning algorithm for training or inference.</p>
+<a class="reference internal image-reference" href="_images/workflow.png"><img alt="Data analytics workflows" class="align-center" src="_images/workflow.png" style="width: 526px;" /></a>
+<p>We also recommend to read <a class="reference external" href="https://numba.pydata.org/numba-doc/dev/user/5minguide.html">A ~5 minute guide to Numba</a>
+for getting started with <a class="reference external" href="https://numba.pydata.org/">Numba*</a>.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>You can use conda and pip package managers to install Intel® SDC into your <a class="reference external" href="https://www.python.org/">Python*</a> environment.</p>
+<p>Intel SDC is available on the Anaconda Cloud intel/label/beta channel.
+Distribution includes Intel SDC for Python 3.6 and 3.7 for Windows and Linux platforms.</p>
+<p>Intel SDC conda package can be installed using the steps below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">sdc_env</span> <span class="n">python</span><span class="o">=&lt;</span><span class="mf">3.7</span> <span class="ow">or</span> <span class="mf">3.6</span><span class="o">&gt;</span>
+<span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">sdc_env</span>
+<span class="o">&gt;</span> <span class="n">conda</span> <span class="n">install</span> <span class="n">sdc</span> <span class="o">-</span><span class="n">c</span> <span class="n">intel</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">beta</span> <span class="o">-</span><span class="n">c</span> <span class="n">intel</span> <span class="o">-</span><span class="n">c</span> <span class="n">defaults</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">override</span><span class="o">-</span><span class="n">channels</span>
+</pre></div>
+</div>
+<p>Intel SDC wheel package can be installed using the steps below:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">sdc_env</span> <span class="n">python</span><span class="o">=&lt;</span><span class="mf">3.7</span> <span class="ow">or</span> <span class="mf">3.6</span><span class="o">&gt;</span> <span class="n">pip</span>
+<span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">sdc_env</span>
+<span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">beta</span><span class="o">/</span><span class="n">simple</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">anaconda</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">intel</span><span class="o">/</span><span class="n">simple</span> <span class="o">--</span><span class="n">extra</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">simple</span> <span class="n">sdc</span>
+</pre></div>
+</div>
+<p>Experienced users can also build Intel SDC from sources
+<a class="reference external" href="https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-linux">for Linux*</a> and
+<a class="reference external" href="https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-windows">for Windows*</a>.</p>
+</div>
+<div class="section" id="basic-usage">
+<h2>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>The code below illustrates a typical ML workflow that consists of data pre-processing and predicting stages.
+Intel® SDC is intended to compile pre-processing stage that includes
+reading dataset from a csv file, filtering data and performing Pearson correlation operation.
+The prediction based on gradient boosting regression module is made using scikit-learn module.</p>
+<div class="literal-block-wrapper docutils container" id="ex-getting-started-basic-usage-nyse-predict">
+<div class="code-block-caption"><span class="caption-text">Typical usage of Intel® SDC in combination with scikit-learn</span><a class="headerlink" href="#ex-getting-started-basic-usage-nyse-predict" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+
+<span class="nd">@njit</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">preprocess_data</span><span class="p">():</span>
+    <span class="c1"># Reading stock prices from CSV file</span>
+    <span class="n">df_prices</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./prices.csv&#39;</span><span class="p">)</span>  <span class="c1"># Public dataset from https://www.kaggle.com/dgawlik/nyse</span>
+
+    <span class="c1"># Select stock of interest (INTC)</span>
+    <span class="n">df_prices_intc</span> <span class="o">=</span> <span class="n">df_prices</span><span class="p">[</span><span class="n">df_prices</span><span class="p">[</span><span class="s1">&#39;symbol&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;INTC&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Remove unused columns</span>
+    <span class="n">df_prices_intc</span> <span class="o">=</span> <span class="n">df_prices_intc</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;symbol&#39;</span><span class="p">,</span> <span class="s1">&#39;volume&#39;</span><span class="p">))</span>
+
+    <span class="c1"># The year of interest is 2012</span>
+    <span class="n">df_prices_intc_2012</span> <span class="o">=</span> <span class="n">df_prices_intc</span><span class="p">[</span><span class="n">df_prices_intc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2012-12-31&#39;</span><span class="p">]</span>
+    <span class="n">df_prices_intc_2012</span> <span class="o">=</span> <span class="n">df_prices_intc_2012</span><span class="p">[</span><span class="n">df_prices_intc</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2012-01-01&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Pearson correlation between open and close prices for 2012</span>
+    <span class="n">corr_open_close_2012</span> <span class="o">=</span> <span class="n">df_prices_intc_2012</span><span class="p">[</span><span class="s1">&#39;open&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df_prices_intc_2012</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Keep days when started low and finished high in 2012</span>
+    <span class="n">df_prices_intc_2012_low2high</span> <span class="o">=</span> <span class="n">df_prices_intc_2012</span><span class="p">[</span><span class="n">df_prices_intc</span><span class="p">[</span><span class="s1">&#39;open&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">df_prices_intc</span><span class="p">[</span><span class="s1">&#39;low&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">1.005</span><span class="p">]</span>
+    <span class="n">df_prices_intc_2012_low2high</span> <span class="o">=</span> <span class="n">df_prices_intc_2012_low2high</span><span class="p">[</span><span class="n">df_prices_intc</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">df_prices_intc</span><span class="p">[</span><span class="s1">&#39;high&#39;</span><span class="p">]</span><span class="o">*</span><span class="mf">0.995</span><span class="p">]</span>
+
+    <span class="c1"># Prepare data for forecasting</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df_prices_intc_2012</span><span class="p">[</span><span class="s1">&#39;open&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df_prices_intc_2012</span><span class="p">[</span><span class="s1">&#39;close&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">df_prices_intc_2012</span><span class="p">,</span> <span class="n">corr_open_close_2012</span><span class="p">,</span> <span class="n">df_prices_intc_2012_low2high</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+
+
+<span class="n">t_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">data2012</span><span class="p">,</span> <span class="n">coc12</span><span class="p">,</span> <span class="n">data2012_low2high</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">preprocess_data</span><span class="p">()</span>
+
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">regr</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">()</span>
+<span class="n">my_fit</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+<span class="n">sc</span> <span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="n">t_end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2012&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data2012</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pearson correlation&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coc12</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Days traded low to high&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data2012_low2high</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Execution time: &#39;</span><span class="p">,</span> <span class="n">t_end</span> <span class="o">-</span> <span class="n">t_start</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="what-if-i-get-a-compilation-error">
+<h2>What If I Get A Compilation Error<a class="headerlink" href="#what-if-i-get-a-compilation-error" title="Permalink to this headline">¶</a></h2>
+<p>Not all Python code can be compiled with Intel® SDC. Not all <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> and <a class="reference external" href="https://numpy.org/">Numpy*</a> APIs are currently supported and not all valid python code can be compiled using underlying Numba compiler.</p>
+<p>To be successfully compiled code must use only supported subset of <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> API and use only subset <a class="reference external" href="https://www.python.org/">Python*</a> supported by <a class="reference external" href="https://numba.pydata.org/">Numba*</a> (e.g. be type-stable)</p>
+<p>Example of currently unsupported code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+<span class="hll">   <span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span class="k">else</span><span class="p">:</span>
+<span class="hll">   <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span> <span class="k">return</span> <span class="n">a</span>  <span class="c1"># Type of a cannot be inferred</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="apireference.html#apireference"><span class="std std-ref">SDC API reference</span></a></p>
+<p><a class="reference internal" href="compilation.html#compilation"><span class="std std-ref">More info on SDC compilation process and supported Python features</span></a></p>
+<p><a class="reference external" href="https://numba.pydata.org/numba-doc/latest/user/troubleshoot.html">Numba documentation</a></p>
+</div>
+<div class="section" id="measuring-performance">
+<h2>Measuring Performance<a class="headerlink" href="#measuring-performance" title="Permalink to this headline">¶</a></h2>
+<p>Lets consider we want to measure performance of Series.max() method.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">series_max</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+   <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>First, recall that Intel® SDC is based on Numba. Therefore, execution time may consist of the following:</dt><dd><ol class="arabic simple">
+<li><p>Numba has to <em>compile</em> your function for the first time, this takes time.</p></li>
+<li><p><em>Boxing</em> and <em>unboxing</em> convert Python objects into native values, and vice-versa. They occur at the boundaries of calling a <a class="reference external" href="https://numba.pydata.org/">Numba*</a> function from the Python interpreter. E.g. boxing and unboxing apply to <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> types like <a class="reference internal" href="_api_ref/pandas.Series.html#pandas-series"><span class="std std-ref">Series</span></a> and <a class="reference internal" href="_api_ref/pandas.DataFrame.html#pandas-dataframe"><span class="std std-ref">DataFrame</span></a>.</p></li>
+<li><p>The execution of the <em>function itself</em>.</p></li>
+</ol>
+</dd>
+</dl>
+<p>A really common mistake when measuring performance is to not account for the above behaviour and
+to time code once with a simple timer that includes the time taken to compile your function in the execution time.</p>
+<p>A good way to measure the impact Numba JIT has on your code is to time execution using
+the <a class="reference external" href="https://docs.python.org/3/library/timeit.html">timeit</a> module functions.</p>
+<p>Intel® SDC also recommends eliminate the impact of compilation and boxing/unboxing by measuring the time inside Numba JIT code.</p>
+<p>Example of measuring performance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">perf_series_max</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>                  <span class="c1"># &lt;-- unboxing</span>
+   <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>              <span class="c1"># &lt;-- time inside Numba JIT code</span>
+   <span class="n">res</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+   <span class="n">finish_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>             <span class="c1"># &lt;-- time inside Numba JIT code</span>
+   <span class="k">return</span> <span class="n">finish_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">res</span>  <span class="c1"># &lt;-- boxing</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100000</span><span class="p">))</span>
+<span class="n">exec_time</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="n">perf_series_max</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Execution time in JIT code: &quot;</span><span class="p">,</span> <span class="n">exec_time</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See also <a class="reference external" href="https://numba.pydata.org/">Numba*</a> documentation <a class="reference external" href="http://numba.pydata.org/numba-doc/latest/user/5minguide.html#how-to-measure-the-performance-of-numba">How to measure the performance of Numba?</a></p>
+<p>See also Intel® SDC repository <a class="reference external" href="https://github.com/IntelPython/sdc/tree/master/sdc/tests/tests_perf">performance tests</a>.</p>
+</div>
+<div class="section" id="what-if-i-get-poor-performance">
+<h2>What If I Get Poor Performance?<a class="headerlink" href="#what-if-i-get-poor-performance" title="Permalink to this headline">¶</a></h2>
+<p>If you get poor performance you need to consider several reasons, among which
+compilation overheads, overheads related to converting Python objects to native structures and back,
+amount of parallelism in compiled code, to what extent the code is “static” and many other factors.
+See more details in Intel® SDC documentation <a class="reference internal" href="performance.html#performance"><span class="std std-ref">Getting Performance With Intel® SDC</span></a>.</p>
+<p>Also you need to consider limitations of particular function.
+See more details in Intel® SDC documentation for particular function <a class="reference internal" href="apireference.html#apireference"><span class="std std-ref">API Reference</span></a>.</p>
+<p>See also <a class="reference external" href="https://numba.pydata.org/">Numba*</a> documentation <a class="reference external" href="http://numba.pydata.org/numba-doc/latest/user/performance-tips.html">Performance Tips</a>
+and <a class="reference external" href="http://numba.pydata.org/numba-doc/latest/user/troubleshoot.html#the-compiled-code-is-too-slow">The compiled code is too slow</a>.</p>
+</div>
+<div class="section" id="build-instructions">
+<h2>Build Instructions<a class="headerlink" href="#build-instructions" title="Permalink to this headline">¶</a></h2>
+<p>Build instructions for Linux*: <a class="reference external" href="https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-linux">https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-linux</a>
+Build instructions for Windows*: <a class="reference external" href="https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-windows">https://github.com/IntelPython/sdc#building-intel-sdc-from-source-on-windows</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="overview.html"
+                        title="previous chapter">What is Intel® SDC?</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="compilation.html"
+                        title="next chapter">Compiling With Intel® SDC</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

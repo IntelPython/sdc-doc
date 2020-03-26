@@ -1,0 +1,20 @@
+.. _pandas.core.groupby.DataFrameGroupBy.all:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.all
+****************************************
+
+Return True if all values in the group are truthful, else False.
+
+:param skipna:
+    bool, default True
+        Flag to ignore nan values during truth testing
+
+:return: bool
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

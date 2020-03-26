@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.merge &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.merge<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Merge DataFrame or named Series objects with a database-style join.</p>
+<p>The join is done on columns or indexes. If joining columns on
+columns, the DataFrame indexes <em>will be ignored</em>. Otherwise if joining indexes
+on indexes or indexes on a column or columns, the index will be passed on.</p>
+<dl class="field-list">
+<dt class="field-odd">param right</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>DataFrame or named Series</dt><dd><p>Object to merge with.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param how</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{‘left’, ‘right’, ‘outer’, ‘inner’}, default ‘inner’</dt><dd><p>Type of merge to be performed.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>left: use only keys from left frame, similar to a SQL left outer join;</dt><dd><p>preserve key order.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>right: use only keys from right frame, similar to a SQL right outer join;</dt><dd><p>preserve key order.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>outer: use union of keys from both frames, similar to a SQL full outer</dt><dd><p>join; sort keys lexicographically.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>inner: use intersection of keys from both frames, similar to a SQL inner</dt><dd><p>join; preserve the order of the left keys.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param on</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>label or list</dt><dd><p>Column or index level names to join on. These must be found in both
+DataFrames. If <cite>on</cite> is None and not merging on indexes then this defaults
+to the intersection of the columns in both DataFrames.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param left_on</dt>
+<dd class="field-even"><dl class="simple">
+<dt>label or list, or array-like</dt><dd><p>Column or index level names to join on in the left DataFrame. Can also
+be an array or list of arrays of the length of the left DataFrame.
+These arrays are treated as if they are columns.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param right_on</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>label or list, or array-like</dt><dd><p>Column or index level names to join on in the right DataFrame. Can also
+be an array or list of arrays of the length of the right DataFrame.
+These arrays are treated as if they are columns.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param left_index</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default False</dt><dd><p>Use the index from the left DataFrame as the join key(s). If it is a
+MultiIndex, the number of keys in the other DataFrame (either the index
+or a number of columns) must match the number of levels.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param right_index</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default False</dt><dd><p>Use the index from the right DataFrame as the join key. Same caveats as
+left_index.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param sort</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default False</dt><dd><p>Sort the join keys lexicographically in the result DataFrame. If False,
+the order of the join keys depends on the join type (how keyword).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param suffixes</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>tuple of (str, str), default (‘_x’, ‘_y’)</dt><dd><p>Suffix to apply to overlapping column names in the left and right
+side, respectively. To raise an exception on overlapping columns use
+(False, False).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param copy</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default True</dt><dd><p>If False, avoid copy if possible.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param indicator</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool or str, default False</dt><dd><p>If True, adds a column to output DataFrame called “_merge” with
+information on the source of each row.
+If string, column with information on source of each row will be added to
+output DataFrame, and column will be named value of string.
+Information column is Categorical-type and takes on a value of “left_only”
+for observations whose merge key only appears in ‘left’ DataFrame,
+“right_only” for observations whose merge key only appears in ‘right’
+DataFrame, and “both” if the observation’s merge key is found in both.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param validate</dt>
+<dd class="field-even"><dl>
+<dt>str, optional</dt><dd><p>If specified, checks if merge is of specified type.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>“one_to_one” or “1:1”: check if merge keys are unique in both</dt><dd><p>left and right datasets.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“one_to_many” or “1:m”: check if merge keys are unique in left</dt><dd><p>dataset.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>“many_to_one” or “m:1”: check if merge keys are unique in right</dt><dd><p>dataset.</p>
+</dd>
+</dl>
+</li>
+<li><p>“many_to_many” or “m:m”: allowed, but does not result in checks.</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>DataFrame
+A DataFrame of the two merged objects.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

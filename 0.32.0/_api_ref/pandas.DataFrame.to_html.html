@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.to_html &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.to_html<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Render a DataFrame as an HTML table.</p>
+<dl class="field-list">
+<dt class="field-odd">param buf</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>StringIO-like, optional</dt><dd><p>Buffer to write to.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param columns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>sequence, optional, default None</dt><dd><p>The subset of columns to write. Writes all columns by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param col_space</dt>
+<dd class="field-odd"><dl>
+<dt>str or int, optional</dt><dd><p>The minimum width of each column in CSS length units.  An int is assumed to be px units.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.25.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param header</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, optional</dt><dd><p>Whether to print column labels, default True.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param index</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, optional, default True</dt><dd><p>Whether to print index (row) labels.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param na_rep</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, optional, default ‘NaN’</dt><dd><p>String representation of NAN to use.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param formatters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list or dict of one-param. functions, optional</dt><dd><p>Formatter functions to apply to columns’ elements by position or
+name.
+The result of each function must be a unicode string.
+List must be of length equal to the number of columns.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param float_format</dt>
+<dd class="field-even"><dl class="simple">
+<dt>one-parameter function, optional, default None</dt><dd><p>Formatter function to apply to columns’ elements if they are
+floats. The result of this function must be a unicode string.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param sparsify</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, optional, default True</dt><dd><p>Set to False for a DataFrame with a hierarchical index to print
+every multiindex key at each row.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param index_names</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, optional, default True</dt><dd><p>Prints the names of the indexes.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param justify</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, default None</dt><dd><p>How to justify the column labels. If None uses the option from
+the print configuration (controlled by set_option), ‘right’ out
+of the box. Valid values are</p>
+<ul class="simple">
+<li><p>left</p></li>
+<li><p>right</p></li>
+<li><p>center</p></li>
+<li><p>justify</p></li>
+<li><p>justify-all</p></li>
+<li><p>start</p></li>
+<li><p>end</p></li>
+<li><p>inherit</p></li>
+<li><p>match-parent</p></li>
+<li><p>initial</p></li>
+<li><p>unset.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param max_rows</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int, optional</dt><dd><p>Maximum number of rows to display in the console.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param min_rows</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int, optional</dt><dd><p>The number of rows to display in the console in a truncated repr
+(when number of rows is above <cite>max_rows</cite>).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param max_cols</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int, optional</dt><dd><p>Maximum number of columns to display in the console.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param show_dimensions</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default False</dt><dd><p>Display DataFrame dimensions (number of rows by number of columns).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param decimal</dt>
+<dd class="field-even"><dl>
+<dt>str, default ‘.’</dt><dd><p>Character recognized as decimal separator, e.g. ‘,’ in Europe.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.18.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param bold_rows</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Make the row labels bold in the output.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param classes</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or list or tuple, default None</dt><dd><p>CSS class(es) to apply to the resulting html table.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param escape</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Convert the characters &lt;, &gt;, and &amp; to HTML-safe sequences.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param notebook</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{True, False}, default False</dt><dd><p>Whether the generated HTML is for IPython Notebook.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param border</dt>
+<dd class="field-odd"><dl>
+<dt>int</dt><dd><p>A <code class="docutils literal notranslate"><span class="pre">border=border</span></code> attribute is included in the opening
+<cite>&lt;table&gt;</cite> tag. Default <code class="docutils literal notranslate"><span class="pre">pd.options.display.html.border</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.19.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param table_id</dt>
+<dd class="field-even"><dl>
+<dt>str, optional</dt><dd><p>A css id is included in the opening <cite>&lt;table&gt;</cite> tag if specified.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.23.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param render_links</dt>
+<dd class="field-odd"><dl>
+<dt>bool, default False</dt><dd><p>Convert URLs to HTML links.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.24.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>str (or unicode, depending on data and options)
+String representation of the dataframe.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

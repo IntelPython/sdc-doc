@@ -1,0 +1,50 @@
+.. _pandas.Series.append:
+
+:orphan:
+
+pandas.Series.append
+********************
+
+Concatenate two or more Series.
+
+:param to_append:
+    Series or list/tuple of Series
+        Series to append with self.
+
+:param ignore_index:
+    bool, default False
+        If True, do not use the index labels.
+
+        .. versionadded:: 0.19.0
+
+:param verify_integrity:
+    bool, default False
+        If True, raise Exception on creating index with duplicates.
+
+:return: Series
+    Concatenated Series.
+
+Limitations
+-----------
+- Parameter ``verify_integrity`` is currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``ignore_index`` is supported as literal value only
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/series/series_append.py
+   :language: python
+   :lines: 37-
+   :caption: Concatenate two or more Series.
+   :name: ex_series_append
+
+.. command-output:: python ./series/series_append.py
+   :cwd: ../../../examples
+
+.. seealso::
+
+    `pandas.absolute
+    <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html#pandas.concat>`_
+        General function to concatenate DataFrame or Series objects.
+

@@ -1,0 +1,14 @@
+.. _pandas.core.groupby.GroupBy.agg:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.agg
+*******************************
+
+
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

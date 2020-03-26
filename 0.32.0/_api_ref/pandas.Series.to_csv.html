@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.to_csv &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.Series.to_csv<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Write object to a comma-separated values (csv) file.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+</div>
+<dl class="field-list">
+<dt class="field-odd">param path_or_buf</dt>
+<dd class="field-odd"><dl>
+<dt>str or file handle, default None</dt><dd><p>File path or object, if None is provided the result is returned as
+a string.  If a file object is passed it should be opened with
+<cite>newline=’’</cite>, disabling universal newlines.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+</div>
+<p>Was previously named “path” for Series.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param sep</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, default ‘,’</dt><dd><p>String of length 1. Field delimiter for the output file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param na_rep</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, default ‘’</dt><dd><p>Missing data representation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param float_format</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, default None</dt><dd><p>Format string for floating point numbers.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param columns</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>sequence, optional</dt><dd><p>Columns to write.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param header</dt>
+<dd class="field-even"><dl>
+<dt>bool or list of str, default True</dt><dd><p>Write out the column names. If a list of strings is given it is
+assumed to be aliases for the column names.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+</div>
+<p>Previously defaulted to False for Series.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param index</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Write row names (index).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param index_label</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str or sequence, or False, default None</dt><dd><p>Column label for index column(s) if desired. If None is given, and
+<cite>header</cite> and <cite>index</cite> are True, then the index names are used. A
+sequence should be given if the object uses MultiIndex. If
+False do not print fields for index names. Use index_label=False
+for easier importing in R.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param mode</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>Python write mode, default ‘w’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param encoding</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, optional</dt><dd><p>A string representing the encoding to use in the output file,
+defaults to ‘utf-8’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param compression</dt>
+<dd class="field-odd"><dl>
+<dt>str, default ‘infer’</dt><dd><p>Compression mode among the following possible values: {‘infer’,
+‘gzip’, ‘bz2’, ‘zip’, ‘xz’, None}. If ‘infer’ and <cite>path_or_buf</cite>
+is path-like, then detect compression from the following
+extensions: ‘.gz’, ‘.bz2’, ‘.zip’ or ‘.xz’. (otherwise no
+compression).</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+</div>
+<p>‘infer’ option added and set to default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param quoting</dt>
+<dd class="field-even"><dl class="simple">
+<dt>optional constant from csv module</dt><dd><p>Defaults to csv.QUOTE_MINIMAL. If you have set a <cite>float_format</cite>
+then floats are converted to strings and thus csv.QUOTE_NONNUMERIC
+will treat them as non-numeric.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param quotechar</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, default ‘”’</dt><dd><p>String of length 1. Character used to quote fields.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param line_terminator</dt>
+<dd class="field-even"><dl>
+<dt>str, optional</dt><dd><p>The newline character or character sequence to use in the output
+file. Defaults to <cite>os.linesep</cite>, which depends on the OS in which
+this method is called (‘n’ for linux, ‘rn’ for Windows, i.e.).</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.24.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param chunksize</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int or None</dt><dd><p>Rows to write at a time.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param date_format</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, default None</dt><dd><p>Format string for datetime objects.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param doublequote</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Control quoting of <cite>quotechar</cite> inside a field.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param escapechar</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, default None</dt><dd><p>String of length 1. Character used to escape <cite>sep</cite> and <cite>quotechar</cite>
+when appropriate.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param decimal</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, default ‘.’</dt><dd><p>Character recognized as decimal separator. E.g. use ‘,’ for
+European data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>None or str
+If path_or_buf is None, returns the resulting csv format as a
+string. Otherwise returns None.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

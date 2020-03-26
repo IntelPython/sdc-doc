@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>API Reference &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Pandas Input/output" href="_api_ref/api_ref.pandas.io.html" />
+    <link rel="prev" title="Step by step on typical data analysis workflow" href="workflow.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="_api_ref/api_ref.pandas.io.html" title="Pandas Input/output">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="workflow.html" title="Step by step on typical data analysis workflow">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>API Reference</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="api-reference">
+<span id="apireference"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="_api_ref/api_ref.pandas.io.html">Input/output</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.io.html#flat-file">Flat file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html">Series: Columnar Data Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#constructor">Constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#attributes-operators">Attributes/Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#type-conversions">Type Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#indexing-and-iteration">Indexing and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#binary-operator-functions">Binary Operator Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#user-defined-functions-groupby-window">User-Defined Functions, GroupBy, Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#computations-descriptive-statistics">Computations, Descriptive Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#re-indexing-selection-label-manipulation">Re-Indexing, Selection, Label Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#missing-data-handling">Missing Data Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#re-shaping-sorting">Re-Shaping, Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#combining-joining-merging">Combining, Joining, Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#time-series">Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#accessors">Accessors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html#serialization-input-output-conversion">Serialization, Input-Output, Conversion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html">Dataframe: Tabular Data Structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#constructor">Constructor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#attributes-operators">Attributes/Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#type-conversions">Type Conversions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#indexing-and-iteration">Indexing and Iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#binary-operator-functions">Binary Operator Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#user-defined-functions-groupby-window">User-Defined Functions, GroupBy &amp; Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#computations-descriptive-statistics">Computations, Descriptive Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#re-indexing-selection-label-manipulation">Re-Indexing, Selection, Label Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#missing-data-handling">Missing Data Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#re-shaping-sorting-transposing">Re-Shaping, Sorting, Transposing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#combining-joining-merging">Combining, Joining, Merging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#time-series">Time Series</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#plotting">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#sparse-accessor">Sparse Accessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html#serialization-input-output-conversion">Serialization, Input-Output, Conversion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_api_ref/api_ref.pandas.window.html">Window</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.window.html#standard-moving-window-functions">Standard moving window functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.window.html#standard-expanding-window-functions">Standard expanding window functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.window.html#exponentially-weighted-moving-window-functions">Exponentially-weighted moving window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_api_ref/api_ref.pandas.groupby.html">GroupBy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.groupby.html#indexing-iteration">Indexing, iteration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.groupby.html#function-application">Function application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.groupby.html#computations-descriptive-stats">Computations / descriptive stats</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.io.html">Input/output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.series.html">Series: Columnar Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.dataframe.html">Dataframe: Tabular Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_api_ref/api_ref.pandas.groupby.html">GroupBy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="workflow.html"
+                        title="previous chapter">Step by step on typical data analysis workflow</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="_api_ref/api_ref.pandas.io.html"
+                        title="next chapter">Pandas Input/output</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

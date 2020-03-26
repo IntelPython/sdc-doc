@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.to_hdf &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.to_hdf<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Write the contained data to an HDF5 file using HDFStore.</p>
+<p>Hierarchical Data Format (HDF) is self-describing, allowing an
+application to interpret the structure and contents of a file with
+no outside information. One HDF file can hold a mix of related objects
+which can be accessed as a group or as individual objects.</p>
+<p>In order to add another DataFrame or Series to an existing HDF file
+please use append mode and a different a key.</p>
+<p>For more information see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-hdf5" title="(in pandas v1.0.3)"><span class="xref std std-ref">user guide</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param path_or_buf</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str or pandas.HDFStore</dt><dd><p>File path or HDFStore object.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param key</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>Identifier for the group in the store.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param mode</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{‘a’, ‘w’, ‘r+’}, default ‘a’</dt><dd><p>Mode to open file:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘w’: write, a new file is created (an existing file with</dt><dd><p>the same name would be deleted).</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘a’: append, an existing file is opened for reading and</dt><dd><p>writing, and if the file does not exist it is created.</p>
+</dd>
+</dl>
+</li>
+<li><p>‘r+’: similar to ‘a’, but the file must already exist.</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param format</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{‘fixed’, ‘table’}, default ‘fixed’</dt><dd><p>Possible values:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>‘fixed’: Fixed format. Fast writing/reading. Not-appendable,</dt><dd><p>nor searchable.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘table’: Table format. Write as a PyTables Table structure</dt><dd><p>which may perform worse but allow more flexible operations
+like searching / selecting subsets of the data.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param append</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default False</dt><dd><p>For Table formats, append the input data to the existing.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param data_columns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list of columns or True, optional</dt><dd><p>List of columns to create as indexed data columns for on-disk
+queries, or True to use all columns. By default only the axes
+of the object are indexed. See <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-hdf5-query-data-columns" title="(in pandas v1.0.3)"><span>Query via data columns</span></a>.
+Applicable only to format=’table’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param complevel</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{0-9}, optional</dt><dd><p>Specifies a compression level for data.
+A value of 0 disables compression.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param complib</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{‘zlib’, ‘lzo’, ‘bzip2’, ‘blosc’}, default ‘zlib’</dt><dd><p>Specifies the compression library to be used.
+As of v0.20.2 these additional compressors for Blosc are supported
+(default if no compressor specified: ‘blosc:blosclz’):
+{‘blosc:blosclz’, ‘blosc:lz4’, ‘blosc:lz4hc’, ‘blosc:snappy’,
+‘blosc:zlib’, ‘blosc:zstd’}.
+Specifying a compression library which is not available issues
+a ValueError.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param fletcher32</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default False</dt><dd><p>If applying compression use the fletcher32 checksum.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param dropna</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default False</dt><dd><p>If true, ALL nan rows will not be written to store.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param errors</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, default ‘strict’</dt><dd><p>Specifies how encoding and decoding errors are to be handled.
+See the errors argument for <a class="reference external" href="https://docs.python.org/2/library/functions.html#open" title="(in Python v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> for a full list
+of options.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

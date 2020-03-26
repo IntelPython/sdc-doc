@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Getting Performance With Intel® SDC &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Step by step on typical data analysis workflow" href="workflow.html" />
+    <link rel="prev" title="Compiling With Intel® SDC" href="compilation.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="workflow.html" title="Step by step on typical data analysis workflow">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="compilation.html" title="Compiling With Intel® SDC">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>Getting Performance With Intel® SDC</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="performance"></span><div class="section" id="getting-performance-with-intel-sdc">
+<h1>Getting Performance With Intel® SDC<a class="headerlink" href="#getting-performance-with-intel-sdc" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_images/timing.png"><img alt="To compile or not" class="align-center" src="_images/timing.png" style="width: 800px;" /></a>
+<p>Compiled code does not necessarily faster than interpreted one. There are several key elements impacting whether
+compiled code will outperform an interpreted one or not. These are compilation overheads, overheads related to
+converting Python objects to native structures and back, amount of parallelism in compiled code, to what extent
+the code is “static”, and many other factors. The following section will discuss each of these aspects in greater
+detail.</p>
+<div class="section" id="compilation-overheads">
+<h2>Compilation Overheads<a class="headerlink" href="#compilation-overheads" title="Permalink to this headline">¶</a></h2>
+<p>Compilation of the code may lead to significantly better performance, however, it comes with some costs. First, there
+is a cost associated with the need to compile a code. Depending on the size of compiled function and many other factors
+the compilation time may be material.</p>
+<p>With above in mind there are several general recommendations when using Intel SDC will be beneficial.</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Compile application hotspots only.</dt><dd><ul class="simple">
+<li><p>Focus on where application spends most time.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compile parts of the code where parallelism resides.</dt><dd><ul class="simple">
+<li><p>Remember that Intel SDC has been created
+to extract parallelism. If there is no parallelism in the code, then it unlikely to perform visibly better than
+interpreted code.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Compilation overheads quickly become negligible when compiled function is called multiple times.</dt><dd><ul class="simple">
+<li><p>If arguments to compiled function are type stable then <a class="reference external" href="https://numba.pydata.org/">Numba*</a> won’t recompile the function on each call.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>Use <a class="reference external" href="https://numba.pydata.org/numba-doc/dev/developer/caching.html">Numba* caching</a> for ahead-of-time compilation.</p></li>
+<li><dl class="simple">
+<dt>Minimize the number of columns in dataframes in a region being compiled.</dt><dd><ul class="simple">
+<li><p>Intel SDC performs dataframe analysis at
+compilation time, as a result the compilation may take significantly longer if the number of columns is large.
+Among key features to reduce the number of columns in compile time analysis is to read in memory only columns
+actually used in computations.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="boxing-and-unboxing-overheads">
+<h2>Boxing And Unboxing Overheads<a class="headerlink" href="#boxing-and-unboxing-overheads" title="Permalink to this headline">¶</a></h2>
+<p>All <a class="reference external" href="https://www.python.org/">Python*</a> objects are accessed through GIL, the Global Interpreter Lock, a mutex that protects Python objects
+preventing multiple threads from executing bytecodes concurrently. While it is okay technology for interpreted code
+it kills any sort of parallelism. For Intel SDC and <a class="reference external" href="https://numba.pydata.org/">Numba*</a> to be able to extract parallelism, the GIL must be
+released. To release GIL Python objects must be converted into native structures that do not require GIL.
+The implication is additional overheads to convert input arguments into native objects (unboxing) and to
+convert results back to Python objects (boxing).</p>
+<p>In most cases these overheads are reasonably small as Intel SDC and Numba try to avoid extensive memory copy during
+boxing and unboxing. However, sometimes memory copy is unavoidable, and passing large dataframe as input or as
+a returning value may be expensive.</p>
+<p>It is almost always a good idea to originate large amounts of data from within compiled region. For example,
+reading large CSV file from outside compiled region and then passing that large dataframe as input may result in
+visible unboxing costs.</p>
+<p>The rule of thumb is “Generate and process massive data from within the compiled region. Pass through JIT region
+borders small data only”.</p>
+</div>
+<div class="section" id="automatic-parallelization">
+<h2>Automatic Parallelization<a class="headerlink" href="#automatic-parallelization" title="Permalink to this headline">¶</a></h2>
+<p>Intel SDC parallelizes most of <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> operations so that users do not typically
+need to take extra steps besides using <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator. However, sometimes you might want to extract additional
+parallelism available in a JIT-region. To do that you need to add <code class="docutils literal notranslate"><span class="pre">parallel=True</span></code> option to <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator:</p>
+<div class="literal-block-wrapper docutils container" id="ex-basic-workflow-parallel">
+<div class="code-block-caption"><span class="caption-text">Example 2: Parallelizing <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> Workflow</span><a class="headerlink" href="#ex-basic-workflow-parallel" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span><span class="p">,</span> <span class="n">prange</span>
+
+<span class="c1"># Dataset for analysis</span>
+<span class="n">FNAME</span> <span class="o">=</span> <span class="s2">&quot;employees.csv&quot;</span>
+
+
+<span class="c1"># This function gets compiled by Numba* and multi-threaded</span>
+<span class="hll"><span class="nd">@njit</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span class="hll"><span class="k">def</span> <span class="nf">get_analyzed_data</span><span class="p">():</span>
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">FNAME</span><span class="p">)</span>
+    <span class="n">s_bonus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Bonus %&#39;</span><span class="p">])</span>
+    <span class="n">s_first_name</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;First Name&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Use explicit loop to compute the mean. It will be compiled as parallel loop</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">prange</span><span class="p">(</span><span class="n">s_bonus</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+        <span class="n">m</span> <span class="o">+=</span> <span class="n">s_bonus</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">m</span> <span class="o">/=</span> <span class="n">s_bonus</span><span class="o">.</span><span class="n">size</span>
+
+    <span class="n">names</span> <span class="o">=</span> <span class="n">s_first_name</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">m</span><span class="p">,</span> <span class="n">names</span>
+
+
+<span class="c1"># Printing names and their average bonus percent</span>
+<span class="n">mean_bonus</span><span class="p">,</span> <span class="n">sorted_first_names</span> <span class="o">=</span> <span class="n">get_analyzed_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sorted_first_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Average Bonus %:&#39;</span><span class="p">,</span> <span class="n">mean_bonus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="other-performance-tips">
+<h2>Other Performance Tips<a class="headerlink" href="#other-performance-tips" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to <a class="reference external" href="https://numba.pydata.org/numba-doc/dev/user/performance-tips.html">Numba Performance Tips</a>
+for additional hints on obtaining good performance with Intel SDC.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="compilation.html"
+                        title="previous chapter">Compiling With Intel® SDC</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="workflow.html"
+                        title="next chapter">Step by step on typical data analysis workflow</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

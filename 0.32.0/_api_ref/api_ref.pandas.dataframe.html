@@ -1,0 +1,1249 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>DataFrame &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pandas Window" href="api_ref.pandas.window.html" />
+    <link rel="prev" title="Pandas Series" href="api_ref.pandas.series.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="api_ref.pandas.window.html" title="Pandas Window">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="api_ref.pandas.series.html" title="Pandas Series">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../apireference.html" accesskey="U">API Reference</a> &#187;</li>
+      
+      <li>DataFrame</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="api-ref-pandas-dataframe"></span><div class="section" id="dataframe">
+<h1>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h1>
+<p>This is the main <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> data structure representing a table of rows and columns.</p>
+<p>DataFrame is a two-dimensional structure with labeled axes. It can be thought of as a dictionary-like
+container for <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Series</span></code></a></p>
+<div class="section" id="constructor">
+<h2>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.html#pandas-dataframe"><span class="std std-ref">DataFrame</span></a></dt><dd><p>Two-dimensional size-mutable, potentially heterogeneous tabular data structure with labeled axes (rows and columns). Arithmetic operations align on both row and column labels. Can be thought of as a dict-like container for Series objects. The primary pandas data structure.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="attributes-operators">
+<h2>Attributes/Operators<a class="headerlink" href="#attributes-operators" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.index.html#pandas-dataframe-index"><span class="std std-ref">DataFrame.index</span></a></dt><dd><p>The index (row labels) of the DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.columns.html#pandas-dataframe-columns"><span class="std std-ref">DataFrame.columns</span></a></dt><dd><p>The column labels of the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.dtypes.html#pandas-dataframe-dtypes"><span class="std std-ref">DataFrame.dtypes</span></a></dt><dd><p>Return the dtypes in the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.select_dtypes.html#pandas-dataframe-select-dtypes"><span class="std std-ref">DataFrame.select_dtypes</span></a></dt><dd><p>Return a subset of the DataFrame’s columns based on the column dtypes.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.values.html#pandas-dataframe-values"><span class="std std-ref">DataFrame.values</span></a></dt><dd><p>Return a Numpy representation of the DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.axes.html#pandas-dataframe-axes"><span class="std std-ref">DataFrame.axes</span></a></dt><dd><p>Return a list representing the axes of the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.ndim.html#pandas-dataframe-ndim"><span class="std std-ref">DataFrame.ndim</span></a></dt><dd><p>Return an int representing the number of axes / array dimensions.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.size.html#pandas-dataframe-size"><span class="std std-ref">DataFrame.size</span></a></dt><dd><p>Return an int representing the number of elements in this object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.shape.html#pandas-dataframe-shape"><span class="std std-ref">DataFrame.shape</span></a></dt><dd><p>Return a tuple representing the dimensionality of the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.memory_usage.html#pandas-dataframe-memory-usage"><span class="std std-ref">DataFrame.memory_usage</span></a></dt><dd><p>Return the memory usage of each column in bytes.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.empty.html#pandas-dataframe-empty"><span class="std std-ref">DataFrame.empty</span></a></dt><dd><p>Indicator whether DataFrame is empty.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.getitem.html#pandas-dataframe-getitem"><span class="std std-ref">DataFrame.getitem</span></a></dt><dd><p>Get data from a DataFrame by indexer.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.setitem.html#pandas-dataframe-setitem"><span class="std std-ref">DataFrame.setitem</span></a></dt><dd><p>Set data to a DataFrame by indexer.</p>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="type-conversions">
+<h2>Type Conversions<a class="headerlink" href="#type-conversions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.astype.html#pandas-dataframe-astype"><span class="std std-ref">DataFrame.astype</span></a></dt><dd><p>Cast a pandas object to a specified dtype <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.infer_objects.html#pandas-dataframe-infer-objects"><span class="std std-ref">DataFrame.infer_objects</span></a></dt><dd><p>Attempt to infer better dtypes for object columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.copy.html#pandas-dataframe-copy"><span class="std std-ref">DataFrame.copy</span></a></dt><dd><p>Make a copy of this object’s indices and data.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.isna.html#pandas-dataframe-isna"><span class="std std-ref">DataFrame.isna</span></a></dt><dd><p>Detect missing values.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.notna.html#pandas-dataframe-notna"><span class="std std-ref">DataFrame.notna</span></a></dt><dd><p>Detect existing (non-missing) values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.bool.html#pandas-dataframe-bool"><span class="std std-ref">DataFrame.bool</span></a></dt><dd><p>Return the bool of a single element PandasObject.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="indexing-and-iteration">
+<h2>Indexing and Iteration<a class="headerlink" href="#indexing-and-iteration" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.head.html#pandas-dataframe-head"><span class="std std-ref">DataFrame.head</span></a></dt><dd><p>Return the first <cite>n</cite> rows.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.at.html#pandas-dataframe-at"><span class="std std-ref">DataFrame.at</span></a></dt><dd><p>Access a single value for a row/column label pair.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.iat.html#pandas-dataframe-iat"><span class="std std-ref">DataFrame.iat</span></a></dt><dd><p>Access a single value for a row/column pair by integer position.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.loc.html#pandas-dataframe-loc"><span class="std std-ref">DataFrame.loc</span></a></dt><dd><p>Access a group of rows and columns by label(s) or a boolean array.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.iloc.html#pandas-dataframe-iloc"><span class="std std-ref">DataFrame.iloc</span></a></dt><dd><p>Purely integer-location based indexing for selection by position.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.insert.html#pandas-dataframe-insert"><span class="std std-ref">DataFrame.insert</span></a></dt><dd><p>Insert column into DataFrame at specified location.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.__iter__.html#pandas-dataframe-iter"><span class="std std-ref">DataFrame.__iter__</span></a></dt><dd><p>Iterate over info axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.items.html#pandas-dataframe-items"><span class="std std-ref">DataFrame.items</span></a></dt><dd><p>Iterator over (column name, Series) pairs.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.iteritems.html#pandas-dataframe-iteritems"><span class="std std-ref">DataFrame.iteritems</span></a></dt><dd><p>Iterator over (column name, Series) pairs.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.keys.html#pandas-dataframe-keys"><span class="std std-ref">DataFrame.keys</span></a></dt><dd><p>Get the ‘info axis’ (see Indexing for more)</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.iterrows.html#pandas-dataframe-iterrows"><span class="std std-ref">DataFrame.iterrows</span></a></dt><dd><p>Iterate over DataFrame rows as (index, Series) pairs.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.itertuples.html#pandas-dataframe-itertuples"><span class="std std-ref">DataFrame.itertuples</span></a></dt><dd><p>Iterate over DataFrame rows as namedtuples.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.lookup.html#pandas-dataframe-lookup"><span class="std std-ref">DataFrame.lookup</span></a></dt><dd><p>Label-based “fancy indexing” function for DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pop.html#pandas-dataframe-pop"><span class="std std-ref">DataFrame.pop</span></a></dt><dd><p>Return item and drop from frame. Raise KeyError if not found.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.tail.html#pandas-dataframe-tail"><span class="std std-ref">DataFrame.tail</span></a></dt><dd><p>Return the last <cite>n</cite> rows.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.xs.html#pandas-dataframe-xs"><span class="std std-ref">DataFrame.xs</span></a></dt><dd><p>Return cross-section from the Series/DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.get.html#pandas-dataframe-get"><span class="std std-ref">DataFrame.get</span></a></dt><dd><p>Get item from object for given key (ex: DataFrame column).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.isin.html#pandas-dataframe-isin"><span class="std std-ref">DataFrame.isin</span></a></dt><dd><p>Whether each element in the DataFrame is contained in values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.where.html#pandas-dataframe-where"><span class="std std-ref">DataFrame.where</span></a></dt><dd><p>Replace values where the condition is False.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.mask.html#pandas-dataframe-mask"><span class="std std-ref">DataFrame.mask</span></a></dt><dd><p>Replace values where the condition is True.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.query.html#pandas-dataframe-query"><span class="std std-ref">DataFrame.query</span></a></dt><dd><p>Query the columns of a DataFrame with a boolean expression.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+<p>For more information on <code class="docutils literal notranslate"><span class="pre">.at</span></code>, <code class="docutils literal notranslate"><span class="pre">.iat</span></code>, <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">.iloc</span></code>,  see the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing" title="(in pandas v1.0.3)"><span class="xref std std-ref">indexing documentation</span></a>.</p>
+</div>
+<div class="section" id="binary-operator-functions">
+<h2>Binary Operator Functions<a class="headerlink" href="#binary-operator-functions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.add.html#pandas-dataframe-add"><span class="std std-ref">DataFrame.add</span></a></dt><dd><p>Get Addition of dataframe and other, element-wise (binary operator <cite>add</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sub.html#pandas-dataframe-sub"><span class="std std-ref">DataFrame.sub</span></a></dt><dd><p>Get Subtraction of dataframe and other, element-wise (binary operator <cite>sub</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.mul.html#pandas-dataframe-mul"><span class="std std-ref">DataFrame.mul</span></a></dt><dd><p>Get Multiplication of dataframe and other, element-wise (binary operator <cite>mul</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.div.html#pandas-dataframe-div"><span class="std std-ref">DataFrame.div</span></a></dt><dd><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>truediv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.truediv.html#pandas-dataframe-truediv"><span class="std std-ref">DataFrame.truediv</span></a></dt><dd><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>truediv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.floordiv.html#pandas-dataframe-floordiv"><span class="std std-ref">DataFrame.floordiv</span></a></dt><dd><p>Get Integer division of dataframe and other, element-wise (binary operator <cite>floordiv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.mod.html#pandas-dataframe-mod"><span class="std std-ref">DataFrame.mod</span></a></dt><dd><p>Get Modulo of dataframe and other, element-wise (binary operator <cite>mod</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pow.html#pandas-dataframe-pow"><span class="std std-ref">DataFrame.pow</span></a></dt><dd><p>Get Exponential power of dataframe and other, element-wise (binary operator <cite>pow</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.dot.html#pandas-dataframe-dot"><span class="std std-ref">DataFrame.dot</span></a></dt><dd><p>Compute the matrix multiplication between the DataFrame and other.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.radd.html#pandas-dataframe-radd"><span class="std std-ref">DataFrame.radd</span></a></dt><dd><p>Get Addition of dataframe and other, element-wise (binary operator <cite>radd</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rsub.html#pandas-dataframe-rsub"><span class="std std-ref">DataFrame.rsub</span></a></dt><dd><p>Get Subtraction of dataframe and other, element-wise (binary operator <cite>rsub</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rmul.html#pandas-dataframe-rmul"><span class="std std-ref">DataFrame.rmul</span></a></dt><dd><p>Get Multiplication of dataframe and other, element-wise (binary operator <cite>rmul</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rdiv.html#pandas-dataframe-rdiv"><span class="std std-ref">DataFrame.rdiv</span></a></dt><dd><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>rtruediv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rtruediv.html#pandas-dataframe-rtruediv"><span class="std std-ref">DataFrame.rtruediv</span></a></dt><dd><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>rtruediv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rfloordiv.html#pandas-dataframe-rfloordiv"><span class="std std-ref">DataFrame.rfloordiv</span></a></dt><dd><p>Get Integer division of dataframe and other, element-wise (binary operator <cite>rfloordiv</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rmod.html#pandas-dataframe-rmod"><span class="std std-ref">DataFrame.rmod</span></a></dt><dd><p>Get Modulo of dataframe and other, element-wise (binary operator <cite>rmod</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rpow.html#pandas-dataframe-rpow"><span class="std std-ref">DataFrame.rpow</span></a></dt><dd><p>Get Exponential power of dataframe and other, element-wise (binary operator <cite>rpow</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.lt.html#pandas-dataframe-lt"><span class="std std-ref">DataFrame.lt</span></a></dt><dd><p>Get Less than of dataframe and other, element-wise (binary operator <cite>lt</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.gt.html#pandas-dataframe-gt"><span class="std std-ref">DataFrame.gt</span></a></dt><dd><p>Get Greater than of dataframe and other, element-wise (binary operator <cite>gt</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.le.html#pandas-dataframe-le"><span class="std std-ref">DataFrame.le</span></a></dt><dd><p>Get Less than or equal to of dataframe and other, element-wise (binary operator <cite>le</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.ge.html#pandas-dataframe-ge"><span class="std std-ref">DataFrame.ge</span></a></dt><dd><p>Get Greater than or equal to of dataframe and other, element-wise (binary operator <cite>ge</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.ne.html#pandas-dataframe-ne"><span class="std std-ref">DataFrame.ne</span></a></dt><dd><p>Get Not equal to of dataframe and other, element-wise (binary operator <cite>ne</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.eq.html#pandas-dataframe-eq"><span class="std std-ref">DataFrame.eq</span></a></dt><dd><p>Get Equal to of dataframe and other, element-wise (binary operator <cite>eq</cite>).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.combine.html#pandas-dataframe-combine"><span class="std std-ref">DataFrame.combine</span></a></dt><dd><p>Perform column-wise combine with another DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.combine_first.html#pandas-dataframe-combine-first"><span class="std std-ref">DataFrame.combine_first</span></a></dt><dd><p>Update null elements with value in the same location in <cite>other</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="user-defined-functions-groupby-window">
+<h2>User-Defined Functions, GroupBy &amp; Window<a class="headerlink" href="#user-defined-functions-groupby-window" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.apply.html#pandas-dataframe-apply"><span class="std std-ref">DataFrame.apply</span></a></dt><dd><p>Apply a function along an axis of the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.applymap.html#pandas-dataframe-applymap"><span class="std std-ref">DataFrame.applymap</span></a></dt><dd><p>Apply a function to a Dataframe elementwise.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pipe.html#pandas-dataframe-pipe"><span class="std std-ref">DataFrame.pipe</span></a></dt><dd><p>Apply func(self, \*args, \*\*kwargs).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.agg.html#pandas-dataframe-agg"><span class="std std-ref">DataFrame.agg</span></a></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.aggregate.html#pandas-dataframe-aggregate"><span class="std std-ref">DataFrame.aggregate</span></a></dt><dd><p>Aggregate using one or more operations over the specified axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.transform.html#pandas-dataframe-transform"><span class="std std-ref">DataFrame.transform</span></a></dt><dd><p>Call <code class="docutils literal notranslate"><span class="pre">func</span></code> on self producing a DataFrame with transformed values and that has the same axis length as self.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.groupby.html#pandas-dataframe-groupby"><span class="std std-ref">DataFrame.groupby</span></a></dt><dd><p>Group DataFrame or Series using a mapper or by a Series of columns.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rolling.html#pandas-dataframe-rolling"><span class="std std-ref">DataFrame.rolling</span></a></dt><dd><p>Provide rolling window calculations.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.expanding.html#pandas-dataframe-expanding"><span class="std std-ref">DataFrame.expanding</span></a></dt><dd><p>Provide expanding transformations.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.ewm.html#pandas-dataframe-ewm"><span class="std std-ref">DataFrame.ewm</span></a></dt><dd><p>Provide exponential weighted functions.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="computations-descriptive-statistics">
+<span id="api-ref-dataframe-stats"></span><h2>Computations, Descriptive Statistics<a class="headerlink" href="#computations-descriptive-statistics" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.abs.html#pandas-dataframe-abs"><span class="std std-ref">DataFrame.abs</span></a></dt><dd><p>Return a Series/DataFrame with absolute numeric value of each element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.all.html#pandas-dataframe-all"><span class="std std-ref">DataFrame.all</span></a></dt><dd><p>Return whether all elements are True, potentially over an axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.any.html#pandas-dataframe-any"><span class="std std-ref">DataFrame.any</span></a></dt><dd><p>Return whether any element is True, potentially over an axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.clip.html#pandas-dataframe-clip"><span class="std std-ref">DataFrame.clip</span></a></dt><dd><p>Trim values at input threshold(s).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.corr.html#pandas-dataframe-corr"><span class="std std-ref">DataFrame.corr</span></a></dt><dd><p>Compute pairwise correlation of columns, excluding NA/null values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.corrwith.html#pandas-dataframe-corrwith"><span class="std std-ref">DataFrame.corrwith</span></a></dt><dd><p>Compute pairwise correlation between rows or columns of DataFrame with rows or columns of Series or DataFrame.  DataFrames are first aligned along both axes before computing the correlations.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.count.html#pandas-dataframe-count"><span class="std std-ref">DataFrame.count</span></a></dt><dd><p>Count non-NA cells for each column or row.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.cov.html#pandas-dataframe-cov"><span class="std std-ref">DataFrame.cov</span></a></dt><dd><p>Compute pairwise covariance of columns, excluding NA/null values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.cummax.html#pandas-dataframe-cummax"><span class="std std-ref">DataFrame.cummax</span></a></dt><dd><p>Return cumulative maximum over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.cummin.html#pandas-dataframe-cummin"><span class="std std-ref">DataFrame.cummin</span></a></dt><dd><p>Return cumulative minimum over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.cumprod.html#pandas-dataframe-cumprod"><span class="std std-ref">DataFrame.cumprod</span></a></dt><dd><p>Return cumulative product over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.cumsum.html#pandas-dataframe-cumsum"><span class="std std-ref">DataFrame.cumsum</span></a></dt><dd><p>Return cumulative sum over a DataFrame or Series axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.describe.html#pandas-dataframe-describe"><span class="std std-ref">DataFrame.describe</span></a></dt><dd><p>Generate descriptive statistics that summarize the central tendency, dispersion and shape of a dataset’s distribution, excluding <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.diff.html#pandas-dataframe-diff"><span class="std std-ref">DataFrame.diff</span></a></dt><dd><p>First discrete difference of element.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.eval.html#pandas-dataframe-eval"><span class="std std-ref">DataFrame.eval</span></a></dt><dd><p>Evaluate a string describing operations on DataFrame columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.kurt.html#pandas-dataframe-kurt"><span class="std std-ref">DataFrame.kurt</span></a></dt><dd><p>Return unbiased kurtosis over requested axis using Fisher’s definition of kurtosis (kurtosis of normal == 0.0). Normalized by N-1.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.kurtosis.html#pandas-dataframe-kurtosis"><span class="std std-ref">DataFrame.kurtosis</span></a></dt><dd><p>Return unbiased kurtosis over requested axis using Fisher’s definition of kurtosis (kurtosis of normal == 0.0). Normalized by N-1.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.mad.html#pandas-dataframe-mad"><span class="std std-ref">DataFrame.mad</span></a></dt><dd><p>Return the mean absolute deviation of the values for the requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.max.html#pandas-dataframe-max"><span class="std std-ref">DataFrame.max</span></a></dt><dd><p>Return the maximum of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.mean.html#pandas-dataframe-mean"><span class="std std-ref">DataFrame.mean</span></a></dt><dd><p>Return the mean of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.median.html#pandas-dataframe-median"><span class="std std-ref">DataFrame.median</span></a></dt><dd><p>Return the median of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.min.html#pandas-dataframe-min"><span class="std std-ref">DataFrame.min</span></a></dt><dd><p>Return the minimum of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.mode.html#pandas-dataframe-mode"><span class="std std-ref">DataFrame.mode</span></a></dt><dd><p>Get the mode(s) of each element along the selected axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pct_change.html#pandas-dataframe-pct-change"><span class="std std-ref">DataFrame.pct_change</span></a></dt><dd><p>Percentage change between the current and a prior element.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.prod.html#pandas-dataframe-prod"><span class="std std-ref">DataFrame.prod</span></a></dt><dd><p>Return the product of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.product.html#pandas-dataframe-product"><span class="std std-ref">DataFrame.product</span></a></dt><dd><p>Return the product of the values for the requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.quantile.html#pandas-dataframe-quantile"><span class="std std-ref">DataFrame.quantile</span></a></dt><dd><p>Return values at the given quantile over requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rank.html#pandas-dataframe-rank"><span class="std std-ref">DataFrame.rank</span></a></dt><dd><p>Compute numerical data ranks (1 through n) along axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.round.html#pandas-dataframe-round"><span class="std std-ref">DataFrame.round</span></a></dt><dd><p>Round a DataFrame to a variable number of decimal places.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sem.html#pandas-dataframe-sem"><span class="std std-ref">DataFrame.sem</span></a></dt><dd><p>Return unbiased standard error of the mean over requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.skew.html#pandas-dataframe-skew"><span class="std std-ref">DataFrame.skew</span></a></dt><dd><p>Return unbiased skew over requested axis Normalized by N-1.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sum.html#pandas-dataframe-sum"><span class="std std-ref">DataFrame.sum</span></a></dt><dd><p>Return the sum of the values for the requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.std.html#pandas-dataframe-std"><span class="std std-ref">DataFrame.std</span></a></dt><dd><p>Return sample standard deviation over requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.var.html#pandas-dataframe-var"><span class="std std-ref">DataFrame.var</span></a></dt><dd><p>Return unbiased variance over requested axis.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.nunique.html#pandas-dataframe-nunique"><span class="std std-ref">DataFrame.nunique</span></a></dt><dd><p>Count distinct observations over requested axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="re-indexing-selection-label-manipulation">
+<h2>Re-Indexing, Selection, Label Manipulation<a class="headerlink" href="#re-indexing-selection-label-manipulation" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.add_prefix.html#pandas-dataframe-add-prefix"><span class="std std-ref">DataFrame.add_prefix</span></a></dt><dd><p>Prefix labels with string <cite>prefix</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.add_suffix.html#pandas-dataframe-add-suffix"><span class="std std-ref">DataFrame.add_suffix</span></a></dt><dd><p>Suffix labels with string <cite>suffix</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.align.html#pandas-dataframe-align"><span class="std std-ref">DataFrame.align</span></a></dt><dd><p>Align two objects on their axes with the specified join method for each axis Index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.at_time.html#pandas-dataframe-at-time"><span class="std std-ref">DataFrame.at_time</span></a></dt><dd><p>Select values at particular time of day (e.g. 9:30AM).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.between_time.html#pandas-dataframe-between-time"><span class="std std-ref">DataFrame.between_time</span></a></dt><dd><p>Select values between particular times of the day (e.g., 9:00-9:30 AM).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.drop.html#pandas-dataframe-drop"><span class="std std-ref">DataFrame.drop</span></a></dt><dd><p>Drop specified labels from rows or columns.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.drop_duplicates.html#pandas-dataframe-drop-duplicates"><span class="std std-ref">DataFrame.drop_duplicates</span></a></dt><dd><p>Return DataFrame with duplicate rows removed, optionally only considering certain columns. Indexes, including time indexes are ignored.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.duplicated.html#pandas-dataframe-duplicated"><span class="std std-ref">DataFrame.duplicated</span></a></dt><dd><p>Return boolean Series denoting duplicate rows, optionally only considering certain columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.equals.html#pandas-dataframe-equals"><span class="std std-ref">DataFrame.equals</span></a></dt><dd><p>Test whether two objects contain the same elements.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.filter.html#pandas-dataframe-filter"><span class="std std-ref">DataFrame.filter</span></a></dt><dd><p>Subset rows or columns of dataframe according to labels in the specified index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.first.html#pandas-dataframe-first"><span class="std std-ref">DataFrame.first</span></a></dt><dd><p>Convenience method for subsetting initial periods of time series data based on a date offset.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.head.html#pandas-dataframe-head"><span class="std std-ref">DataFrame.head</span></a></dt><dd><p>Return the first <cite>n</cite> rows.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.idxmax.html#pandas-dataframe-idxmax"><span class="std std-ref">DataFrame.idxmax</span></a></dt><dd><p>Return index of first occurrence of maximum over requested axis. NA/null values are excluded.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.idxmin.html#pandas-dataframe-idxmin"><span class="std std-ref">DataFrame.idxmin</span></a></dt><dd><p>Return index of first occurrence of minimum over requested axis. NA/null values are excluded.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.last.html#pandas-dataframe-last"><span class="std std-ref">DataFrame.last</span></a></dt><dd><p>Convenience method for subsetting final periods of time series data based on a date offset.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.reindex.html#pandas-dataframe-reindex"><span class="std std-ref">DataFrame.reindex</span></a></dt><dd><p>Conform DataFrame to new index with optional filling logic, placing NA/NaN in locations having no value in the previous index. A new object is produced unless the new index is equivalent to the current one and <code class="docutils literal notranslate"><span class="pre">copy=False</span></code>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.reindex_like.html#pandas-dataframe-reindex-like"><span class="std std-ref">DataFrame.reindex_like</span></a></dt><dd><p>Return an object with matching indices as other object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rename.html#pandas-dataframe-rename"><span class="std std-ref">DataFrame.rename</span></a></dt><dd><p>Alter axes labels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.rename_axis.html#pandas-dataframe-rename-axis"><span class="std std-ref">DataFrame.rename_axis</span></a></dt><dd><p>Set the name of the axis for the index or columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.reset_index.html#pandas-dataframe-reset-index"><span class="std std-ref">DataFrame.reset_index</span></a></dt><dd><p>Reset the index, or a level of it.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sample.html#pandas-dataframe-sample"><span class="std std-ref">DataFrame.sample</span></a></dt><dd><p>Return a random sample of items from an axis of object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.set_axis.html#pandas-dataframe-set-axis"><span class="std std-ref">DataFrame.set_axis</span></a></dt><dd><p>Assign desired index to given axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.set_index.html#pandas-dataframe-set-index"><span class="std std-ref">DataFrame.set_index</span></a></dt><dd><p>Set the DataFrame index using existing columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.tail.html#pandas-dataframe-tail"><span class="std std-ref">DataFrame.tail</span></a></dt><dd><p>Return the last <cite>n</cite> rows.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.take.html#pandas-dataframe-take"><span class="std std-ref">DataFrame.take</span></a></dt><dd><p>Return the elements in the given <em>positional</em> indices along an axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.truncate.html#pandas-dataframe-truncate"><span class="std std-ref">DataFrame.truncate</span></a></dt><dd><p>Truncate a Series or DataFrame before and after some index value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="missing-data-handling">
+<h2>Missing Data Handling<a class="headerlink" href="#missing-data-handling" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.dropna.html#pandas-dataframe-dropna"><span class="std std-ref">DataFrame.dropna</span></a></dt><dd><p>Remove missing values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.fillna.html#pandas-dataframe-fillna"><span class="std std-ref">DataFrame.fillna</span></a></dt><dd><p>Fill NA/NaN values using the specified method.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.replace.html#pandas-dataframe-replace"><span class="std std-ref">DataFrame.replace</span></a></dt><dd><p>Replace values given in <cite>to_replace</cite> with <cite>value</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.interpolate.html#pandas-dataframe-interpolate"><span class="std std-ref">DataFrame.interpolate</span></a></dt><dd><p>Interpolate values according to different methods.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="re-shaping-sorting-transposing">
+<h2>Re-Shaping, Sorting, Transposing<a class="headerlink" href="#re-shaping-sorting-transposing" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.droplevel.html#pandas-dataframe-droplevel"><span class="std std-ref">DataFrame.droplevel</span></a></dt><dd><p>Return DataFrame with requested index / column level(s) removed.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pivot.html#pandas-dataframe-pivot"><span class="std std-ref">DataFrame.pivot</span></a></dt><dd><p>Return reshaped DataFrame organized by given index / column values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.pivot_table.html#pandas-dataframe-pivot-table"><span class="std std-ref">DataFrame.pivot_table</span></a></dt><dd><p>Create a spreadsheet-style pivot table as a DataFrame. The levels in the pivot table will be stored in MultiIndex objects (hierarchical indexes) on the index and columns of the result DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.reorder_levels.html#pandas-dataframe-reorder-levels"><span class="std std-ref">DataFrame.reorder_levels</span></a></dt><dd><p>Rearrange index levels using input order. May not drop or duplicate levels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sort_values.html#pandas-dataframe-sort-values"><span class="std std-ref">DataFrame.sort_values</span></a></dt><dd><p>Sort by the values along either axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sort_index.html#pandas-dataframe-sort-index"><span class="std std-ref">DataFrame.sort_index</span></a></dt><dd><p>Sort object by labels (along an axis).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.nlargest.html#pandas-dataframe-nlargest"><span class="std std-ref">DataFrame.nlargest</span></a></dt><dd><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in descending order.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.nsmallest.html#pandas-dataframe-nsmallest"><span class="std std-ref">DataFrame.nsmallest</span></a></dt><dd><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in ascending order.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.swaplevel.html#pandas-dataframe-swaplevel"><span class="std std-ref">DataFrame.swaplevel</span></a></dt><dd><p>Swap levels i and j in a MultiIndex on a particular axis.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.stack.html#pandas-dataframe-stack"><span class="std std-ref">DataFrame.stack</span></a></dt><dd><p>Stack the prescribed level(s) from columns to index.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.unstack.html#pandas-dataframe-unstack"><span class="std std-ref">DataFrame.unstack</span></a></dt><dd><p>Pivot a level of the (necessarily hierarchical) index labels, returning a DataFrame having a new level of column labels whose inner-most level consists of the pivoted index labels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.swapaxes.html#pandas-dataframe-swapaxes"><span class="std std-ref">DataFrame.swapaxes</span></a></dt><dd><p>Interchange axes and swap values axes appropriately.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.melt.html#pandas-dataframe-melt"><span class="std std-ref">DataFrame.melt</span></a></dt><dd><p>Unpivot a DataFrame from wide format to long format, optionally leaving identifier variables set.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.explode.html#pandas-dataframe-explode"><span class="std std-ref">DataFrame.explode</span></a></dt><dd><p>Transform each element of a list-like to a row, replicating the index values.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.squeeze.html#pandas-dataframe-squeeze"><span class="std std-ref">DataFrame.squeeze</span></a></dt><dd><p>Squeeze 1 dimensional axis objects into scalars.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_xarray.html#pandas-dataframe-to-xarray"><span class="std std-ref">DataFrame.to_xarray</span></a></dt><dd><p>Return an xarray object from the pandas object.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.T.html#pandas-dataframe-t"><span class="std std-ref">DataFrame.T</span></a></dt><dd><p>Transpose index and columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.transpose.html#pandas-dataframe-transpose"><span class="std std-ref">DataFrame.transpose</span></a></dt><dd><p>Transpose index and columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="combining-joining-merging">
+<h2>Combining, Joining, Merging<a class="headerlink" href="#combining-joining-merging" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.append.html#pandas-dataframe-append"><span class="std std-ref">DataFrame.append</span></a></dt><dd><p>Append rows of <cite>other</cite> to the end of caller, returning a new object.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.assign.html#pandas-dataframe-assign"><span class="std std-ref">DataFrame.assign</span></a></dt><dd><p>Assign new columns to a DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.join.html#pandas-dataframe-join"><span class="std std-ref">DataFrame.join</span></a></dt><dd><p>Join columns of another DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.merge.html#pandas-dataframe-merge"><span class="std std-ref">DataFrame.merge</span></a></dt><dd><p>Merge DataFrame or named Series objects with a database-style join.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.update.html#pandas-dataframe-update"><span class="std std-ref">DataFrame.update</span></a></dt><dd><p>Modify in place using non-NA values from another DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="time-series">
+<h2>Time Series<a class="headerlink" href="#time-series" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.asfreq.html#pandas-dataframe-asfreq"><span class="std std-ref">DataFrame.asfreq</span></a></dt><dd><p>Convert TimeSeries to specified frequency.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.asof.html#pandas-dataframe-asof"><span class="std std-ref">DataFrame.asof</span></a></dt><dd><p>Return the last row(s) without any NaNs before <cite>where</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.shift.html#pandas-dataframe-shift"><span class="std std-ref">DataFrame.shift</span></a></dt><dd><p>Shift index by desired number of periods with an optional time <cite>freq</cite>.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.slice_shift.html#pandas-dataframe-slice-shift"><span class="std std-ref">DataFrame.slice_shift</span></a></dt><dd><p>Equivalent to <cite>shift</cite> without copying data. The shifted data will not include the dropped periods and the shifted axis will be smaller than the original.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.tshift.html#pandas-dataframe-tshift"><span class="std std-ref">DataFrame.tshift</span></a></dt><dd><p>Shift the time index, using the index’s frequency if available.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.first_valid_index.html#pandas-dataframe-first-valid-index"><span class="std std-ref">DataFrame.first_valid_index</span></a></dt><dd><p>Return index for first non-NA/null value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.last_valid_index.html#pandas-dataframe-last-valid-index"><span class="std std-ref">DataFrame.last_valid_index</span></a></dt><dd><p>Return index for last non-NA/null value.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.resample.html#pandas-dataframe-resample"><span class="std std-ref">DataFrame.resample</span></a></dt><dd><p>Resample time-series data.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_period.html#pandas-dataframe-to-period"><span class="std std-ref">DataFrame.to_period</span></a></dt><dd><p>Convert DataFrame from DatetimeIndex to PeriodIndex with desired frequency (inferred from index if not passed).</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_timestamp.html#pandas-dataframe-to-timestamp"><span class="std std-ref">DataFrame.to_timestamp</span></a></dt><dd><p>Cast to DatetimeIndex of timestamps, at <em>beginning</em> of period.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.tz_convert.html#pandas-dataframe-tz-convert"><span class="std std-ref">DataFrame.tz_convert</span></a></dt><dd><p>Convert tz-aware axis to target time zone.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.tz_localize.html#pandas-dataframe-tz-localize"><span class="std std-ref">DataFrame.tz_localize</span></a></dt><dd><p>Localize tz-naive index of a Series or DataFrame to target time zone.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="plotting">
+<span id="api-ref-dataframe-plotting"></span><h2>Plotting<a class="headerlink" href="#plotting" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">DataFrame.plot</span></code> is both a callable method and a namespace attribute for
+specific plotting methods of the form <code class="docutils literal notranslate"><span class="pre">DataFrame.plot.&lt;kind&gt;</span></code>.</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.html#pandas-dataframe-plot"><span class="std std-ref">DataFrame.plot</span></a></dt><dd><p>Make plots of Series or DataFrame using the backend specified by the option <code class="docutils literal notranslate"><span class="pre">plotting.backend</span></code>. By default, matplotlib is used.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.area.html#pandas-dataframe-plot-area"><span class="std std-ref">DataFrame.plot.area</span></a></dt><dd><p>Draw a stacked area plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.bar.html#pandas-dataframe-plot-bar"><span class="std std-ref">DataFrame.plot.bar</span></a></dt><dd><p>Vertical bar plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.barh.html#pandas-dataframe-plot-barh"><span class="std std-ref">DataFrame.plot.barh</span></a></dt><dd><p>Make a horizontal bar plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.box.html#pandas-dataframe-plot-box"><span class="std std-ref">DataFrame.plot.box</span></a></dt><dd><p>Make a box plot of the DataFrame columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.density.html#pandas-dataframe-plot-density"><span class="std std-ref">DataFrame.plot.density</span></a></dt><dd><p>Generate Kernel Density Estimate plot using Gaussian kernels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.hexbin.html#pandas-dataframe-plot-hexbin"><span class="std std-ref">DataFrame.plot.hexbin</span></a></dt><dd><p>Generate a hexagonal binning plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.hist.html#pandas-dataframe-plot-hist"><span class="std std-ref">DataFrame.plot.hist</span></a></dt><dd><p>Draw one histogram of the DataFrame’s columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.kde.html#pandas-dataframe-plot-kde"><span class="std std-ref">DataFrame.plot.kde</span></a></dt><dd><p>Generate Kernel Density Estimate plot using Gaussian kernels.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.line.html#pandas-dataframe-plot-line"><span class="std std-ref">DataFrame.plot.line</span></a></dt><dd><p>Plot Series or DataFrame as lines.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.pie.html#pandas-dataframe-plot-pie"><span class="std std-ref">DataFrame.plot.pie</span></a></dt><dd><p>Generate a pie plot.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.plot.scatter.html#pandas-dataframe-plot-scatter"><span class="std std-ref">DataFrame.plot.scatter</span></a></dt><dd><p>Create a scatter plot with varying marker point size and color.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.boxplot.html#pandas-dataframe-boxplot"><span class="std std-ref">DataFrame.boxplot</span></a></dt><dd><p>Make a box plot from DataFrame columns.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.hist.html#pandas-dataframe-hist"><span class="std std-ref">DataFrame.hist</span></a></dt><dd><p>Make a histogram of the DataFrame’s.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="sparse-accessor">
+<span id="api-ref-dataframe-sparse"></span><h2>Sparse Accessor<a class="headerlink" href="#sparse-accessor" title="Permalink to this headline">¶</a></h2>
+<p>Sparse-<code class="docutils literal notranslate"><span class="pre">dtype</span></code> specific methods and attributes are provided under the
+<code class="docutils literal notranslate"><span class="pre">DataFrame.sparse</span></code> accessor.</p>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.sparse.density.html#pandas-dataframe-sparse-density"><span class="std std-ref">DataFrame.sparse.density</span></a></dt><dd><p>Ratio of non-sparse points to total (dense) data points represented in the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sparse.from_spmatrix.html#pandas-dataframe-sparse-from-spmatrix"><span class="std std-ref">DataFrame.sparse.from_spmatrix</span></a></dt><dd><p>Create a new DataFrame from a scipy sparse matrix.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sparse.to_coo.html#pandas-dataframe-sparse-to-coo"><span class="std std-ref">DataFrame.sparse.to_coo</span></a></dt><dd><p>Return the contents of the frame as a sparse SciPy COO matrix.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.sparse.to_dense.html#pandas-dataframe-sparse-to-dense"><span class="std std-ref">DataFrame.sparse.to_dense</span></a></dt><dd><p>Convert a DataFrame with sparse values to dense.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+<div class="section" id="serialization-input-output-conversion">
+<h2>Serialization, Input-Output, Conversion<a class="headerlink" href="#serialization-input-output-conversion" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><dl>
+<dt><a class="reference internal" href="pandas.DataFrame.from_dict.html#pandas-dataframe-from-dict"><span class="std std-ref">DataFrame.from_dict</span></a></dt><dd><p>Construct DataFrame from dict of array-like or dicts.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.from_records.html#pandas-dataframe-from-records"><span class="std std-ref">DataFrame.from_records</span></a></dt><dd><p>Convert structured or record ndarray to DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.info.html#pandas-dataframe-info"><span class="std std-ref">DataFrame.info</span></a></dt><dd><p>Print a concise summary of a DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_parquet.html#pandas-dataframe-to-parquet"><span class="std std-ref">DataFrame.to_parquet</span></a></dt><dd><p>Write a DataFrame to the binary parquet format.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_pickle.html#pandas-dataframe-to-pickle"><span class="std std-ref">DataFrame.to_pickle</span></a></dt><dd><p>Pickle (serialize) object to file.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_csv.html#pandas-dataframe-to-csv"><span class="std std-ref">DataFrame.to_csv</span></a></dt><dd><p>Write object to a comma-separated values (csv) file.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_hdf.html#pandas-dataframe-to-hdf"><span class="std std-ref">DataFrame.to_hdf</span></a></dt><dd><p>Write the contained data to an HDF5 file using HDFStore.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_sql.html#pandas-dataframe-to-sql"><span class="std std-ref">DataFrame.to_sql</span></a></dt><dd><p>Write records stored in a DataFrame to a SQL database.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_dict.html#pandas-dataframe-to-dict"><span class="std std-ref">DataFrame.to_dict</span></a></dt><dd><p>Convert the DataFrame to a dictionary.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_excel.html#pandas-dataframe-to-excel"><span class="std std-ref">DataFrame.to_excel</span></a></dt><dd><p>Write object to an Excel sheet.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_json.html#pandas-dataframe-to-json"><span class="std std-ref">DataFrame.to_json</span></a></dt><dd><p>Convert the object to a JSON string.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_html.html#pandas-dataframe-to-html"><span class="std std-ref">DataFrame.to_html</span></a></dt><dd><p>Render a DataFrame as an HTML table.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_feather.html#pandas-dataframe-to-feather"><span class="std std-ref">DataFrame.to_feather</span></a></dt><dd><p>Write out the binary feather-format for DataFrames.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_latex.html#pandas-dataframe-to-latex"><span class="std std-ref">DataFrame.to_latex</span></a></dt><dd><p>Render an object to a LaTeX tabular environment table.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_stata.html#pandas-dataframe-to-stata"><span class="std std-ref">DataFrame.to_stata</span></a></dt><dd><p>Export DataFrame object to Stata dta format.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_msgpack.html#pandas-dataframe-to-msgpack"><span class="std std-ref">DataFrame.to_msgpack</span></a></dt><dd><p>Serialize object to input file path using msgpack format.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_gbq.html#pandas-dataframe-to-gbq"><span class="std std-ref">DataFrame.to_gbq</span></a></dt><dd><p>Write a DataFrame to a Google BigQuery table.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_records.html#pandas-dataframe-to-records"><span class="std std-ref">DataFrame.to_records</span></a></dt><dd><p>Convert DataFrame to a NumPy record array.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_string.html#pandas-dataframe-to-string"><span class="std std-ref">DataFrame.to_string</span></a></dt><dd><p>Render a DataFrame to a console-friendly tabular output.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.to_clipboard.html#pandas-dataframe-to-clipboard"><span class="std std-ref">DataFrame.to_clipboard</span></a></dt><dd><p>Copy object to the system clipboard.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.style.html#pandas-dataframe-style"><span class="std std-ref">DataFrame.style</span></a></dt><dd><p>Property returning a Styler object containing methods for building a styled HTML representation fo the DataFrame.</p>
+<blockquote>
+<div><p><strong>Unsupported by Intel SDC</strong>.</p>
+</div></blockquote>
+</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../apireference.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.io.html">Input/output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.series.html">Series: Columnar Data Structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Dataframe: Tabular Data Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.window.html">Window</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api_ref.pandas.groupby.html">GroupBy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="api_ref.pandas.series.html"
+                        title="previous chapter">Pandas Series</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="api_ref.pandas.window.html"
+                        title="next chapter">Pandas Window</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

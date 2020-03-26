@@ -1,0 +1,33 @@
+.. _pandas.core.groupby.SeriesGroupBy.nsmallest:
+
+:orphan:
+
+pandas.core.groupby.SeriesGroupBy.nsmallest
+*******************************************
+
+Return the smallest `n` elements.
+
+:param n:
+    int, default 5
+        Return this many ascending sorted values.
+
+:param keep:
+    {'first', 'last', 'all'}, default 'first'
+        When there are duplicate values that cannot all fit in a
+        Series of `n` elements:
+
+        - ``first`` : return the first `n` occurrences in order
+            of appearance.
+        - ``last`` : return the last `n` occurrences in reverse
+            order of appearance.
+        - ``all`` : keep all occurrences. This can result in a Series of
+            size larger than `n`.
+
+:return: Series
+    The `n` smallest values in the Series, sorted in increasing order.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

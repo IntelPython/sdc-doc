@@ -1,0 +1,23 @@
+.. _pandas.core.groupby.DataFrameGroupBy.nunique:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.nunique
+********************************************
+
+Return DataFrame with number of distinct observations per group for
+each column.
+
+.. versionadded:: 0.20.0
+
+:param dropna:
+    boolean, default True
+        Don't include NaN in the counts.
+
+:return: nunique: DataFrame
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

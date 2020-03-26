@@ -1,0 +1,17 @@
+.. _pandas.core.groupby.DataFrameGroupBy.count:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.count
+******************************************
+
+Compute count of group, excluding missing values.
+
+:return: DataFrame
+    Count of values within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

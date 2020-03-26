@@ -1,0 +1,25 @@
+.. _pandas.Series.index:
+
+:orphan:
+
+pandas.Series.index
+*******************
+
+The index (axis labels) of the Series.
+
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system. Users should exercise a tradeoff
+    between staying in JIT-region with that function or going back to interpreter mode.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/series/series_index.py
+   :language: python
+   :lines: 27-
+   :caption: The index (axis labels) of the Series.
+   :name: ex_series_index
+
+.. command-output:: python ./series/series_index.py
+   :cwd: ../../../examples
+

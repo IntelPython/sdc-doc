@@ -1,0 +1,14 @@
+.. _pandas.core.groupby.GroupBy.groups:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.groups
+**********************************
+
+Dict {group name -> group labels}.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.Series.to_latex &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.Series.to_latex<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Render an object to a LaTeX tabular environment table.</p>
+<p>Render an object to a tabular environment table. You can splice
+this into a LaTeX document. Requires usepackage{booktabs}.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 0.20.2.</span></p>
+</div>
+<dl class="field-list">
+<dt class="field-odd">param buf</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>file descriptor or None</dt><dd><p>Buffer to write to. If None, the output is returned as a string.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param columns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>list of label, optional</dt><dd><p>The subset of columns to write. Writes all columns by default.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param col_space</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int, optional</dt><dd><p>The minimum width of each column.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param header</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool or list of str, default True</dt><dd><p>Write out the column names. If a list of strings is given,
+it is assumed to be aliases for the column names.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param index</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Write row names (index).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param na_rep</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, default ‘NaN’</dt><dd><p>Missing data representation.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param formatters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>list of functions or dict of {str: function}, optional</dt><dd><p>Formatter functions to apply to columns’ elements by position or
+name. The result of each function must be a unicode string.
+List must be of length equal to the number of columns.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param float_format</dt>
+<dd class="field-even"><dl class="simple">
+<dt>one-parameter function or str, optional, default None</dt><dd><p>Formatter for floating point numbers. For example
+<code class="docutils literal notranslate"><span class="pre">float_format=&quot;%%.2f&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">float_format=&quot;{:0.2f}&quot;.format</span></code> will
+both result in 0.1234 being formatted as 0.12.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param sparsify</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, optional</dt><dd><p>Set to False for a DataFrame with a hierarchical index to print
+every multiindex key at each row. By default, the value will be
+read from the config module.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param index_names</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default True</dt><dd><p>Prints the names of the indexes.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param bold_rows</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, default False</dt><dd><p>Make the row labels bold in the output.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param column_format</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str, optional</dt><dd><p>The columns format as specified in <a class="reference external" href="https://en.wikibooks.org/wiki/LaTeX/Tables">LaTeX table format</a> e.g. ‘rcl’ for 3
+columns. By default, ‘l’ will be used for all columns except
+columns of numbers, which default to ‘r’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param longtable</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool, optional</dt><dd><p>By default, the value will be read from the pandas config
+module. Use a longtable environment instead of tabular. Requires
+adding a usepackage{longtable} to your LaTeX preamble.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param escape</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, optional</dt><dd><p>By default, the value will be read from the pandas config
+module. When set to False prevents from escaping latex special
+characters in column names.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param encoding</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str, optional</dt><dd><p>A string representing the encoding to use in the output file,
+defaults to ‘utf-8’.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param decimal</dt>
+<dd class="field-even"><dl>
+<dt>str, default ‘.’</dt><dd><p>Character recognized as decimal separator, e.g. ‘,’ in Europe.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.18.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param multicolumn</dt>
+<dd class="field-odd"><dl>
+<dt>bool, default True</dt><dd><p>Use multicolumn to enhance MultiIndex columns.
+The default will be read from the config module.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.20.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param multicolumn_format</dt>
+<dd class="field-even"><dl>
+<dt>str, default ‘l’</dt><dd><p>The alignment for multicolumns, similar to <cite>column_format</cite>
+The default will be read from the config module.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.20.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param multirow</dt>
+<dd class="field-odd"><dl>
+<dt>bool, default False</dt><dd><p>Use multirow to enhance MultiIndex rows. Requires adding a
+usepackage{multirow} to your LaTeX preamble. Will print
+centered labels (instead of top-aligned) across the contained
+rows, separating groups via clines. The default will be read
+from the pandas config module.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.20.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>str or None
+If buf is None, returns the resulting LateX format as a
+string. Otherwise returns None.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

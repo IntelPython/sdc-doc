@@ -1,0 +1,28 @@
+.. _pandas.core.groupby.GroupBy.ngroup:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.ngroup
+**********************************
+
+Number each group from 0 to the number of groups - 1.
+
+This is the enumerative complement of cumcount.  Note that the
+numbers given to the groups match the order in which the groups
+would be seen when iterating over the groupby object, not the
+order they are first observed.
+
+.. versionadded:: 0.20.2
+
+:param ascending:
+    bool, default True
+        If False, number in reverse, from number of group - 1 to 0.
+
+:return: Series
+    Unique numbers for each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

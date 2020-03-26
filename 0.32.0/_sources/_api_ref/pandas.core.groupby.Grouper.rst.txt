@@ -1,0 +1,67 @@
+.. _pandas.core.groupby.Grouper:
+
+:orphan:
+
+pandas.core.groupby.Grouper
+***************************
+
+A Grouper allows the user to specify a groupby instruction for a target
+object
+
+This specification will select a column via the key parameter, or if the
+level and/or axis parameters are given, a level of the index of the target
+object.
+
+If `axis` and/or `level` are passed as keywords to both `Grouper` and
+`groupby`, the values passed to `Grouper` take precedence.
+
+:param key:
+    string, defaults to None
+        groupby key, which selects the grouping column of the target
+
+:param level:
+    name/number, defaults to None
+        the level for the target index
+
+:param freq:
+    string / frequency object, defaults to None
+        This will groupby the specified frequency if the target selection
+        (via key or level) is a datetime-like object. For full specification
+        of available frequencies, please see `here
+        <http://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases>`_.
+
+:param axis:
+    number/name of the axis, defaults to 0
+
+:param sort:
+    boolean, default to False
+        whether to sort the resulting labels
+
+:param closed:
+    {'left' or 'right'}
+        Closed end of interval. Only when `freq` parameter is passed.
+
+:param label:
+    {'left' or 'right'}
+        Interval boundary to use for labeling.
+        Only when `freq` parameter is passed.
+
+:param convention:
+    {'start', 'end', 'e', 's'}
+        If grouper is PeriodIndex and `freq` parameter is passed.
+
+:param base:
+    int, default 0
+        Only when `freq` parameter is passed.
+
+:param loffset:
+    string, DateOffset, timedelta object
+        Only when `freq` parameter is passed.
+
+:return: A specification for a groupby instruction
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

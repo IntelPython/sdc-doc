@@ -1,0 +1,33 @@
+.. _pandas.core.groupby.GroupBy.count:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.count
+*********************************
+
+Compute count of group, excluding missing values.
+
+:return: Series or DataFrame
+    Count of values within each group.
+
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system.    Users should exercise a tradeoff between staying in JIT-region with that function or    going back to interpreter mode.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_count.py
+   :language: python
+   :lines: 27-
+   :caption: Compute count of group, excluding missing values.
+   :name: ex_dataframe_groupby_count
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_count.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.groupby <pandas.Series.groupby>`
+        Group Series using a mapper or by a Series of columns.
+    :ref:`DataFrame.groupby <pandas.DataFrame.groupby>`
+        Group DataFrame using a mapper or by a Series of columns.
+

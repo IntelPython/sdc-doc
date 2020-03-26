@@ -1,0 +1,17 @@
+.. _pandas.core.groupby.GroupBy.first:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.first
+*********************************
+
+Compute first of group values.
+
+:return: Series or DataFrame
+    Computed first of values within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

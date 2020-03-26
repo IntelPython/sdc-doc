@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>pandas.DataFrame.drop &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="../other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="../index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="../examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>pandas.DataFrame.drop<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Drop specified labels from rows or columns.</p>
+<p>Remove rows or columns by specifying label names and corresponding
+axis, or by specifying directly index or column names. When using a
+multi-index, labels on different levels can be removed by specifying
+the level.</p>
+<dl class="field-list">
+<dt class="field-odd">param labels</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>single label or list-like</dt><dd><p>Index or column labels to drop.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param axis</dt>
+<dd class="field-even"><dl class="simple">
+<dt>{0 or ‘index’, 1 or ‘columns’}, default 0</dt><dd><p>Whether to drop labels from the index (0 or ‘index’) or
+columns (1 or ‘columns’).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param index</dt>
+<dd class="field-odd"><dl>
+<dt>single label or list-like</dt><dd><p>Alternative to specifying axis (<code class="docutils literal notranslate"><span class="pre">labels,</span> <span class="pre">axis=0</span></code>
+is equivalent to <code class="docutils literal notranslate"><span class="pre">index=labels</span></code>).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param columns</dt>
+<dd class="field-even"><dl>
+<dt>single label or list-like</dt><dd><p>Alternative to specifying axis (<code class="docutils literal notranslate"><span class="pre">labels,</span> <span class="pre">axis=1</span></code>
+is equivalent to <code class="docutils literal notranslate"><span class="pre">columns=labels</span></code>).</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 0.21.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param level</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>int or level name, optional</dt><dd><p>For MultiIndex, level from which the labels will be removed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">param inplace</dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool, default False</dt><dd><p>If True, do operation inplace and return None.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">param errors</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>{‘ignore’, ‘raise’}, default ‘raise’</dt><dd><p>If ‘ignore’, suppress error and only existing labels are
+dropped.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">return</dt>
+<dd class="field-even"><p>DataFrame
+DataFrame without the removed index or column labels.</p>
+</dd>
+<dt class="field-odd">raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>KeyError</dt><dd><p>If any of the labels is not found in the selected axis.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Parameters <code class="docutils literal notranslate"><span class="pre">labels</span></code>, <code class="docutils literal notranslate"><span class="pre">axis</span></code>, <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">inplace</span></code> are currently unsupported.</p></li>
+<li><dl class="simple">
+<dt>Parameter <code class="docutils literal notranslate"><span class="pre">columns</span></code> is required and is expected to be a Literal value with one column name</dt><dd><p>or Tuple with columns names.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Supported <code class="docutils literal notranslate"><span class="pre">errors</span></code> can be {<code class="docutils literal notranslate"><span class="pre">raise</span></code>, <code class="docutils literal notranslate"><span class="pre">ignore</span></code>}, default <code class="docutils literal notranslate"><span class="pre">raise</span></code>. If <code class="docutils literal notranslate"><span class="pre">ignore</span></code>, suppress error and only</dt><dd><p>existing labels are dropped.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="ex-dataframe-drop">
+<div class="code-block-caption"><span class="caption-text">Drop specified columns from DataFrame.</span><a class="headerlink" href="#ex-dataframe-drop" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">dataframe_drop</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]})</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dataframe_drop</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./dataframe/dataframe_drop.py
+   B  C
+0  4  a
+1  5  b
+2  6  c
+3  7  d
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.DataFrame.loc.html#pandas-dataframe-loc"><span class="std std-ref">DataFrame.loc</span></a></dt><dd><p>Label-location based indexer for selection by label.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.dropna.html#pandas-dataframe-dropna"><span class="std std-ref">DataFrame.dropna</span></a></dt><dd><p>Return DataFrame with labels on given axis omitted where (all or any) data are missing.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.DataFrame.drop_duplicates.html#pandas-dataframe-drop-duplicates"><span class="std std-ref">DataFrame.drop_duplicates</span></a></dt><dd><p>Return DataFrame with duplicate rows removed, optionally only considering certain columns.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.drop.html#pandas-series-drop"><span class="std std-ref">Series.drop</span></a></dt><dd><p>Return Series with specified index labels removed.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../compilation.html">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

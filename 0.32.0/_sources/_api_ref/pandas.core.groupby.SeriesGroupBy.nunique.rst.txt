@@ -1,0 +1,17 @@
+.. _pandas.core.groupby.SeriesGroupBy.nunique:
+
+:orphan:
+
+pandas.core.groupby.SeriesGroupBy.nunique
+*****************************************
+
+Return number of unique elements in the group.
+
+:return: Series
+    Number of unique values within each group.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

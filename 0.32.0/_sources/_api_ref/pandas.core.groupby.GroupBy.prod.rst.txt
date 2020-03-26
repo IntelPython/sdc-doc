@@ -1,0 +1,27 @@
+.. _pandas.core.groupby.GroupBy.prod:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.prod
+********************************
+
+Compute prod of group values.
+
+:return: Series or DataFrame
+    Computed prod of values within each group.
+
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system.    Users should exercise a tradeoff between staying in JIT-region with that function or    going back to interpreter mode.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_prod.py
+   :language: python
+   :lines: 27-
+   :caption: Compute prod of group values.
+   :name: ex_dataframe_groupby_prod
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_prod.py
+   :cwd: ../../../examples
+

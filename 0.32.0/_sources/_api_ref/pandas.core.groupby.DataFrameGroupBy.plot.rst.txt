@@ -1,0 +1,14 @@
+.. _pandas.core.groupby.DataFrameGroupBy.plot:
+
+:orphan:
+
+pandas.core.groupby.DataFrameGroupBy.plot
+*****************************************
+
+Class implementing the .plot attribute for groupby objects.
+
+
+
+.. warning::
+    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+

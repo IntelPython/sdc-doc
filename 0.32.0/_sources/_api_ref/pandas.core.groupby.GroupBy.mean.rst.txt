@@ -1,0 +1,32 @@
+.. _pandas.core.groupby.GroupBy.mean:
+
+:orphan:
+
+pandas.core.groupby.GroupBy.mean
+********************************
+
+Compute mean of groups, excluding missing values.
+
+:return: pandas.Series or pandas.DataFrame
+
+Limitations
+-----------
+- This function may reveal slower performance than Pandas\* on user system.    Users should exercise a tradeoff between staying in JIT-region with that function or    going back to interpreter mode.
+
+Examples
+--------
+.. literalinclude:: ../../../examples/dataframe/groupby/dataframe_groupby_mean.py
+   :language: python
+   :lines: 27-
+   :caption: Compute mean of groups, excluding missing values.
+   :name: ex_dataframe_groupby_mean
+
+.. command-output:: python ./dataframe/groupby/dataframe_groupby_mean.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.groupby <pandas.Series.groupby>`
+        Group Series using a mapper or by a Series of columns.
+    :ref:`DataFrame.groupby <pandas.DataFrame.groupby>`
+        Group DataFrame using a mapper or by a Series of columns.
+

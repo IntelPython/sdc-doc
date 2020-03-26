@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Compiling With Intel® SDC &#8212; Intel® Scalable Dataframe Compiler 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/sdc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Performance With Intel® SDC" href="performance.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Intel Python projects" href="other_intel_python_projects.html"></a>
+  <a class="brand_sdc" title="Documentation Home" href="index.html"></a>
+
+  <ul>
+    <li><a class="exampleslink" title="Examples" href="examples.html"></a></li>
+    <li><a class="issueslink" title="Issues" href="https://software.intel.com/en-us/distribution-for-python/support/get-help"></a></li>
+    <li><a class="emaillink" title="Email" href="mailto:scripting@intel.com"></a></li>
+    <li><a class="homelink" title="SDC GitHub" href="https://github.com/IntelPython/sdc"></a></li>
+    <li>
+      
+      
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="performance.html" title="Getting Performance With Intel® SDC">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="getting_started.html" title="Getting Started">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="index.html">Intel® Scalable Dataframe Compiler 0.1 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>Compiling With Intel® SDC</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="compilation"></span><div class="section" id="compiling-with-intel-sdc">
+<h1>Compiling With Intel® SDC<a class="headerlink" href="#compiling-with-intel-sdc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-if-i-get-a-compilation-error">
+<h2>What if I get a compilation error<a class="headerlink" href="#what-if-i-get-a-compilation-error" title="Permalink to this headline">¶</a></h2>
+<p>There are a few reasons why Intel SDC cannot compile your code out-of-the-box.</p>
+<ol class="arabic simple">
+<li><p>Intel SDC does support only a subset of <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> APIs.</p></li>
+<li><p>Intel SDC and <a class="reference external" href="https://numba.pydata.org/">Numba*</a> can compile only a subset of Python data types.</p></li>
+<li><p>Intel SDC cannot infer the type of a variable at compile time.</p></li>
+</ol>
+<div class="section" id="unsupported-apis">
+<h3>Unsupported APIs<a class="headerlink" href="#unsupported-apis" title="Permalink to this headline">¶</a></h3>
+<p>Intel® SDC is able to compile variety of the most typical workflows that involve <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> operations but not all.
+Sometimes it means that your code cannot be compiled out-of-the-box:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numba</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
+<span class="k">def</span> <span class="nf">read_df</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+<span class="n">read_df</span><span class="p">(</span><span class="s2">&quot;data.xlsx&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<span class="o">...</span>
+<span class="n">numba</span><span class="o">.</span><span class="n">errors</span><span class="o">.</span><span class="n">TypingError</span><span class="p">:</span> <span class="n">Failed</span> <span class="ow">in</span> <span class="n">nopython</span> <span class="n">mode</span> <span class="n">pipeline</span> <span class="p">(</span><span class="n">step</span><span class="p">:</span> <span class="n">nopython</span> <span class="n">frontend</span><span class="p">)</span>
+<span class="n">Unknown</span> <span class="n">attribute</span> <span class="s1">&#39;read_excel&#39;</span> <span class="n">of</span> <span class="nb">type</span> <span class="n">Module</span><span class="p">(</span><span class="o">&lt;</span><span class="n">module</span> <span class="s1">&#39;pandas&#39;</span> <span class="kn">from</span> <span class="nn">...</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In such case you have the following options:</p>
+<ul class="simple">
+<li><p>Replace unsupported function with similar ones which are supported
+(e.g. use <a class="reference internal" href="_api_ref/pandas.read_csv.html#pandas-read-csv"><span class="std std-ref">pandas.read_csv</span></a> instead of <a class="reference internal" href="_api_ref/pandas.read_csv.html#pandas-read-csv"><span class="std std-ref">pandas.read_excel</span></a>):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numba</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
+<span class="k">def</span> <span class="nf">read_df</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+
+<span class="n">read_df</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Use <a class="reference external" href="https://numba.pydata.org/">Numba*</a> <a class="reference external" href="https://numba.pydata.org/numba-doc/latest/user/withobjmode.html">objmode</a>:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numba</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
+<span class="k">def</span> <span class="nf">cummax</span><span class="p">():</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+    <span class="k">with</span> <span class="n">numba</span><span class="o">.</span><span class="n">objmode</span><span class="p">(</span><span class="n">r</span><span class="o">=</span><span class="s1">&#39;intp[:]&#39;</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">cummax</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+
+    <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Please note, that an array is returned from objmode. Returning Series or DataFrame from objmode is not a trivial task.</p>
+<ul class="simple">
+<li><p>Exclude such calls from jit region:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numba</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="k">def</span> <span class="nf">cummax</span><span class="p">():</span>
+    <span class="nd">@numba</span><span class="o">.</span><span class="n">njit</span>
+    <span class="k">def</span> <span class="nf">create_series</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="n">create_series</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">s</span><span class="o">.</span><span class="n">cummax</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Please note that last two options would result in performing boxing/unboxing which could significantly affect performance.</p>
+<p>For more details on performance see <a class="reference internal" href="performance.html#performance"><span class="std std-ref">Getting Performance With Intel® SDC</span></a></p>
+<p>For list of supported functions see <a class="reference internal" href="apireference.html#apireference"><span class="std std-ref">API Reference</span></a></p>
+</div>
+<div class="section" id="unsupported-data-types">
+<h3>Unsupported Data Types<a class="headerlink" href="#unsupported-data-types" title="Permalink to this headline">¶</a></h3>
+<p>The other common reason why Intel® SDC or <a class="reference external" href="https://numba.pydata.org/">Numba*</a> cannot compile the code is because it does not support
+a certain data type. e.g. <a class="reference external" href="https://numba.pydata.org/">Numba*</a> doesn’t support heterogeneous lists and dicts:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Literal heterogeneous lists usually could be replaced with tuples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While heterogeneous dicts are not supported, it could be passed as parameter to <a class="reference internal" href="_api_ref/pandas.DataFrame.html#pandas-dataframe"><span class="std std-ref">pandas.DataFrame</span></a>
+or <a class="reference internal" href="_api_ref/pandas.read_csv.html#pandas-read-csv"><span class="std std-ref">pandas.read_csv</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ranf</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Intel® SDC supports <a class="reference internal" href="_api_ref/pandas.Series.html#pandas-series"><span class="std std-ref">pandas.Series</span></a> only of boolean, integer, float and string types.
+Other types like Series of datetime or categorical are not supported.</p>
+</div>
+<div class="section" id="type-inference-and-type-stability">
+<h3>Type Inference And Type Stability<a class="headerlink" href="#type-inference-and-type-stability" title="Permalink to this headline">¶</a></h3>
+<p>The last but certainly not the least why Intel® SDC cannot compile your code is because it cannot infer the type
+at the time of compilation. The most frequent cause for that is the type instability.</p>
+<p>The static compilation is a powerful technology to obtain high efficiency of a code but the flip side is the
+compiler should be able to infer all variable types at the time of compilation and these types remain stable
+within the region being compiled.</p>
+<p>The following is an example of the type-unstable variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, and hence this code cannot
+be compiled by <a class="reference external" href="https://numba.pydata.org/">Numba*</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+<span class="hll">   <span class="n">a</span> <span class="o">=</span> <span class="mf">1.0</span>
+</span><span class="k">else</span><span class="p">:</span>
+<span class="hll">   <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>The use of <a class="reference external" href="https://docs.python.org/2/library/functions.html#isinstance" title="(in Python v2.7)"><code class="xref py py-func docutils literal notranslate"><span class="pre">isinstance()</span></code></a> function often means type instability and is not supported. Similarly, function calls
+should also be deterministic. The below example is not supported since the function <code class="xref py py-func docutils literal notranslate"><span class="pre">f()</span></code> is not known in advance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">flag</span><span class="p">:</span>
+<span class="hll">    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span>
+</span><span class="k">else</span><span class="p">:</span>
+<span class="hll">    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">ranf</span>
+</span><span class="n">a</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dealing-with-integer-nan-values">
+<h3>Dealing With Integer NaN Values<a class="headerlink" href="#dealing-with-integer-nan-values" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.0.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code></a> are built upon <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.17)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>, which does not support
+<code class="docutils literal notranslate"><span class="pre">NaN</span></code> values for integers and booleans. For that reason <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> dynamically converts integer columns to floating point ones
+when <code class="docutils literal notranslate"><span class="pre">NaN</span></code> values are needed. Intel SDC doesn’t perform such conversion and it is user responsibility to manually
+convert from integer data to floating point data.</p>
+</div>
+<div class="section" id="type-inference-in-i-o-operations">
+<h3>Type Inference In I/O Operations<a class="headerlink" href="#type-inference-in-i-o-operations" title="Permalink to this headline">¶</a></h3>
+<p>If the filename is constant, the Intel SDC may be able to determine file schema at compilation time. It will allow
+to perform type inference of columns in respective <a class="reference external" href="https://pandas.pydata.org/">Pandas*</a> dataframe.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If Intel SDC fails to infer types from the file, the schema must be manually specified.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+<span class="n">dtypes</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">}</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">names</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="n">usecols</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtypes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Alternatively you can take file reading out of the compiled region.</p>
+<p>Note: if data file contains integer data with empty positions (Nans) it is highly recommended to manually specify column type to float.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Table of Contents</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">What is Intel® SDC?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compiling With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Getting Performance With Intel® SDC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workflow.html">Step by step on typical data analysis workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apireference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">List of examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_developers.html">Contribute to Intel® Scalable Dataframe Compiler Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="other_intel_python_projects.html">Other Intel projects for high-performance Python</a></li>
+</ul>
+
+
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="getting_started.html"
+                        title="previous chapter">Getting Started</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="performance.html"
+                        title="next chapter">Getting Performance With Intel® SDC</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright 2019-2020, Intel Corporation.<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 2.4.4. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>
