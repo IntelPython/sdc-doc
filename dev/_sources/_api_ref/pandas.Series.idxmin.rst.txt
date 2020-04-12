@@ -32,8 +32,8 @@ value is returned.
 
 Limitations
 -----------
-Parameter ``axis`` is supported only with default value ``None``.
-Parameter ``skipna`` cannot be ``False`` with data of string type.
+- Parameter ``axis`` is supported only with default value ``None``.
+- Parameter ``skipna`` cannot be ``False`` with data of string type.
 
 Examples
 --------
@@ -51,7 +51,7 @@ Examples
     :ref:`Series.idxmax <pandas.Series.idxmax>`
         Return index label of the first occurrence of maximum of values.
 
-    `numpy.absolute <https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmin.html#numpy.argmin>`_
+    `numpy.argmin <https://docs.scipy.org/doc/numpy/reference/generated/numpy.argmin.html#numpy.argmin>`_
         Return indices of the minimum values along the given axis.
 
     :ref:`DataFrame.idxmin <pandas.DataFrame.idxmin>`

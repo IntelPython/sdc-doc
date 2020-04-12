@@ -124,8 +124,12 @@ Object with missing values filled.</p>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Parameters <code class="docutils literal notranslate"><span class="pre">method</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code> and <code class="docutils literal notranslate"><span class="pre">downcast</span></code> are currently unsupported by Intel Scalable Dataframe Compiler.</p></li>
-<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">inplace</span></code> is supported as literal value only.</p></li>
+<li><dl class="simple">
+<dt>Parameters <code class="docutils literal notranslate"><span class="pre">method</span></code>, <code class="docutils literal notranslate"><span class="pre">limit</span></code> and <code class="docutils literal notranslate"><span class="pre">downcast</span></code> are currently unsupported</dt><dd><p>by Intel Scalable Dataframe Compiler.</p>
+</dd>
+</dl>
+</li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">inplace</span></code> is supported with literal value only.</p></li>
 </ul>
 </div>
 <div class="section" id="examples">
@@ -158,15 +162,15 @@ dtype: float64
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html#pandas.Series.interpolate">pandas.absolute</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html#pandas.Series.interpolate">pandas.interpolate</a></p>
 <blockquote>
 <div><p>Fill NaN values using interpolation.</p>
 </div></blockquote>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.reindex.html#pandas.Series.reindex">pandas.absolute</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.reindex.html#pandas.Series.reindex">pandas.reindex</a></p>
 <blockquote>
 <div><p>Conform object to new index.</p>
 </div></blockquote>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.asfreq.html#pandas.Series.asfreq">pandas.absolute</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.asfreq.html#pandas.Series.asfreq">pandas.asfreq</a></p>
 <blockquote>
 <div><p>Convert TimeSeries to specified frequency.</p>
 </div></blockquote>

@@ -35,7 +35,7 @@ series of elements.
 
 Limitations
 -----------
-Parameters ``limit`` and ``freq`` are unsupported.
+Parameters ``limit`` and ``freq`` are supported only with default value ``None``.
 
 Examples
 --------

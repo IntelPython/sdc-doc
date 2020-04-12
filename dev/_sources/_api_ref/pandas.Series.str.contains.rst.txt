@@ -37,8 +37,27 @@ contained within a string of a Series or Index.
     given pattern is contained within the string of each element
     of the Series or Index.
 
+Limitations
+-----------
+- Series elements are expected to be Unicode strings. Elements cannot be `NaNs`.
+- Parameter ``na`` is supported only with default value ``None``.
+- Parameter ``flags`` is supported only with default value ``0``.
+- Parameter ``regex`` is supported only with default value ``True``.
 
+Examples
+--------
+.. literalinclude:: ../../../examples/series/str/series_str_contains.py
+   :language: python
+   :lines: 27-
+   :caption: Tests if string element contains a pattern.
+   :name: ex_series_str_contains
 
-.. warning::
-    This feature is currently unsupported by Intel Scalable Dataframe Compiler
+.. command-output:: python ./series/str/series_str_contains.py
+   :cwd: ../../../examples
+
+.. seealso::
+    :ref:`Series.str.startswith <pandas.Series.str.startswith>`
+        Same as endswith, but tests the start of string.
+    :ref:`Series.str.endswith <pandas.Series.str.endswith>`
+        Same as startswith, but tests the end of string.
 

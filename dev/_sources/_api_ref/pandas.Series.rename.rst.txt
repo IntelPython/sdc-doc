@@ -41,7 +41,7 @@ See the :ref:`user guide <basics.rename>` for more.
 
 Limitations
 -----------
-- Parameter level is currently unsupported by Intel Scalable Dataframe Compiler
+- Parameter ``level`` is currently unsupported by Intel Scalable Dataframe Compiler.
 
 Examples
 --------

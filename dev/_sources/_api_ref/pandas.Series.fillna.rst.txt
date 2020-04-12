@@ -51,8 +51,9 @@ Fill NA/NaN values using the specified method.
 
 Limitations
 -----------
-- Parameters ``method``, ``limit`` and ``downcast`` are currently unsupported by Intel Scalable Dataframe Compiler.
-- Parameter ``inplace`` is supported as literal value only.
+- Parameters ``method``, ``limit`` and ``downcast`` are currently unsupported
+    by Intel Scalable Dataframe Compiler.
+- Parameter ``inplace`` is supported with literal value only.
 
 Examples
 --------
@@ -67,15 +68,15 @@ Examples
 
 .. seealso::
 
-    `pandas.absolute
+    `pandas.interpolate
     <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.interpolate.html#pandas.Series.interpolate>`_
         Fill NaN values using interpolation.
 
-    `pandas.absolute
+    `pandas.reindex
     <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.reindex.html#pandas.Series.reindex>`_
         Conform object to new index.
 
-    `pandas.absolute
+    `pandas.asfreq
     <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.asfreq.html#pandas.Series.asfreq>`_
         Convert TimeSeries to specified frequency.
 

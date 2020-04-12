@@ -901,8 +901,6 @@ strings and apply several methods to it. These can be accessed like
        Filling left and right side of strings in the Series/Index with an additional character. Equivalent to :meth:`str.center`.
    :ref:`Series.str.contains <pandas.Series.str.contains>`
        Test if pattern or regex is contained within a string of a Series or Index.
-
-        **Unsupported by Intel SDC**.
    :ref:`Series.str.count <pandas.Series.str.count>`
        Count occurrences of pattern in each string of the Series/Index.
 

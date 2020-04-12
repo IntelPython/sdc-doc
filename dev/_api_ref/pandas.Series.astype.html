@@ -105,13 +105,13 @@ pandas objects).</p>
 <div class="section" id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Currently copy=False is not supported</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">copy</span></code> is supported only with default value <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 </ul>
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="ex-series-astype">
-<div class="code-block-caption"><span class="caption-text">Cast a pandas object to a specified dtype dtype.</span><a class="headerlink" href="#ex-series-astype" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Cast a pandas object to a specified dtype.</span><a class="headerlink" href="#ex-series-astype" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
@@ -139,19 +139,19 @@ dtype: object
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime">pandas.absolute</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime">pandas.to_datetime</a></p>
 <blockquote>
 <div><p>Convert argument to datetime.</p>
 </div></blockquote>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_timedelta.html#pandas.to_timedelta">pandas.absolute</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_timedelta.html#pandas.to_timedelta">pandas.to_timedelta</a></p>
 <blockquote>
 <div><p>Convert argument to timedelta.</p>
 </div></blockquote>
-<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas.to_numeric">pandas.absolute</a></p>
+<p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_numeric.html#pandas.to_numeric">pandas.to_numeric</a></p>
 <blockquote>
 <div><p>Convert argument to a numeric type.</p>
 </div></blockquote>
-<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype">numpy.absolute</a></p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.astype.html#numpy.ndarray.astype">numpy.ndarray.astype</a></p>
 <blockquote>
 <div><p>Copy of the array, cast to a specified type.</p>
 </div></blockquote>

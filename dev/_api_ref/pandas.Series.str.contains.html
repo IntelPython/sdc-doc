@@ -105,9 +105,50 @@ given pattern is contained within the string of each element
 of the Series or Index.</p>
 </dd>
 </dl>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This feature is currently unsupported by Intel Scalable Dataframe Compiler</p>
+<div class="section" id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Series elements are expected to be Unicode strings. Elements cannot be <cite>NaNs</cite>.</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">na</span></code> is supported only with default value <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">flags</span></code> is supported only with default value <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p>Parameter <code class="docutils literal notranslate"><span class="pre">regex</span></code> is supported only with default value <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="ex-series-str-contains">
+<div class="code-block-caption"><span class="caption-text">Tests if string element contains a pattern.</span><a class="headerlink" href="#ex-series-str-contains" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+
+
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">series_str_contains</span><span class="p">():</span>
+    <span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">series</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>  <span class="c1"># Expect series of True, True, False</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">series_str_contains</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ python ./series/str/series_str_contains.py
+0     True
+1     True
+2    False
+dtype: bool
+</pre></div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="pandas.Series.str.startswith.html#pandas-series-str-startswith"><span class="std std-ref">Series.str.startswith</span></a></dt><dd><p>Same as endswith, but tests the start of string.</p>
+</dd>
+<dt><a class="reference internal" href="pandas.Series.str.endswith.html#pandas-series-str-endswith"><span class="std std-ref">Series.str.endswith</span></a></dt><dd><p>Same as startswith, but tests the end of string.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 

@@ -522,8 +522,6 @@ Re-Indexing, Selection, Label Manipulation
         **Unsupported by Intel SDC**.
    :ref:`DataFrame.reset_index <pandas.DataFrame.reset_index>`
        Reset the index, or a level of it.
-
-        **Unsupported by Intel SDC**.
    :ref:`DataFrame.sample <pandas.DataFrame.sample>`
        Return a random sample of items from an axis of object.
 

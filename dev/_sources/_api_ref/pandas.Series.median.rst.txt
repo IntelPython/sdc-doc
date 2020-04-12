@@ -31,7 +31,6 @@ Return the median of the values for the requested axis.
 
 Limitations
 -----------
-
 - Parameters ``axis``, ``level`` and ``numeric_only`` are supported only with default value ``None``.
 
 Examples
